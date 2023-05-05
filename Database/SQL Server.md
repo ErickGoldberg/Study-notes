@@ -69,18 +69,18 @@ O comando SELECT permite recuperar os dados de um objeto do banco de dados, como
 - SELECT <lista_de_campos>
 FROM <nome_da_tabela></nome_da_tabela></lista_de_campos>
 
-##### Where: 
+#### Where: 
 A cláusula Where permite ao comando SQL passar condições de filtragem
 - SELECT CODIGO, NOME FROM CLIENTES
 WHERE UF = ‘RJ’ OR (UF = ‘SP’ AND ATIVO = ‘N’)
 
-##### Like:
+#### Like:
 O operador LIKE é empregado nas situações em que usamos como base para realizar pesquisas (ou filtros) as colunas que estão no formato caractere
 Possuí o "NOT LIKE"
 - SELECT CODIGO, NOME FROM CLIENTES
  WHERE NOME LIKE ‘MARIA%’
 
-##### Order by:
+#### Order by:
 A ordenação pode ser definida com o comando ORDER BY. Assim como no comando WHERE, o campo de ordenação não precisa estar listado como campo de visualização. Obs: A utilização da palavra DESC garante a ordenação invertida
 - SELECT CODIGO, NOME FROM CLIENTES
 ORDER BY NOME
@@ -91,7 +91,7 @@ ORDER BY NOME DESC
 SELECT CODIGO, NOME FROM CLIENTES
 ORDER BY UF DESC
 
-##### Agreggation:
+#### Agreggation:
 Existem 5 funções para agrupar
 - AVG: Retorna a média do campo especificado
 - SELECT AVG(VALOR) FROM PEDIDOS
@@ -101,13 +101,13 @@ Existem 5 funções para agrupar
 - SELECT AVG(VALOR) FROM PEDIDOS
 - COUNT: Retorna a quantidade de itens da seleção
 
-##### Group by:
+#### Group by:
 Um poderoso recurso do comando SELECT é o parâmetro GROUPY BY. Através dele podemos retornar informações agrupadas de um conjunto de registros, estabelecendo uma condição de agrupamento
 - SELECT CODCLIENTE, MAX(VALOR)
 FROM PEDIDOS
 GROUP BY CODCLIENTE
 
-##### Having:
+#### Having:
 Através do comando HAVING podemos filtrar a cláusula GROUP BY
 - SELECT CODCLIENTE, COUNT(*)
 FROM PEDIDOS
@@ -119,7 +119,7 @@ WHERE DATA > ‘06/10/2002’
 GROUPY BY CODCLIENTE
 HAVING COUNT(*) >= 2
 
-##### Join:
+#### Join:
 Utilizado para junar 2 tabelas na hora da visualização do SELECT e possuem 5 tipos de join:
 - (INNER) JOIN: Retorna registros que possuem valores correspondentes em ambas as tabelas
 - LEFT (OUTER) JOIN: Retorna todos os registros da tabela da esquerda e os registros correspondentes da tabela da direita
@@ -148,7 +148,7 @@ ON A.Key = B.Key
 FROM Tabela A
 CROSS JOIN Tabela B
 
-##### Union:
+#### Union:
 Existe ainda uma segunda forma de juntar tabelas com o comando SELECT. Através do parâmetro UNION, é possível colar o conteúdo de duas tabelas. Por default, os registros duplicados são eliminados na cláusula UNION. Para incluir todos os registros, independente de duplicidade, utilize a palavra ALL
 - SELECT CODIGO, NOME FROM CLIENTES
 UNION
