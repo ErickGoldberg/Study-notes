@@ -38,6 +38,14 @@ Um Endereço IP elástico é um endereço IPv4 estático projetado para computa�
 
 obs: O IP elástico não é cobrado se a instância estiver ligada, apenas se tiver desligada.
 
+## Volume: 
+Um volume do Amazon EBS é um dispositivo de armazenamento em blocos durável que é possível anexar às suas instâncias. Depois de anexar um volume a uma instância, será possível usá-lo como você usaria um disco rígido físico. Os volumes do EBS são flexíveis. Para volumes de geração atual anexados a tipos de instância de geração atual, é possível aumentar o tamanho dinamicamente, modificar a capacidade de IOPS provisionadas e alterar o tipo de volume em volumes de produção em tempo real.
+
+É possível usar os volumes do EBS como armazenamento principal de dados que exigem atualizações frequentes, como o drive do sistema para uma instância ou armazenamento de uma aplicação de banco de dados. Também é possível usá-los para aplicações com muita throughput que executam verificações de disco contínuas. Os volumes do EBS persistem independentemente da vida útil de uma instância do EC2.
+
+## Snapshot: 
+É um backup, um clone do seu volume (disco EBS), e a partir dele você pode gerar novos volumes (restaurar um backup). Você pode realizar snapshots manuais, agendar via Lambda ou usar o serviço do AWS Backup para agendar seus snapshots.
+
 ## Elastic Load Balancing: 
 O Elastic Load Balancing é compatível com os seguintes tipos de balanceadores de carga: Application Load Balancers e Network Load Balancers. Os serviços do Amazon ECS podem usar esses tipos de balanceador de carga. Os application load balancers são usados para encaminhar o tráfego HTTP/HTTPS (ou Camada 7). Os network load balancers e os classic load balancers são usados para encaminhar o tráfego TCP (ou da Camada 4).
 
