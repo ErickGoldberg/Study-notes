@@ -28,6 +28,11 @@ O Amazon EC2 fornece os seguintes recursos:
 
 * Redes virtuais isoladas logicamente do restante da Nuvem AWS que você pode criar e, opcionalmente, conectar à sua própria rede, conhecida como nuvens virtuais privadas (VPCs)
 
+## Security groups:
+Um grupo de segurança atua como firewall virtual para as instâncias do EC2 visando controlar o tráfego de entrada e de saída. As regras de entrada controlam o tráfego de entrada para a instância e as regras de saída controlam o tráfego de saída da instância. Ao executar sua instância, é possível especificar um ou mais grupos de segurança. Se você não especificar um grupo de segurança, o Amazon EC2 usará o grupo de segurança padrão. É possível adicionar regras a cada grupo de segurança que permite tráfego de entrada ou de saída nas instâncias associadas. É possível modificar as regras de um grupo de segurança a qualquer momento. As regras novas e modificadas são aplicadas automaticamente para todas as instâncias que estão associados ao grupo de segurança. Quando o Amazon EC2 decide se deve permitir que o tráfego atinja uma instância, ele avalia todas as regras de todos os grupos de segurança associados à instância.
+
+Ao executar uma instância em uma VPC, você precisa especificar um grupo de segurança criado para a VPC. Depois de executar uma instância, é possível alterar seus grupos de segurança. Os grupos de segurança estão associados a interfaces de rede. A alteração dos grupos de segurança de uma instância altera os grupos de segurança associados à interface de rede primária (eth0).
+
 ## Diferença entre modelo e imagem:
 Ao criarmos uma instância a partir de uma imagem, podemos selecionar todo o hardware (tipo de instância, rede, etc) e algum software já vem pré-instalado. Já com o Modelo, nós podemos selecionar qualquer imagem e o hardware já estará pré-configurado. Inclusive nós criaremos um modelo mais adiante no curso para que a AWS possa criar instâncias automaticamente para nós.
 
