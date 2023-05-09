@@ -168,9 +168,6 @@ SELECT CODIGO. NOME FROM FUNCIONARIOS
 UNION ALL
 SELECT CODIGO, NOME FROM FUNCIONARIOS
 
-
-
-
 #### Subqueries
 Subqueries, ou subconsultas, em SQL Server são consultas internas que são incorporadas em uma consulta externa. As subconsultas são usadas para filtrar ou recuperar dados de uma tabela ou conjunto de tabelas, que é então usado como entrada para uma consulta externa.
 
@@ -183,6 +180,14 @@ WHERE CustomerID IN (
     WHERE ShippedDate IS NULL
 )
 
+### Comandos DTL:
+A DTL ou TCL (Data Transaction Language) é um subconjunto do SQL para transação de dados. A DTL envolve gerenciamento e controle de transações. Tanto o comando BEGIN TRANSACTION quanto o SET TRANSACTION indicam o início de uma transação.
+
+O SQL Server usa as instruções COMMIT e ROLLBACK para gerenciar transações em um banco de dados. Transações são uma sequência de comandos SQL que são executados como uma única unidade lógica de trabalho. Quando um conjunto de comandos SQL é executado dentro de uma transação, o SQL Server garante que todas as alterações feitas pelos comandos sejam permanentes ou nenhuma delas seja permanente, garantindo a integridade dos dados do banco de dados.
+
+O comando COMMIT é usado para confirmar uma transação. Ele faz com que todas as alterações feitas na transação sejam permanentes no banco de dados. Depois que o comando COMMIT é executado, as alterações não podem ser desfeitas. O comando COMMIT é geralmente usado quando as alterações feitas na transação são consideradas corretas e desejadas.
+
+Por outro lado, o comando ROLLBACK é usado para desfazer uma transação. Ele faz com que todas as alterações feitas na transação sejam descartadas e o banco de dados volte ao estado anterior à execução da transação. O comando ROLLBACK é geralmente usado quando ocorre um erro ou quando as alterações feitas na transação são consideradas incorretas ou indesejadas.
 
 ## T-SQL:
 A linguagem Transact-SQL é uma extensão ao padrão SQL-92, sendo a linguagem utilizada por desenvolvedores na construção de aplicações que manipulam dados mantidos no SQL Server. Seus comandos podem ser classificados em quatro grupos, de acordo com sua função: DML (Linguagem de Manipulação de Dados), DDL (Linguagem de Definição de Dados), DCL (Linguagem de Controle de Dados) e DTL (Linguagem de Transação de Dados). Além dessas categorias, podemos ter também uma relacionada à consulta dos dados (DQL – Linguagem de Consulta de Dados), que possui apenas o comando SELECT. Entretanto, é mais comum encontrar esse comando como parte da DML em conjunto com os demais comandos de manipulação: INSERT, UPDATE e DELETE.
