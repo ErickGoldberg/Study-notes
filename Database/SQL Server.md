@@ -223,14 +223,20 @@ Exemplo: 'SELECT DATEADD(day, 7, '2023-05-09')' retornaria '2023-05-16'
 - DATEDIFF(): Esta função retorna a diferença entre duas datas em uma unidade específica, como dias, semanas ou meses.
 Exemplo: 'SELECT DATEDIFF(day, '2023-05-01', '2023-05-09')' retornaria '8'
 
-#### Funções númericas:
-- SUM: Esta função retorna a soma dos valores em uma coluna.
-- AVG: Esta função retorna a média dos valores em uma coluna.
-- MAX: Esta função retorna o valor máximo em uma coluna.
-- MIN: Esta função retorna o valor mínimo em uma coluna.
-- COUNT: Esta função retorna o número de linhas em uma tabela que atendem a uma condição especificada.
+#### Funções numéricas:
 - ROUND: Esta função arredonda um número para um número especificado de casas decimais.
+- CEILING: Essa função arredonda um número para cima para o número inteiro mais próximo.
+- FLOOR: Essa função arredonda um número para baixo para o número inteiro mais próximo.
+- POWER: Essa função retorna um número elevado a uma potência especificada.
+- EXP: Essa função retorna o número de Euler elevado a uma potência especificada.
+- SQRT: Essa função retorna a raiz quadrada de um número especificado.
+- ABS: Essa função retorna o valor absoluto de um número especificado.
 
+#### Funções de conversão:
+- CAST: Esta função converte um valor para um tipo de dados especificado.
+- CONVERT: Esta função converte um valor para um tipo de dados especificado, com opções adicionais para formatar a saída.
+- TRY_CAST: Esta função tenta converter um valor para um tipo de dados especificado, retornando NULL se a conversão não for bem-sucedida.
+- TRY_CONVERT: Esta função tenta converter um valor para um tipo de dados especificado, com opções adicionais para formatar a saída, retornando NULL se a conversão não for bem-sucedida.
 
 
 ### Stored procedures:
