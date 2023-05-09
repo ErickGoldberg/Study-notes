@@ -245,8 +245,31 @@ Para acessar dados dentro das tabelas, há dois modos que o SQL Server trabalha:
 No SQL Server temos dois tipos de índices: clusterizados e não clusterizados. O tipo clusterizado é um índice gerado na própria estrutura de armazenamento dos dados. Esse índice fará com que os dados da sua tabela fiquem organizados fisicamente na sequência. Por isso, em uma tabela pode haver apenas um índice cluster, sendo que sua principal vantagem é a performance obtida nas pesquisas, que normalmente são mais rápidas em comparação com o não-clusterizado. O índice clusterizado é criado automaticamente em colunas definida como PRIMAKY KEY.
 
 Já o índice não clusterizado é um índice criado em uma estrutura separada dos dados físicos. São criadas páginas de índices que irão conter os apontadores para os registros físicos. Eles são eficientes quando precisamos ter várias maneiras de pesquisar os dados dentro de uma tabela. Por exemplo, em uma tabela que contém os livros de uma livraria, armazenamos o nome do livro, o ISBN, o autor e a editora. Quando pesquisamos um livro, poderemos pesquisar por qualquer uma dessas colunas, nesse caso, precisaremos ter índices para cada uma das colunas, então criaremos índices non-clustered associados a elas.
+Exemplo:
+CREATE NONCLUSTERED INDEX idx_Nome
+ON Clientes (Nome);
+...
+SELECT IdCliente, Nome, Email, Telefone, DataCadastro
+FROM Clientes
+WHERE Nome = 'João';
+
 
 ### Views:
+Views são tabelas virtuais acessadas frequentemente e que facilitam as consultas no banco de dados. O uso de view é particularmente útil quando se deseja dar o foco a um determinado tipo de informação mantida pelo banco de dados. Imagine um banco de dados corporativo que é acessado por usuários de vários departamentos, as informações que a equipe de vendas manuseia certamente serão diferentes das do departamento de marketing. Trabalhando com view, é possível oferecer ao usuário apenas as informações que ele necessita, não importando se são de uma ou várias tabelas. Isso permite que diferentes usuários vejam as mesmas informações sob uma perspectiva diferente.
+Exemplo:
+CREATE VIEW dbo.SeattleOnly
+AS
+SELECT p.LastName, p.FirstName, e.JobTitle, a.City, sp.StateProvinceCode
+ FROM HumanResources.Employee e
+ INNER JOIN Person.Person p
+ ON p.BusinessEntityID = e.BusinessEntityID
+ INNER JOIN Person.BusinessEntityAddress bea
+ ON bea.BusinessEntityID = e.BusinessEntityID
+ INNER JOIN Person.Address a
+ ON a.AddressID = bea.AddressID
+ INNER JOIN Person.StateProvince sp
+ ON sp.StateProvinceID = a.StateProvinceID
+ WHERE a.City = 'Seattle'
 
 ### Stored procedures:
 
