@@ -17,8 +17,8 @@ Os Schemas são uma coleção de objetos dentro de um determinado database (banc
 #### Table: 
 Tabelas são objetos de banco de dados que contêm todos os dados em um banco de dados. Nas tabelas, os dados são organizados de maneira lógica em um formato de linha-e-coluna semelhante ao de uma planilha. Cada linha representa um registro exclusivo e cada coluna representa um campo no registro.
 
-### Comandos DDL:
-#### Create: 
+## Comandos DDL:
+### Create: 
 Serve para criar um database/Schema/Table
 Exemplos:
 - CREATE DATABASE nome do banco de dados;
@@ -31,7 +31,7 @@ Exemplos:
     table_constraints
 );
 
-#### Alter: 
+### Alter: 
 Serve para alterar um database/Schema/Table
 Exemplos:
 - ALTER DATABASE database_name MODIFY NAME = new_database_name // 
@@ -39,7 +39,7 @@ Exemplos:
    TRANSFER  <entity_type> ::  securable_name ; 
 - ALTER TABLE table_name ADD column_name {datatype};
 
-#### Drop: 
+### Drop: 
 Serve para apagar um database/Schema/Table
 Exemplos:
 - DROP DATABASE database_name;
@@ -47,19 +47,19 @@ Exemplos:
 - DROP TABLE table_name;
 
 
-### Comandos DML:
+## Comandos DML:
 #### Insert: 
 Usado para inserir novos registros na tabela
 - INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
 
-#### Update: 
+### Update: 
 Usada para modificar os registros existentes em uma tabela
 - UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 
-#### Merge:
+### Merge:
 O comando MERGE no SQL Server é usado para combinar dados de duas ou mais tabelas em uma única tabela, comparando os dados de origem com os dados de destino e executando operações diferentes dependendo do resultado da comparação. O comando MERGE é especialmente útil quando você precisa sincronizar dados em tabelas diferentes ou atualizar dados em uma tabela com base em dados de outra tabela.
 - MERGE INTO tabela_destino AS destino
 USING tabela_origem AS origem
@@ -70,28 +70,28 @@ WHEN NOT MATCHED THEN
     -- INSERT
 
 
-#### Delete:
+### Delete:
 Usado para deletar tabelas e colunas
 - DELETE FROM table_name WHERE condition;
 
-### Comandos DQL:
-#### SELECT: 
+## Comandos DQL:
+### SELECT: 
 O comando SELECT permite recuperar os dados de um objeto do banco de dados, como uma tabela, view e, em alguns casos, uma stored procedure (alguns bancos de dados permitem a criação de procedimentos que retornam valor).
 - SELECT <lista_de_campos>
 FROM <nome_da_tabela></nome_da_tabela></lista_de_campos>
 
-#### Where: 
+### Where: 
 A cláusula Where permite ao comando SQL passar condições de filtragem
 - SELECT CODIGO, NOME FROM CLIENTES
 WHERE UF = ‘RJ’ OR (UF = ‘SP’ AND ATIVO = ‘N’)
 
-#### Like:
+### Like:
 O operador LIKE é empregado nas situações em que usamos como base para realizar pesquisas (ou filtros) as colunas que estão no formato caractere
 Possuí o "NOT LIKE"
 - SELECT CODIGO, NOME FROM CLIENTES
  WHERE NOME LIKE ‘MARIA%’
 
-#### Order by:
+### Order by:
 A ordenação pode ser definida com o comando ORDER BY. Assim como no comando WHERE, o campo de ordenação não precisa estar listado como campo de visualização. Obs: A utilização da palavra DESC garante a ordenação invertida
 - SELECT CODIGO, NOME FROM CLIENTES
 ORDER BY NOME
@@ -102,7 +102,7 @@ ORDER BY NOME DESC
 SELECT CODIGO, NOME FROM CLIENTES
 ORDER BY UF DESC
 
-#### Agreggation:
+### Agreggation:
 Existem 5 funções para agrupar
 - AVG: Retorna a média do campo especificado
 - SELECT AVG(VALOR) FROM PEDIDOS
@@ -112,13 +112,13 @@ Existem 5 funções para agrupar
 - SELECT AVG(VALOR) FROM PEDIDOS
 - COUNT: Retorna a quantidade de itens da seleção
 
-#### Group by:
+### Group by:
 Um poderoso recurso do comando SELECT é o parâmetro GROUPY BY. Através dele podemos retornar informações agrupadas de um conjunto de registros, estabelecendo uma condição de agrupamento
 - SELECT CODCLIENTE, MAX(VALOR)
 FROM PEDIDOS
 GROUP BY CODCLIENTE
 
-#### Having:
+### Having:
 Através do comando HAVING podemos filtrar a cláusula GROUP BY
 - SELECT CODCLIENTE, COUNT(*)
 FROM PEDIDOS
@@ -130,7 +130,7 @@ WHERE DATA > ‘06/10/2002’
 GROUPY BY CODCLIENTE
 HAVING COUNT(*) >= 2
 
-#### Join:
+### Join:
 Utilizado para junar 2 tabelas na hora da visualização do SELECT e possuem 5 tipos de join:
 - (INNER) JOIN: Retorna registros que possuem valores correspondentes em ambas as tabelas
 - LEFT (OUTER) JOIN: Retorna todos os registros da tabela da esquerda e os registros correspondentes da tabela da direita
@@ -159,7 +159,7 @@ ON A.Key = B.Key
 FROM Tabela A
 CROSS JOIN Tabela B
 
-#### Union:
+### Union:
 Existe ainda uma segunda forma de juntar tabelas com o comando SELECT. Através do parâmetro UNION, é possível colar o conteúdo de duas tabelas. Por default, os registros duplicados são eliminados na cláusula UNION. Para incluir todos os registros, independente de duplicidade, utilize a palavra ALL
 - SELECT CODIGO, NOME FROM CLIENTES
 UNION
@@ -168,7 +168,7 @@ SELECT CODIGO. NOME FROM FUNCIONARIOS
 UNION ALL
 SELECT CODIGO, NOME FROM FUNCIONARIOS
 
-#### Subqueries
+### Subqueries
 Subqueries, ou subconsultas, em SQL Server são consultas internas que são incorporadas em uma consulta externa. As subconsultas são usadas para filtrar ou recuperar dados de uma tabela ou conjunto de tabelas, que é então usado como entrada para uma consulta externa.
 
 As subconsultas em SQL Server podem ser usadas em várias cláusulas da consulta, como SELECT, FROM, WHERE, HAVING e JOIN. O resultado da subconsulta é usado como entrada para a consulta externa, que pode então ser usada para filtrar ou selecionar dados de outras tabelas.
@@ -180,7 +180,7 @@ WHERE CustomerID IN (
     WHERE ShippedDate IS NULL
 )
 
-### Comandos DTL:
+## Comandos DTL:
 A DTL ou TCL (Data Transaction Language) é um subconjunto do SQL para transação de dados. A DTL envolve gerenciamento e controle de transações. Tanto o comando BEGIN TRANSACTION quanto o SET TRANSACTION indicam o início de uma transação.
 
 O SQL Server usa as instruções COMMIT e ROLLBACK para gerenciar transações em um banco de dados. Transações são uma sequência de comandos SQL que são executados como uma única unidade lógica de trabalho. Quando um conjunto de comandos SQL é executado dentro de uma transação, o SQL Server garante que todas as alterações feitas pelos comandos sejam permanentes ou nenhuma delas seja permanente, garantindo a integridade dos dados do banco de dados.
