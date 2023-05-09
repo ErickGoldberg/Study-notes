@@ -59,6 +59,17 @@ Usada para modificar os registros existentes em uma tabela
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 
+#### Merge:
+O comando MERGE no SQL Server é usado para combinar dados de duas ou mais tabelas em uma única tabela, comparando os dados de origem com os dados de destino e executando operações diferentes dependendo do resultado da comparação. O comando MERGE é especialmente útil quando você precisa sincronizar dados em tabelas diferentes ou atualizar dados em uma tabela com base em dados de outra tabela.
+- MERGE INTO tabela_destino AS destino
+USING tabela_origem AS origem
+ON destino.coluna_chave = origem.coluna_chave
+WHEN MATCHED THEN
+    -- UPDATE ou DELETE
+WHEN NOT MATCHED THEN
+    -- INSERT
+
+
 #### Delete:
 Usado para deletar tabelas e colunas
 - DELETE FROM table_name WHERE condition;
