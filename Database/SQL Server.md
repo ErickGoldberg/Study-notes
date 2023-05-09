@@ -186,6 +186,7 @@ O comando IDENTITY é utilizado para determinar que uma coluna da tabela será a
 )
 
 ### Function
+#### USER FUNCTION:
 Em SQL Server, uma função é um objeto de banco de dados que pode ser usado para encapsular uma lógica específica e ser reutilizada em diferentes partes do código SQL. As funções podem aceitar argumentos de entrada, executar operações de lógica e retornar um valor de saída.
 
 Um exemplo de uso de função em SQL Server é para retornar a idade de uma pessoa a partir de sua data de nascimento. Você pode criar uma função chamada "GetAge" que recebe como entrada a data de nascimento e retorna a idade em anos. Aqui está um exemplo de como criar e usar uma função GetAge em SQL Server:
