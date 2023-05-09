@@ -173,10 +173,10 @@ WHERE CustomerID IN (
 )
 
 
-### T-SQL:
+## T-SQL:
 A linguagem Transact-SQL é uma extensão ao padrão SQL-92, sendo a linguagem utilizada por desenvolvedores na construção de aplicações que manipulam dados mantidos no SQL Server. Seus comandos podem ser classificados em quatro grupos, de acordo com sua função: DML (Linguagem de Manipulação de Dados), DDL (Linguagem de Definição de Dados), DCL (Linguagem de Controle de Dados) e DTL (Linguagem de Transação de Dados). Além dessas categorias, podemos ter também uma relacionada à consulta dos dados (DQL – Linguagem de Consulta de Dados), que possui apenas o comando SELECT. Entretanto, é mais comum encontrar esse comando como parte da DML em conjunto com os demais comandos de manipulação: INSERT, UPDATE e DELETE.
 
-#### Identity:
+### Identity:
 O comando IDENTITY é utilizado para determinar que uma coluna da tabela será automaticamente incrementada quando um valor novo é inserido (esse campo não aceita valores nulos). Todas as tabelas possuem uma coluna ou um conjunto de colunas que identificam a linha: a primary key.
 - CREATE TABLE MyTable
 (
@@ -279,5 +279,19 @@ SELECT p.LastName, p.FirstName, e.JobTitle, a.City, sp.StateProvinceCode
  WHERE a.City = 'Seattle'
 
 ### Stored procedures:
+Procedures são conjuntos de instruções T-SQL executadas dentro de um único plano de execução. Elas podem melhorar a performance (como ela é armazenada dentro do banco, ela é executada rapidamente) e criam mecanismos de segurança nos dados do banco.
+
+Considerando a forma como o SQL Server é utilizado no dia a dia em muitas organizações, é possível afirmar que grande parte do desenvolvimento em T-SQL gira em torno da construção de stored procedures. Muitas dessas rotinas são implementadas com o intuito de produzir resultados dinâmicos, empregando para isso uma consulta SQL simples ou até agrupamentos mais complexos de instruções (podendo envolver uma série de cálculos ou mesmo junções de dados provenientes de diferentes fontes).
+
+Exemplo: 
+
+CREATE PROCEDURE HumanResources.uspGetEmployees
+ @LastName nvarchar(50),
+ @FirstName nvarchar(50)
+ AS
+ SET NOCOUNT ON;
+ SELECT FirstName, LastName, Department
+  FROM HumanResources.vEmployeeDepartmentHistory
+  WHERE FirstName = @FirstName AND LastName = @LastName;
 
 ### Triggers:
