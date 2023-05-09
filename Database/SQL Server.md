@@ -160,10 +160,68 @@ SELECT CODIGO, NOME FROM FUNCIONARIOS
 
 
 
+#### Subqueries
+Subqueries, ou subconsultas, em SQL Server são consultas internas que são incorporadas em uma consulta externa. As subconsultas são usadas para filtrar ou recuperar dados de uma tabela ou conjunto de tabelas, que é então usado como entrada para uma consulta externa.
 
-### Subqueries
+As subconsultas em SQL Server podem ser usadas em várias cláusulas da consulta, como SELECT, FROM, WHERE, HAVING e JOIN. O resultado da subconsulta é usado como entrada para a consulta externa, que pode então ser usada para filtrar ou selecionar dados de outras tabelas.
+- SELECT CustomerID, CompanyName
+FROM Customers
+WHERE CustomerID IN (
+    SELECT DISTINCT CustomerID
+    FROM Orders
+    WHERE ShippedDate IS NULL
+)
+
+
+### T-SQL:
+A linguagem Transact-SQL é uma extensão ao padrão SQL-92, sendo a linguagem utilizada por desenvolvedores na construção de aplicações que manipulam dados mantidos no SQL Server. Seus comandos podem ser classificados em quatro grupos, de acordo com sua função: DML (Linguagem de Manipulação de Dados), DDL (Linguagem de Definição de Dados), DCL (Linguagem de Controle de Dados) e DTL (Linguagem de Transação de Dados). Além dessas categorias, podemos ter também uma relacionada à consulta dos dados (DQL – Linguagem de Consulta de Dados), que possui apenas o comando SELECT. Entretanto, é mais comum encontrar esse comando como parte da DML em conjunto com os demais comandos de manipulação: INSERT, UPDATE e DELETE.
+
+#### Identity:
+O comando IDENTITY é utilizado para determinar que uma coluna da tabela será automaticamente incrementada quando um valor novo é inserido (esse campo não aceita valores nulos). Todas as tabelas possuem uma coluna ou um conjunto de colunas que identificam a linha: a primary key.
+- CREATE TABLE MyTable
+(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT
+)
 
 ### Function
+Em SQL Server, uma função é um objeto de banco de dados que pode ser usado para encapsular uma lógica específica e ser reutilizada em diferentes partes do código SQL. As funções podem aceitar argumentos de entrada, executar operações de lógica e retornar um valor de saída.
+
+Um exemplo de uso de função em SQL Server é para retornar a idade de uma pessoa a partir de sua data de nascimento. Você pode criar uma função chamada "GetAge" que recebe como entrada a data de nascimento e retorna a idade em anos. Aqui está um exemplo de como criar e usar uma função GetAge em SQL Server:
+- CREATE FUNCTION GetAge (@birthdate DATE)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @age INT
+    SET @age = DATEDIFF(YEAR, @birthdate, GETDATE())
+    IF (MONTH(@birthdate) > MONTH(GETDATE()) OR (MONTH(@birthdate) = MONTH(GETDATE()) AND DAY(@birthdate) > DAY(GETDATE())))
+        SET @age = @age - 1
+    RETURN @age
+END
+#### Funções de string:
+- CONCAT: Esta função concatena duas ou mais cadeias de caracteres em uma única cadeia de caracteres.
+- SUBSTRING: Esta função retorna uma parte de uma cadeia de caracteres, com base na posição inicial e no comprimento especificados.
+- CHARINDEX: Esta função retorna a posição da primeira ocorrência de uma cadeia de caracteres especificada dentro de outra cadeia de caracteres.
+- REPLACE: Esta função substitui todas as ocorrências de uma cadeia de caracteres especificada em uma cadeia de caracteres por outra cadeia de caracteres.
+- UPPER/LOWER: Essas funções convertem todos os caracteres em uma cadeia de caracteres em maiúsculas ou minúsculas, respectivamente.
+- LTRIM/RTRIM: Essas funções removem os espaços em branco à esquerda ou à direita de uma cadeia de caracteres, respectivamente.
+
+#### Funções de data:
+- GETDATE(): Esta função retorna a data e hora atuais do servidor.
+Exemplo: 'SELECT GETDATE()' retornaria algo como '2023-05-09 12:34:56.789'
+- DATEPART(): Esta função retorna uma parte específica de uma data ou hora, como ano, mês ou dia.
+Exemplo: 'SELECT DATEPART(year, '2023-05-09')' retornaria '2023'
+- YEAR(): Esta função retorna o ano de uma data.
+Exemplo: 'SELECT YEAR('2023-05-09')' retornaria '2023'
+- MONTH(): Esta função retorna o mês de uma data.
+Exemplo: 'SELECT MONTH('2023-05-09')' retornaria '5'
+- DAY(): Esta função retorna o dia do mês de uma data.
+Exemplo: 'SELECT DAY('2023-05-09')' retornaria '9'
+- DATEADD(): Esta função adiciona ou subtrai uma quantidade especificada de tempo a uma data.
+Exemplo: 'SELECT DATEADD(day, 7, '2023-05-09')' retornaria '2023-05-16'
+- DATEDIFF(): Esta função retorna a diferença entre duas datas em uma unidade específica, como dias, semanas ou meses.
+Exemplo: 'SELECT DATEDIFF(day, '2023-05-01', '2023-05-09')' retornaria '8'
 
 ### Stored procedures:
 
@@ -171,12 +229,4 @@ SELECT CODIGO, NOME FROM FUNCIONARIOS
 
 ### Views
 
-### T-SQL
-
 ### Triggers:
-
-###
-
-###
-
-###
