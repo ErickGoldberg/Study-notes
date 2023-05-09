@@ -223,6 +223,16 @@ Exemplo: 'SELECT DATEADD(day, 7, '2023-05-09')' retornaria '2023-05-16'
 - DATEDIFF(): Esta função retorna a diferença entre duas datas em uma unidade específica, como dias, semanas ou meses.
 Exemplo: 'SELECT DATEDIFF(day, '2023-05-01', '2023-05-09')' retornaria '8'
 
+#### Funções númericas:
+- SUM: Esta função retorna a soma dos valores em uma coluna.
+- AVG: Esta função retorna a média dos valores em uma coluna.
+- MAX: Esta função retorna o valor máximo em uma coluna.
+- MIN: Esta função retorna o valor mínimo em uma coluna.
+- COUNT: Esta função retorna o número de linhas em uma tabela que atendem a uma condição especificada.
+- ROUND: Esta função arredonda um número para um número especificado de casas decimais.
+
+
+
 ### Stored procedures:
 
 ### Índices
