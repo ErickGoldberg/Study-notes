@@ -202,8 +202,41 @@ As variáveis são declaradas no corpo de um lote ou procedimento com a instruç
 
 - EX: DECLARE @DATA DATE; ....  SET @DATA = '2023-03-12';
 
+### Print:
+É uma expressão que retorna uma cadeia de caracteres. Pode incluir valores literais, funções e variáveis concatenadas.
+- DECLARE @n INT = 9;   ....    
+PRINT 'Your luck number is ' + @n
 
+### Controle de Fluxo:
+Assim como muitas linguagens de programação utilizam operadores de condição, o SQL não poderia ficar de fora. Ele trabalha com esses elementos, também denominado de controle de fluxo, permitindo assim ao desenvolvedor criar lógicas para as mais variadas situações e regras de negócio de seu sistema. Os elementos de controle de fluxo que iremos ver são, nessa ordem, BEGIN/END, IF/ELSE, CASE/WHEN/THEN/END, WHILE e o TRY...CATCH.
 
+#### BEGIN/END:
+Os elementos BEGIN e END tem o objetivo de iniciar e finalizar, respectivamente, um bloco de comandos, de maneira que este possa ser posteriormente executado. Podemos aninhar blocos de comando utilizando estes elementos.
+
+Caso seja executado um bloco de comandos logo após a realização de um teste de condição, os elementos BEGIN e END, são usados logo após um comando IF ou WHILE
+
+#### IF/ELSE
+Os elementos IF e ELSE são usados para testar condições quando um comando Transact-SQL é executado. O IF e ELSE funcionam similarmente aos comandos de mesmo nome usados em linguagens como C# por exemplo, para testar condições de execução de comandos.
+- IF Expressao_Booleana
+         { comando_sql | bloco_comando }
+ ELSE
+         { comando_sql | bloco_comando } 
+
+#### CASE/WHEN/THEN/END:
+O elemento CASE é utilizado para conferir uma lista de condições e, então, retornar uma entre várias expressões de resultado possíveis. CASE, que é usado em conjunto com o comando SELECT, é útil quando a intenção é a de evitar que sejam criados comandos IF aninhados. Ele é considerado como uma alternativa ao IF. Dois formatos podem ser designados ao comando CASE: a função simples e a função pesquisada. Com a primeira, o resultado é obtido por meio da comparação de uma expressão com uma série de expressões simples. Na segunda função, é obtido um resultado específico a partir de um conjunto de expressões booleanas.
+- SELECT IdProduto, Nome, Tipo = CASE WHEN 'A' THEN 'Produto Nacional' WHEN 'B' THEN 'Produto dos Estados Unidos' WHEN 'C' THEN 'Produto da China' ELSE 'Produto de outros países' END AS [Tipo do Produto] FROM Produtos;
+
+#### WHILE:
+Assim como o IF/ELSE, o comando WHILE funciona da mesma forma que nas linguagens de programação: ele faz com que um comando ou bloco de comandos SQL seja executado repetidamente, ou seja, é criado um loop o comando ou bloco de comandos, que será executado enquanto a condição especificada for verdadeira.
+- DECLARE @Contador AS SMALLINT SET @Contador = 1 WHILE @Contador <= 10 BEGIN SELECT @Contador SET @Contador = @Contador + 1 END;
+  
+#### WHILE com BREAK:
+Podemos usar o WHILE com BREAK quando desejamos interromper o loop em um determinado ponto. O BREAK também pode ser usado para finalizar a execução de um loop dentro de um comando IF/ELSE.
+- DECLARE @Contador AS SMALLINT SET @Contador = 1 WHILE @Contador <= 10 BEGIN SELECT @Contador IF @Contador = 5 BREAK SET @Contador = @Contador + 1 END;
+
+#### WHILE com CONTINUE:
+Com o CONTINUE é possível reiniciar a execução de um loop executado pelo WHILE e interrompido pelo BREAK. Da mesma forma que o BREAK, o CONTINUE geralmente é iniciado por uma condição explicitada pelo IF. Havendo comandos após o CONTINUE, eles serão ignorados.
+- DECLARE @Contador AS SMALLINT SET @Contador = 1 WHILE @Contador <= 10 BEGIN SELECT @Contador IF @Contador <= 5 BEGIN SET @Contador = @Contador + 1 CONTINUE END BREAK END;
 
 ### Identity:
 O comando IDENTITY é utilizado para determinar que uma coluna da tabela será automaticamente incrementada quando um valor novo é inserido (esse campo não aceita valores nulos). Todas as tabelas possuem uma coluna ou um conjunto de colunas que identificam a linha: a primary key.
