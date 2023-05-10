@@ -192,6 +192,19 @@ Por outro lado, o comando ROLLBACK é usado para desfazer uma transação. Ele f
 ## T-SQL:
 A linguagem Transact-SQL é uma extensão ao padrão SQL-92, sendo a linguagem utilizada por desenvolvedores na construção de aplicações que manipulam dados mantidos no SQL Server. Seus comandos podem ser classificados em quatro grupos, de acordo com sua função: DML (Linguagem de Manipulação de Dados), DDL (Linguagem de Definição de Dados), DCL (Linguagem de Controle de Dados) e DTL (Linguagem de Transação de Dados). Além dessas categorias, podemos ter também uma relacionada à consulta dos dados (DQL – Linguagem de Consulta de Dados), que possui apenas o comando SELECT. Entretanto, é mais comum encontrar esse comando como parte da DML em conjunto com os demais comandos de manipulação: INSERT, UPDATE e DELETE.
 
+### Variáveis:
+Uma variável local Transact-SQL é um objeto que pode conter um único valor de dados de um tipo específico. As variáveis em lotes e scripts são normalmente usadas:
+- Como um contador, para contar o número de vezes que um loop é executado ou controlar quantas vezes que o loop é executado.
+- Para reter um valor de dados a ser testado por uma instrução de controle de fluxo.
+- Para salvar um valor de dados a ser retornado por um código de retorno de procedimento armazenado ou valor de retorno de função.
+
+As variáveis são declaradas no corpo de um lote ou procedimento com a instrução DECLARE e valores são atribuídos com uma instrução SET ou SELECT. As variáveis de cursor podem ser declaradas com essa instrução e usadas com outras instruções relacionadas ao cursor. Depois da declaração, todas as variáveis são inicializadas como NULL, a menos que um valor seja fornecido como parte da declaração.
+
+- EX: DECLARE @DATA DATE; ....  SET @DATA = '2023-03-12';
+
+
+
+
 ### Identity:
 O comando IDENTITY é utilizado para determinar que uma coluna da tabela será automaticamente incrementada quando um valor novo é inserido (esse campo não aceita valores nulos). Todas as tabelas possuem uma coluna ou um conjunto de colunas que identificam a linha: a primary key.
 - CREATE TABLE MyTable
