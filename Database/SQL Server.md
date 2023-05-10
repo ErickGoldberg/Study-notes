@@ -311,3 +311,16 @@ CREATE PROCEDURE HumanResources.uspGetEmployees
   WHERE FirstName = @FirstName AND LastName = @LastName;
 
 ### Triggers:
+O termo trigger (gatilho em inglês) define uma estrutura do banco de dados que funciona, como o nome sugere, como uma função que é disparada mediante alguma ação. Geralmente essas ações que disparam os triggers são alterações nas tabelas por meio de operações de inserção, exclusão e atualização de dados (insert, delete e update).
+
+Um gatilho está intimamente relacionado a uma tabela, sempre que uma dessas ações é efetuada sobre essa tabela, é possível dispará-lo para executar alguma tarefa.
+- CREATE TRIGGER [NOME DO TRIGGER]
+ON [NOME DA TABELA]
+[FOR/AFTER/INSTEAD OF] [INSERT/UPDATE/DELETE]
+AS
+    --CORPO DO TRIGGER
+
+
+
+
+
