@@ -238,6 +238,20 @@ Podemos usar o WHILE com BREAK quando desejamos interromper o loop em um determi
 Com o CONTINUE é possível reiniciar a execução de um loop executado pelo WHILE e interrompido pelo BREAK. Da mesma forma que o BREAK, o CONTINUE geralmente é iniciado por uma condição explicitada pelo IF. Havendo comandos após o CONTINUE, eles serão ignorados.
 - DECLARE @Contador AS SMALLINT SET @Contador = 1 WHILE @Contador <= 10 BEGIN SELECT @Contador IF @Contador <= 5 BEGIN SET @Contador = @Contador + 1 CONTINUE END BREAK END;
 
+#### Tabelas temporárias:
+Tabelas Temporárias são criadas no database TempDB e podem ser classificadas em Locais e Globais:
+- Tabelas Temporárias Locais são criadas com o prefixo "#" e possuem visibilidade restrita para a conexão responsável por sua criação; outras conexões não "enxergam" a tabela.
+- Tabelas Temporárias Globais são criadas com o prefixo "##" e são visíveis por todas as conexões
+Tabelas temporárias são muito utilizadas quando precisamos reunir vários registros de várias tabelas em uma única seleção e exibi-las em uma aplicação qualquer (p.ex.: Delphi, Visual Studio, ASP.NET, etc.). .
+
+É fundamental para aplicações cliente/servidor onde vários usuários estão acessando aquela procedure ao mesmo tempo.
+
+- EX: CREATE TABLE #nomeTable
+    (
+     nomecampoA varchar(80),
+     nomecampoB money
+    )
+
 ### Identity:
 O comando IDENTITY é utilizado para determinar que uma coluna da tabela será automaticamente incrementada quando um valor novo é inserido (esse campo não aceita valores nulos). Todas as tabelas possuem uma coluna ou um conjunto de colunas que identificam a linha: a primary key.
 - CREATE TABLE MyTable
