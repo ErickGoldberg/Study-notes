@@ -266,6 +266,8 @@ O comando IDENTITY é utilizado para determinar que uma coluna da tabela será a
 Em SQL Server, uma função é um objeto de banco de dados que pode ser usado para encapsular uma lógica específica e ser reutilizada em diferentes partes do código SQL. As funções podem aceitar argumentos de entrada, executar operações de lógica e retornar um valor de saída.
 
 Um exemplo de uso de função em SQL Server é para retornar a idade de uma pessoa a partir de sua data de nascimento. Você pode criar uma função chamada "GetAge" que recebe como entrada a data de nascimento e retorna a idade em anos. Aqui está um exemplo de como criar e usar uma função GetAge em SQL Server:
+
+Obs: Existe os comandos 'ALTER FUNCTION' e 'DROP FUNCTION'
 - CREATE FUNCTION GetAge (@birthdate DATE)
 RETURNS INT
 AS
@@ -371,6 +373,8 @@ SELECT p.LastName, p.FirstName, e.JobTitle, a.City, sp.StateProvinceCode
 Procedures são conjuntos de instruções T-SQL executadas dentro de um único plano de execução. Elas podem melhorar a performance (como ela é armazenada dentro do banco, ela é executada rapidamente) e criam mecanismos de segurança nos dados do banco.
 
 Considerando a forma como o SQL Server é utilizado no dia a dia em muitas organizações, é possível afirmar que grande parte do desenvolvimento em T-SQL gira em torno da construção de stored procedures. Muitas dessas rotinas são implementadas com o intuito de produzir resultados dinâmicos, empregando para isso uma consulta SQL simples ou até agrupamentos mais complexos de instruções (podendo envolver uma série de cálculos ou mesmo junções de dados provenientes de diferentes fontes).
+
+Obs: 'EXEC' é o comando para executar uma procedure
 
 Exemplo: 
 
