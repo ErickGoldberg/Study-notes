@@ -274,6 +274,19 @@ SELECT IdCliente, Nome, Email, Telefone, DataCadastro
 FROM Clientes
 WHERE Nome = 'João';
 
+### Check:
+A instrução CHECK (verificar, em inglês) é usada para limitar o intervalo de valores que pode ser colocado em uma coluna.
+
+Se você definir uma instrução CHECK em uma única coluna, ela permitirá apenas determinados valores para essa coluna. Se você definir uma instrução CHECK em uma tabela, ela poderá limitar os valores em determinadas colunas com base nos valores de outras colunas dessa linha.
+- CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+
+Obs: Se não satisfazer a verificação da um erro de integridade e o registro não séra incluído
 
 ### Views:
 Views são tabelas virtuais acessadas frequentemente e que facilitam as consultas no banco de dados. O uso de view é particularmente útil quando se deseja dar o foco a um determinado tipo de informação mantida pelo banco de dados. Imagine um banco de dados corporativo que é acessado por usuários de vários departamentos, as informações que a equipe de vendas manuseia certamente serão diferentes das do departamento de marketing. Trabalhando com view, é possível oferecer ao usuário apenas as informações que ele necessita, não importando se são de uma ou várias tabelas. Isso permite que diferentes usuários vejam as mesmas informações sob uma perspectiva diferente.
@@ -321,6 +334,4 @@ AS
     --CORPO DO TRIGGER
 
 
-
-
-
+Finish 😎😎
