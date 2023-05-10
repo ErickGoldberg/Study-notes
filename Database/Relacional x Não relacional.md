@@ -24,3 +24,7 @@ A escolha entre um banco de dados relacional (RDBMS) e um banco de dados não re
 - Flexibilidade: se os dados são heterogêneos e mudam frequentemente, um banco de dados NoSQL pode ser mais flexível. Por exemplo, um banco de dados de mídia social pode ter dados que variam de fotos a vídeos e de textos a áudios, que podem ser armazenados em diferentes formatos e estruturas.
 - Velocidade: se a velocidade de acesso e processamento de dados é uma consideração importante, um banco de dados NoSQL pode ser a melhor opção. Isso ocorre porque muitos bancos de dados NoSQL são projetados para serem mais rápidos do que os bancos de dados relacionais em determinados tipos de operações, como leitura e gravação em grandes volumes de dados.
 - Custos: o custo é sempre uma consideração importante em qualquer projeto. Geralmente, os bancos de dados relacionais têm um custo inicial mais alto, mas podem ser mais fáceis de manter e atualizar no longo prazo. Por outro lado, os bancos de dados não relacionais podem ter um custo inicial mais baixo, mas podem exigir mais esforço e habilidade para manter e atualizar.
+
+## Principais bancos de dados:
+#### Relacionais: SQL Server, MySQL, PostgreSQL, SQLite3, etc...
+#### Não relacionais: MongoDB, Amazon DynamoDB, Redis, etc...
