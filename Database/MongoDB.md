@@ -22,7 +22,7 @@ O MongoDB é projetado para ser altamente disponível, com recursos de replicaç
 
 O MongoDB é amplamente utilizado em aplicações web e mobile de grande escala, que precisam de um banco de dados escalável e flexível para armazenar dados em formato de documentos. Ele é compatível com diversas linguagens de programação, incluindo JavaScript, Python, Ruby, Java e C#.
 
-## restrições de criação - BD:
+## restrições de criação - Database:
 Por padrão, o MongoDB já vem com três bancos de dados criados, o Admin, config e local. Além desses, nós temos a liberdade de criar novos bancos de dados. Porém, precisamos seguir algumas restrições:
 - Diferenciação de maiúsculas e minúsculas do nome do banco de dados
 
@@ -45,6 +45,22 @@ Além disso, os nomes de banco de dados não podem conter o caractere nulo.
 - Comprimento dos nomes de banco de dados
 
 Os nomes de banco de dados não podem estar vazios e devem ter menos de 64 caracteres.
+
+## restrições de criação - Collections:
+- Os nomes das coleções devem começar com um sublinhado ou um caractere de letra.
+
+Não podem:
+- Conter o $.
+- Ser uma string vazia (por exemplo "", ).
+- Conter o caractere nulo.
+- Começar com o system.prefixo. (Reservado para uso interno).
+
+
+
+
+
+
+
 
 ## Principais conceitos:
 
