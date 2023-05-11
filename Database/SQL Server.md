@@ -397,5 +397,22 @@ ON [NOME DA TABELA]
 AS
     --CORPO DO TRIGGER
 
+### Cursor:
+Em bancos de dados SQL Server, um cursor é uma estrutura de controle que permite aos desenvolvedores percorrer linhas de uma tabela ou resultado de uma consulta em um processo iterativo. Os cursores são úteis quando um conjunto de dados precisa ser processado linha por linha, ou quando se precisa fazer operações complexas e/ou dependentes do valor de outras linhas.
+
+O uso de cursores no SQL Server pode ser feito através de declarações específicas da linguagem T-SQL, que é a linguagem de consulta padrão para o SQL Server. O cursor é criado a partir de uma instrução SELECT que retorna as linhas que se deseja percorrer. Em seguida, são definidas variáveis ​​para armazenar os valores das colunas, e um loop WHILE é usado para percorrer as linhas do cursor. A cada iteração do loop WHILE, as variáveis são atualizadas com os valores das colunas da próxima linha do cursor.
+
+- Declarar um cursor:
+DECLARE cursor_name CURSOR FOR 
+SELECT statement
+- Abrindo o cursor:
+OPEN cursor_name
+- Percorrendo as linhas do cursor:
+FETCH NEXT FROM cursor_name
+INTO variable_name
+- Fechar o cursor:
+CLOSE cursor_name
+- Desalocar o cursor:
+DEALLOCATE cursor_name
 
 Finish 😎😎
