@@ -402,6 +402,8 @@ Em bancos de dados SQL Server, um cursor é uma estrutura de controle que permit
 
 O uso de cursores no SQL Server pode ser feito através de declarações específicas da linguagem T-SQL, que é a linguagem de consulta padrão para o SQL Server. O cursor é criado a partir de uma instrução SELECT que retorna as linhas que se deseja percorrer. Em seguida, são definidas variáveis ​​para armazenar os valores das colunas, e um loop WHILE é usado para percorrer as linhas do cursor. A cada iteração do loop WHILE, as variáveis são atualizadas com os valores das colunas da próxima linha do cursor.
 
+No entanto, o uso de cursores em SQL Server pode ser um processo que consome muitos recursos de sistema, e pode levar a lentidão e queda de performance. Por isso, em muitos casos é recomendado evitar o uso de cursores em favor de outras técnicas, como instruções SQL simples ou operações em conjunto com outras ferramentas e linguagens de programação.
+
 - Declarar um cursor:
 DECLARE cursor_name CURSOR FOR 
 SELECT statement
@@ -414,5 +416,25 @@ INTO variable_name
 CLOSE cursor_name
 - Desalocar o cursor:
 DEALLOCATE cursor_name
+
+Exemplos de uso:
+- Processamento linha a linha:
+
+Imagine que você precisa processar linha a linha uma tabela de vendas para calcular o valor total vendido por cada vendedor. Nesse caso, você pode usar um cursor para percorrer cada linha da tabela, calcular o total de vendas para cada vendedor e armazenar o resultado em outra tabela ou em uma variável.
+
+- Processamento em lotes:
+
+Se você precisa executar uma operação complexa em uma grande quantidade de dados, pode usar um cursor para processar os dados em lotes menores, de modo a evitar sobrecarga de memória e recursos de sistema. Por exemplo, você pode percorrer uma tabela grande usando um cursor que processa 100 linhas por vez.
+
+- Processamento hierárquico:
+
+Se você tem uma tabela que representa uma hierarquia de dados, como uma árvore genealógica ou uma estrutura organizacional, pode usar um cursor para percorrer a tabela e processar cada nível hierárquico separadamente.
+
+- Verificação de dados:
+
+Se você precisa verificar se um conjunto de dados está correto ou se atende a determinados critérios, pode usar um cursor para percorrer as linhas e fazer as verificações necessárias. Por exemplo, você pode usar um cursor para verificar se uma tabela de pedidos tem todos os campos preenchidos corretamente e se os valores são válidos.
+
+
+
 
 Finish 😎😎
