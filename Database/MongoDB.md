@@ -29,7 +29,4 @@ O MongoDB é amplamente utilizado em aplicações web e mobile de grande escala,
 
 
 
-
 Link para download: http://www.mongodb.com
-- "Community Server"
-- "Download"
