@@ -434,7 +434,7 @@ Se você tem uma tabela que representa uma hierarquia de dados, como uma árvore
 
 Se você precisa verificar se um conjunto de dados está correto ou se atende a determinados critérios, pode usar um cursor para percorrer as linhas e fazer as verificações necessárias. Por exemplo, você pode usar um cursor para verificar se uma tabela de pedidos tem todos os campos preenchidos corretamente e se os valores são válidos.
 
-
+Obs: É importante lembrar que, embora os cursores possam ser úteis em algumas situações, seu uso pode levar a uma performance reduzida do banco de dados e, em alguns casos, a problemas de bloqueio de recursos. Por isso, é recomendado usar cursores com moderação e considerar outras técnicas, como instruções SQL simples, sempre que possível.
 
 
 Finish 😎😎
