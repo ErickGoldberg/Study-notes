@@ -20,5 +20,16 @@ O MongoDB permite que os desenvolvedores trabalhem com dados não estruturados o
 
 O MongoDB é projetado para ser altamente disponível, com recursos de replicação e failover para garantir que os dados estejam sempre acessíveis, mesmo em caso de falhas.
 
+O MongoDB é amplamente utilizado em aplicações web e mobile de grande escala, que precisam de um banco de dados escalável e flexível para armazenar dados em formato de documentos. Ele é compatível com diversas linguagens de programação, incluindo JavaScript, Python, Ruby, Java e C#.
 
 ## Principais conceitos:
+
+
+
+
+
+
+
+Link para download: http://www.mongodb.com
+- "Community Server"
+- "Download"
