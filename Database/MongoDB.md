@@ -137,7 +137,33 @@ Excluindo vários documentos de uma coleção:
 Excluindo todos os documentos de uma coleção:
 -  'db.colecao.deleteMany({})'
 
-Método find:
+## Método find:
+### Pela interface:
+FILTER:
+  - Utilizado para especificar qual será a condição que os documentos devem atender para serem retornados na busca.  
+
+PROJECT:
+-  Utilizado para especificar quais campos serão ou não retornados na consulta.
+- Ao Informar o nome do campo e informar 0, todos os campos, exceto os campos especificados no campo project, são retornados. Se o campo receber o valor de 1, ele será retornado na consulta. O campo _id é retornado por padrão, a menos que este seja especificado no campo project e definido como 0.
+  
+SORT: 
+- Especifica a ordem de classificação dos documentos retornados.
+- Para especificar a ordem crescente de um campo, defina o campo como 1.
+- Para especificar a ordem decrescente de um campo, defina o campo como -1.
+  
+MAX TIME MS: 
+ - Define o limite de tempo cumulativo em milissegundos para processar as operações da barra de consulta. Se o limite de tempo for atingido antes da conclusão da operação, o Compass interrompe a operação.
+  
+COLLATION: 
+ - Utilizado para especificar regras específicas do idioma para comparação de textos, como regras para letras maiúsculas ou minúsculas, acentos, entre outros. 
+  
+SKIP:
+ - Especifica quantos documentos devem ser ignorados antes de retornar o conjunto de resultados.
+  
+LIMIT: 
+ - Especifica o número máximo de documentos a serem retornados.
+  
+### Pela linha de código:  
 - Para consultar dados em uma coleção
 utilizamos o método find(). Se a condição
 não for fornecida, todos os documentos
