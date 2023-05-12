@@ -63,10 +63,43 @@ Não podem:
 
 
 ## Principais conceitos:
+### Tipos de dados
+O MongoDB armazena registros de dados como documentos BSON, que é uma representação binária de documentos JSON.
+
+O valor de um campo em um documento pode ser qualquer um dos tipos de dados BSON, incluindo outros documentos, matrizes e matrizes de documentos
+- NULL: armazena valores nulos;
+- Boolean: pode armazenar valores true ou falso;
+- Number: número com sinal que pode ter uma notação com E exponencial;
+- Inteiro: pode armazenar o tipo de dados inteiro em duas formas, inteiro assinado de 32 bits e inteiro assinado de 64 bits;
+- String: uma sequência de um ou mais caracteres Unicode;
+- Object: um array não ordenado com itens do tipo chave/valor, também conhecidos como documentos aninhados;
+- Array: armazena uma lista ordenada de qualquer tipo, criada usando colchetes e com cada elemento separado por vírgulas;
+- ObjectId: identificador único de um registro do MongoDB;
+- Date(): retorna a data atual em formato de string; e
+- New Date() e ISODate(): retornam um objeto de data.
 
 
 
+### Comandos para manipulação de Banco de Dados:
 
-
-
+- Listar os nomes de todos os banos: 'show database' ou 'show dbs'
+- Selecionar um banco de dados: 'use <banco>'
+- Visualizar o banco de dados em uso: 'db'
+- Excluir o banco de dados em uso: 'db.dropatabae()'
+- Listr os nomes das coleções: 'show collections'
+- Criação de uma collection: 'db.createColection("nome_da_colecao")'  
+- Listando o nome das coleções: 'show collections'
+- Renomenado uma coleção: d.colecao.renameCollection("novo_nome")
+-  Excluir uma coleção do DB: 'db.colecao.drop()'
+- Listar os documentos de uma coleção: 'db.colecao.find()'
+- Incluir um documento em uma coleção: 'db.colecao.insertOne({campo1: "dado1", campo2: "dado2", ...})'  
+- Incluindo vários documentos em uma coleção: 'db.colecao.insertMany([
+{campo1: "dado1"},
+{campo2: "dado2"},
+{...}
+  ])'  
+- Alterando um documento de uma coleção: 'db.colecao.updateOne({campo: "dado"}, {$set: {campo: "dado"}})'
+- 
+  
+  
 Link para download: http://www.mongodb.com
