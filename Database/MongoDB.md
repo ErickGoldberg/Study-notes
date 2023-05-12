@@ -97,7 +97,11 @@ O valor de um campo em um documento pode ser qualquer um dos tipos de dados BSON
 {...}
   ])'  
 - Alterando um documento de uma coleção: 'db.colecao.updateOne({campo: "dado"}, {$set: {campo: "dado"}})'
-- 
-  
+- Alterando vários documentos de uma coleção: 'db.coleção.updateMany({campo: "dado"}, {$set: {campo: "dado"}})'
+- Alterando todos documentos de uma coleção: 'db.colecao.updateMany({}, {$set: {campo: "dado"}})'
+- Excluindo um documento de uma coleção: 'db.colecao.deleteOne({campo: "dado"})'
+- Excluindo vários documentos de uma coleção: 'db.colecao.deleteMany({campo: "dado"})'
+- Excluindo todos os documentos de uma coleção: 'db.colecao.deleteMany({})'
+
   
 Link para download: http://www.mongodb.com
