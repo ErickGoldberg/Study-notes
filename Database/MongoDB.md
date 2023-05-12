@@ -55,12 +55,10 @@ Não podem:
 - Conter o caractere nulo.
 - Começar com o system.prefixo. (Reservado para uso interno).
 
-
-
-
-
-
-
+## restrições de criação - Documentos:
+- O nome do campo _id é reservado para uso como chave primária. Seu valor deve ser único na coleção, é imutável e pode ser de qualquer tipo que não seja um array.
+- Os nomes dos campos não podem conter o caractere NULL.
+- O tamanho máximo de um documento BSON é 16 megabytes.
 
 ## Principais conceitos:
 ### Tipos de dados
