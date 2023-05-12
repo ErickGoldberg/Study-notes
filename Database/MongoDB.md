@@ -185,8 +185,68 @@ serão mostrados.
 - db.pessoal.find( { } )
 - db.pessoal.find( { }, { nome: 1, sexo: 1 } )
   
+## Operadores lógicos:
+### $eq:  
+- O operador $eq (equal) compara dois valores e retorna true se forem iguais e false se forem diferentes.
+- db.pessoal.find( { sexo: { $eq: "F" } } )
+  
+### $ne:
+- O operador $ne (not equal) compara dois valores e retorna true se forem diferentes e false se forem iguais.  
+- db.pessoal.find( { sexo: { $ne: "F" } } )
+  
+### $gt:
+- O operador $gt (greater than) compara se os valores de um campo são maiores que o valor informado. Devolverá true, se o valor do campo for maior que o valor fornecido.  
+- db.pessoal.find( { salario: { $gt: 16000 } } )
+  
+### $gte: 
+- O operador $gte (greater than or equal) compara se os valores de um campo são maiores ou iguais ao valor informado. Devolverá true, se o valor do campo for maior ou igual ao valor fornecido.  
+- db.pessoal.find( { salario: { $gte: 16000 } } )
+    
+### $lt:
+- O operador $lt (less than) compara se os valores de um campo são menores que o valor informado. Devolverá true, se o valor do campo for menor que o valor fornecido.  
+- db.pessoal.find( { salario: { $lt: 16000 } } )  
+  
+### $lte:
+- O operador $lte (less than or equal) compara se os valores de um campo são menores ou iguais ao valor informado. Devolverá true, se o valor for menor ou igual ao valor fornecido.
+- db.pessoal.find( { salario: { $lte: 16000 } } )  
+  
+### $and:
+- O operador $and é utilizando para especificar mais de uma condição dentro de um array. Todas as condições têm que ser verdadeiras para que o resultado seja verdadeiro.  
+- db.pessoal.find( { $and: [ {sexo: "F" } , { idade: 30 } ] } )  
 
-
-
+### $or:
+- O operador $or é utilizado para verificar mais de uma condição passada em um array. Basta que uma das condições seja verdadeira para que o resultado seja verdadeiro.  
+- db.pessoal.find( { $or: [ {sexo: "F" } , { idade: 30 } ] } )
+  
+### $nor:
+- O operador $nor (not or) é utilizado para verificar a não ocorrência de mais de uma condição passada em um array. As condições devem ser falsas para que o resultado seja verdadeiro.  
+- db.pessoal.find( { $nor: [ {sexo: "F" } , { idade: 30 } ] } )  
+  
+### $not:
+-  O operador $not é utilizando para negar uma condição.
+-  db.pessoal.find( { sexo: { $not: { $eq: "F" } } } )
+  
+### $in:
+- O operador $in (interval) é utilizando para verificar se um valor coincide com um dos valores de um array fornecido. Se o valor for encontrado, será retornado true, caso contrário, false.
+- db.pessoal.find( { idade: { $in: [ 25, 29, 30 ] } } )
+  
+### $nin: 
+- O operador $nin (not interval) é utilizando para verificar se um valor não coincide com nenhum dos valores de um array fornecido. Se o valor não for encontrado, será retornado true, caso contrário, false.
+- db.pessoal.find( { idade: { $nin: [ 25, 29, 30 ] } } )
+  
+### $all:
+- O operador $all é utilizando para verificar se existe todas as ocorrências informadas em um campo multivalorado. O resultado será satisfatório se existir as ocorrências, independentemente da ordem em que os parâmetros foram fornecidos.
+- db.pessoal.find( { lazer: { $all: [ "Cinema", "Futebol" ] } } )
+  
+### $exists:
+- O operador $exists é utilizando para verificar se um campo existe, ou não, em determinados documentos. Se o valor passado for true, devolverá os documentos que possuem o campo. Caso false, devolverá os documentos que não possuem o campo informado.
+-  db.pessoal.find( { obs: { $exists: true } } )
+  
+### $search:
+- O operador $search é utilizado para fazer busca textual indexada em um campo específico. Antes de utilizar o operador, devemos criar um índice com o campo a ser consultado.  
+-  db.pessoal.createIndex({profissao: "text"})
+- db.pessoal.find( { $text: { $search: "Engenheiro" } } )
+  
+  
   
 Link para download: http://www.mongodb.com
