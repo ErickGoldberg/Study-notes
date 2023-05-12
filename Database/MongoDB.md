@@ -79,29 +79,70 @@ O valor de um campo em um documento pode ser qualquer um dos tipos de dados BSON
 
 
 ### Comandos para manipulação de Banco de Dados:
+Listar os nomes de todos os banos: 
+- 'show database' ou 'show dbs'
 
-- Listar os nomes de todos os banos: 'show database' ou 'show dbs'
-- Selecionar um banco de dados: 'use <banco>'
-- Visualizar o banco de dados em uso: 'db'
-- Excluir o banco de dados em uso: 'db.dropatabae()'
-- Listr os nomes das coleções: 'show collections'
-- Criação de uma collection: 'db.createColection("nome_da_colecao")'  
-- Listando o nome das coleções: 'show collections'
-- Renomenado uma coleção: d.colecao.renameCollection("novo_nome")
--  Excluir uma coleção do DB: 'db.colecao.drop()'
-- Listar os documentos de uma coleção: 'db.colecao.find()'
-- Incluir um documento em uma coleção: 'db.colecao.insertOne({campo1: "dado1", campo2: "dado2", ...})'  
+Selecionar um banco de dados:
+-  'use <banco>'
+  
+Visualizar o banco de dados em uso:  
+-  'db'
+  
+  Excluir o banco de dados em uso:
+-  'db.dropatabae()'
+  
+   Listr os nomes das coleções:
+- 'show collections'
+  
+   Criação de uma collection:
+- 'db.createColection("nome_da_colecao")'  
+  
+  Listando o nome das coleções:
+-  'show collections'
+  
+   Renomenado uma coleção:
+- d.colecao.renameCollection("novo_nome")
+  
+  Excluir uma coleção do DB:
+-   'db.colecao.drop()'
+  
+  Listar os documentos de uma coleção:
+-  'db.colecao.find()'
+  
+  Incluir um documento em uma coleção:
+-  'db.colecao.insertOne({campo1: "dado1", campo2: "dado2", ...})'  
+    
 - Incluindo vários documentos em uma coleção: 'db.colecao.insertMany([
 {campo1: "dado1"},
 {campo2: "dado2"},
 {...}
   ])'  
-- Alterando um documento de uma coleção: 'db.colecao.updateOne({campo: "dado"}, {$set: {campo: "dado"}})'
-- Alterando vários documentos de uma coleção: 'db.coleção.updateMany({campo: "dado"}, {$set: {campo: "dado"}})'
-- Alterando todos documentos de uma coleção: 'db.colecao.updateMany({}, {$set: {campo: "dado"}})'
-- Excluindo um documento de uma coleção: 'db.colecao.deleteOne({campo: "dado"})'
-- Excluindo vários documentos de uma coleção: 'db.colecao.deleteMany({campo: "dado"})'
-- Excluindo todos os documentos de uma coleção: 'db.colecao.deleteMany({})'
+  
+  Alterando um documento de uma coleção:
+-  'db.colecao.updateOne({campo: "dado"}, {$set: {campo: "dado"}})'
+  
+   Alterando vários documentos de uma coleção:
+- 'db.coleção.updateMany({campo: "dado"}, {$set: {campo: "dado"}})'
+  
+  Alterando todos documentos de uma coleção:
+-  'db.colecao.updateMany({}, {$set: {campo: "dado"}})'
+  
+   Excluindo um documento de uma coleção:
+- 'db.colecao.deleteOne({campo: "dado"})'
+  
+  Excluindo vários documentos de uma coleção:
+-  'db.colecao.deleteMany({campo: "dado"})'
+  
+  Excluindo todos os documentos de uma coleção:
+-  'db.colecao.deleteMany({})'
 
+  Método find:
+- Para consultar dados em uma coleção
+utilizamos o método find(). Se a condição
+não for fornecida, todos os documentos
+serão mostrados.
+- db.pessoal.find( ) 
+- db.pessoal.find( { } )
+- db.pessoal.find( { }, { nome: 1, sexo: 1 } )
   
 Link para download: http://www.mongodb.com
