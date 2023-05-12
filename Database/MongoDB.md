@@ -149,7 +149,9 @@ PROJECT:
 SORT: 
 - Especifica a ordem de classificação dos documentos retornados.
 - Para especificar a ordem crescente de um campo, defina o campo como 1.
+- db.pessoal.find().sort( { nome: 1 } )
 - Para especificar a ordem decrescente de um campo, defina o campo como -1.
+- db.pessoal.find().sort( { nome: -1 } )  
   
 MAX TIME MS: 
  - Define o limite de tempo cumulativo em milissegundos para processar as operações da barra de consulta. Se o limite de tempo for atingido antes da conclusão da operação, o Compass interrompe a operação.
@@ -159,9 +161,20 @@ COLLATION:
   
 SKIP:
  - Especifica quantos documentos devem ser ignorados antes de retornar o conjunto de resultados.
+ - db.pessoal.find().skip( 2 ) 
   
 LIMIT: 
  - Especifica o número máximo de documentos a serem retornados.
+  
+COUNT:
+- O método count é utilizado para contar o numero de documentos.
+- db.pessoal.count()
+- O método count pode ser utilizado para contar o numero de documentos que satisfaçam determinadas condições.  
+- db.pessoal.count({sexo: "M"})
+  
+PRETTY:
+- O método pretty apresenta os campos do documento em blocos.
+- db.pessoal.find().pretty()  
   
 ### Pela linha de código:  
 - Para consultar dados em uma coleção
@@ -171,5 +184,9 @@ serão mostrados.
 - db.pessoal.find( ) 
 - db.pessoal.find( { } )
 - db.pessoal.find( { }, { nome: 1, sexo: 1 } )
+  
+
+
+
   
 Link para download: http://www.mongodb.com
