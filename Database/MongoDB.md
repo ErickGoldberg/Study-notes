@@ -247,6 +247,9 @@ serão mostrados.
 -  db.pessoal.createIndex({profissao: "text"})
 - db.pessoal.find( { $text: { $search: "Engenheiro" } } )
   
-  
+### $regex:
+- O operador regex permite a utilização de expressões regulares em consultas.
+- db.pessoal.find( { profissao: { $regex: /Eng/ } } )
+- db.pessoal.find( { profissao: /Eng/ } )  
   
 Link para download: http://www.mongodb.com
