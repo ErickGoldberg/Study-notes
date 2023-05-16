@@ -121,6 +121,7 @@ Incluindo vários documentos em uma coleção:
   
 Alterando um documento de uma coleção:
 -  'db.colecao.updateOne({campo: "dado"}, {$set: {campo: "dado"}})'
+-   db.collection.replaceOne( <filter>, <replacement> )
   
 Alterando vários documentos de uma coleção:
 - 'db.coleção.updateMany({campo: "dado"}, {$set: {campo: "dado"}})'
