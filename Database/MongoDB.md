@@ -285,6 +285,15 @@ Executa uma operação de um módulo no valor de um campo e seleciona documentos
 ####  $text:
 Executa a pesquisa de texto:  
 - db.articles.createIndex( { subject: "text" } )
+- {
+  $text:
+    {
+      $search: <string>,
+      $language: <string>,
+      $caseSensitive: <boolean>,
+      $diacriticSensitive: <boolean>
+    }
+}
   
 #### $where:
 Corresponde a documentos que atendem a uma expressão JavaScript
@@ -293,9 +302,28 @@ Corresponde a documentos que atendem a uma expressão JavaScript
    return (hex_md5(this.name) == "9b53e667f30cd329dca1ec9e6a83e994")
 } } );
   
- #### $jsonSchema:
-  Valide documentos em relação ao esquema JSON fornecido
-  
+#### $jsonSchema:
+Valide documentos em relação ao esquema JSON fornecido
+- { $jsonSchema: <JSON Schema object> }
+- {
+  $jsonSchema: {
+     required: [ "name", "major", "gpa", "address" ],
+     properties: {
+        name: {
+           bsonType: "string",
+           description: "must be a string and is required"
+        },
+        address: {
+           bsonType: "object",
+           required: [ "zipcode" ],
+           properties: {
+               "street": { bsonType: "string" },
+               "zipcode": { bsonType: "string" }
+           }
+        }
+     }
+  }
+}
   
   
   
