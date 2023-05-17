@@ -253,4 +253,32 @@ serão mostrados.
 - db.pessoal.find( { profissao: { $regex: /Eng/ } } )
 - db.pessoal.find( { profissao: /Eng/ } )  
   
+## Validação de Schema:
+A validação de esquema permite criar regras de validação para seus campos, como tipos de dados permitidos e intervalos de valores.
+
+O MongoDB usa um modelo de esquema flexível, o que significa que os documentos em uma coleção não precisam ter os mesmos campos ou tipos de dados por padrão. Depois de estabelecer um esquema de aplicativo, você pode usar a validação de esquema para garantir que não haja alterações de esquema não intencionais ou tipos de dados impróprios.
+
+### Quando usar a validação de esquema:  
+Suas necessidades de validação de esquema dependem de como os usuários usam seu aplicativo. Quando seu aplicativo está nos estágios iniciais de desenvolvimento, a validação do esquema pode impor restrições inúteis porque você não sabe como deseja organizar seus dados. Especificamente, os campos em suas coleções podem mudar com o tempo.
+
+A validação de esquema é mais útil para um aplicativo estabelecido onde você tem uma boa noção de como organizar seus dados. Você pode usar a validação de esquema nos seguintes cenários:
+- Para uma coleção de usuários, certifique-se de que o passwordcampo seja armazenado apenas como uma string. Essa validação impede que os usuários salvem suas senhas como um tipo de dados inesperado, como uma imagem.
+- Para uma coleção de vendas, verifique se o itemcampo pertence a uma lista de itens que sua loja vende. Essa validação evita que um usuário digite incorretamente um nome de item acidentalmente ao inserir dados de vendas.
+- Para uma coleção de alunos, certifique-se de que o gpacampo seja sempre um número positivo. Essa validação detecta erros de digitação durante a entrada de dados.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 Link para download: http://www.mongodb.com
