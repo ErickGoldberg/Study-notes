@@ -332,4 +332,6 @@ Valide documentos em relação ao esquema JSON fornecido
   
   
   
-Link para download: http://www.mongodb.com
+#### Links para download:
+- Mongo Compass: http://www.mongodb.com
+- NoSQLBooster: https://nosqlbooster.com/downloads
