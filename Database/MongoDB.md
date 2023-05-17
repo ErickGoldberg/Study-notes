@@ -267,12 +267,15 @@ Por padrão, quando uma operação de inserção ou atualização resultaria em 
 Como alternativa, você pode configurar o MongoDB para permitir documentos inválidos e registrar avisos quando ocorrerem violações de esquema.
   
 ### Operadores de avaliação:
-  
 ####  $expr:
-  Permite o uso de expressões de agregação na linguagem de consulta
+Permite o uso de expressões de agregação na linguagem de consulta
+- { $expr: { <expression> } }
+- db.monthlyBudget.find( { $expr: { $gt: [ "$spent" , "$budget" ] } } )  
   
 ####  $mod:
-  Executa uma operação de um módulo no valor de um campo e seleciona documentos com um resultado especificado
+Executa uma operação de um módulo no valor de um campo e seleciona documentos com um resultado especificado
+- { field: { $mod: [ divisor, remainder ] } }
+- db.inventory.find( { qty: { $mod: [ 4.0, 0 ] } } )
   
 #### $regex:
 - O operador regex permite a utilização de expressões regulares em consultas.
@@ -280,10 +283,15 @@ Como alternativa, você pode configurar o MongoDB para permitir documentos invá
 - db.pessoal.find( { profissao: /Eng/ } ) 
   
 ####  $text:
-  Executa a pesquisa de texto:
+Executa a pesquisa de texto:  
+- db.articles.createIndex( { subject: "text" } )
   
 #### $where:
-  Corresponde a documentos que atendem a uma expressão JavaScript
+Corresponde a documentos que atendem a uma expressão JavaScript
+- { $where: <string|JavaScript Code> }
+- db.players.find( { $where: function() {
+   return (hex_md5(this.name) == "9b53e667f30cd329dca1ec9e6a83e994")
+} } );
   
  #### $jsonSchema:
   Valide documentos em relação ao esquema JSON fornecido
