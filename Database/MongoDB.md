@@ -248,11 +248,6 @@ serão mostrados.
 -  db.pessoal.createIndex({profissao: "text"})
 - db.pessoal.find( { $text: { $search: "Engenheiro" } } )
   
-### $regex:
-- O operador regex permite a utilização de expressões regulares em consultas.
-- db.pessoal.find( { profissao: { $regex: /Eng/ } } )
-- db.pessoal.find( { profissao: /Eng/ } )  
-  
 ## Validação de Schema:
 A validação de esquema permite criar regras de validação para seus campos, como tipos de dados permitidos e intervalos de valores.
 
@@ -271,9 +266,27 @@ Por padrão, quando uma operação de inserção ou atualização resultaria em 
 
 Como alternativa, você pode configurar o MongoDB para permitir documentos inválidos e registrar avisos quando ocorrerem violações de esquema.
   
+### Operadores de avaliação:
   
+####  $expr:
+  Permite o uso de expressões de agregação na linguagem de consulta
   
+####  $mod:
+  Executa uma operação de um módulo no valor de um campo e seleciona documentos com um resultado especificado
   
+#### $regex:
+- O operador regex permite a utilização de expressões regulares em consultas.
+- db.pessoal.find( { profissao: { $regex: /Eng/ } } )
+- db.pessoal.find( { profissao: /Eng/ } ) 
+  
+####  $text:
+  Executa a pesquisa de texto:
+  
+#### $where:
+  Corresponde a documentos que atendem a uma expressão JavaScript
+  
+ #### $jsonSchema:
+  Valide documentos em relação ao esquema JSON fornecido
   
   
   
