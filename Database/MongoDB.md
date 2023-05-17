@@ -266,8 +266,10 @@ A validação de esquema é mais útil para um aplicativo estabelecido onde voc�
 - Para uma coleção de vendas, verifique se o itemcampo pertence a uma lista de itens que sua loja vende. Essa validação evita que um usuário digite incorretamente um nome de item acidentalmente ao inserir dados de vendas.
 - Para uma coleção de alunos, certifique-se de que o gpacampo seja sempre um número positivo. Essa validação detecta erros de digitação durante a entrada de dados.
   
-  
-  
+### O que acontece quando um documento falha na validação:
+Por padrão, quando uma operação de inserção ou atualização resultaria em um documento inválido, o MongoDB rejeita a operação e não grava o documento na coleção.
+
+Como alternativa, você pode configurar o MongoDB para permitir documentos inválidos e registrar avisos quando ocorrerem violações de esquema.
   
   
   
