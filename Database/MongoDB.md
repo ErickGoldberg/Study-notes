@@ -340,7 +340,16 @@ O comando collMod no MongoDB é usado para modificar as opções de uma coleçã
 - db.runCommand({ collMod: "minhaColecao", size: 100000000, capped: true })
 
 ### Níveis de validação:
+  No MongoDB, existem diferentes níveis de validação que podem ser aplicados aos documentos em uma coleção. Esses níveis de validação determinam quando e como a validação dos dados ocorre.
+
+Existem três níveis de validação disponíveis:
+- Nível de validação estrita (strict): Neste nível, a validação é aplicada durante as operações de gravação (insert/update) e impede a gravação de qualquer documento que não atenda à regra de validação definida. Se um documento não atender aos critérios de validação, um erro será retornado e a gravação será rejeitada. Esse é o nível de validação padrão.
+- Nível de validação moderada (moderate): Neste nível, a validação é aplicada durante as operações de gravação (insert/update), mas permite a gravação de documentos que não atendem à regra de validação definida. No entanto, um aviso será gerado para cada documento inválido. A gravação ainda será concluída, mas os documentos inválidos serão marcados como inválidos.
+- Nível de validação off: Neste nível, a validação é desativada e nenhum documento é validado durante as operações de gravação. Isso permite que qualquer documento seja inserido ou atualizado na coleção sem restrições de validação.
   
+Obs: Lembre-se de que, independentemente do nível de validação definido, a validação no MongoDB ocorre apenas durante as operações de gravação (insert/update). As operações de leitura (query) não aplicam a validação.
+
+É importante considerar cuidadosamente o nível de validação a ser usado com base nos requisitos do seu aplicativo e no equilíbrio entre consistência e flexibilidade dos dados.  
   
 #### Links para download:
 - Mongo Compass: http://www.mongodb.com
