@@ -435,17 +435,45 @@ db.Filho.insertMany([
   
 ])  
   
+Obs: Enquanto o parent references armazena o "NÓ" e o ID pai, o children reference armazena  o "NÓ" e o ID dos filhos
   
+###  Array of ancestors:
+Neste padrão, armazenamos em um documento o nó e todos os seus ancestrais.  
   
+db.Ancestrais.insertMany([
   
+    {_id:"Colaborador01", ancestors:["Gerente geral", "Gerente", "Supervisor02"], parent:"Supervisor02"},
   
+    {_id:"Colaborador02", ancestors:["Gerente geral", "Gerente", "Supervisor02"], parent:"Supervisor02"},
   
+    {_id:"Supervisor02", ancestors:["Gerente geral", "Gerente"], parent:"Gerente"},
   
+    {_id:"Supervisor01", ancestors:["Gerente geral", "Gerente"], parent:"Gerente"},
   
+    {_id:"Gerente", ancestors:["Gerente geral"], parent:"Gerente geral"},
   
+    {_id:"Gerente geral", ancestors:[], parent:null}
   
+])  
   
+### Materialized paths:
+Neste padrão, armazenamos no documento o nó e o id de seus ancestrais ou o caminho do nó.  
   
+db.Materializados.insertMany([
+  
+    {_id:"Gerente geral", path:null},
+  
+    {_id:"Gerente", path:"Gerente geral"},
+  
+    {_id:"Supervisor02", path:"Gerente geral,Gerente"},
+  
+    {_id:"Supervisor01", path:"Gerente geral,Gerente"},
+  
+    {_id:"Colaborador01", path:"Gerente geral,Gerente,Supervisor02"},
+  
+    {_id:"Colaborador02", path:"Gerente geral,Gerente,Supervisor02"}
+  
+])  
   
   
   
