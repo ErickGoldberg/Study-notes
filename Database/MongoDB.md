@@ -401,7 +401,70 @@ DBRefs são frequentemente utilizadas para estabelecer relacionamentos "um para 
   
 Obs: É importante notar que as DBRefs não são uma funcionalidade nativa do MongoDB, mas sim uma convenção de estruturação de dados que pode ser seguida por aplicativos para estabelecer relacionamentos entre documentos. O MongoDB não realiza automaticamente o carregamento ou resolução das DBRefs, sendo necessário que a aplicação realize as consultas adicionais para obter os documentos referenciados, se necessário. 
   
+## Dados hierárquicos:  
+### Parent References:
+db.Pai.insertMany([
   
+    {_id:"Colaborador01" , parent:"Supervisor02"},
+  
+    {_id:"Colaborador02" , parent:"Supervisor02"},
+  
+    {_id:"Supervisor02", parent:"Gerente"},
+  
+    {_id:"Supervisor01", parent:"Gerente"},
+  
+    {_id:"Gerente", parent:"Gerente geral"},
+  
+    {_id:"Gerente geral", parent: null}
+  
+])  
+  
+###  Child references:
+db.Filho.insertMany([
+    {_id:"Colaborador01" , children:[]},
+  
+    {_id:"Colaborador02" , children:[]},
+  
+    {_id:"Supervisor01", children:[]},
+  
+    {_id:"Supervisor02", children:["Colaborador01", "Colaborador02"]},
+  
+    {_id:"Gerente", children:["Supervisor01", "Supervisor02"]},
+  
+    {_id:"Gerente geral", children:["Gerente"]}
+  
+])  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ___
 #### Links para download:
 - Mongo Compass: http://www.mongodb.com
 - NoSQLBooster: https://nosqlbooster.com/downloads
