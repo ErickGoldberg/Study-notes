@@ -351,6 +351,19 @@ Obs: Lembre-se de que, independentemente do nível de validação definido, a va
 
 É importante considerar cuidadosamente o nível de validação a ser usado com base nos requisitos do seu aplicativo e no equilíbrio entre consistência e flexibilidade dos dados.  
   
+### Tratando documentos inválidos:
+A opção validationAction é usada para especificar a ação a ser tomada em relação aos documentos que não atendem à regra de validação durante as operações de gravação (insert/update).  
+  
+- "error": Essa é a ação padrão. Quando um documento não atende à regra de validação, um erro é retornado e a operação de gravação é rejeitada. O documento inválido não é inserido ou atualizado na coleção.
+- "warn": Com essa opção, um aviso é gerado para cada documento inválido, mas a operação de gravação é concluída. Os documentos inválidos são inseridos ou atualizados na coleção, mas são marcados como inválidos. O aviso pode ser visualizado nos logs do MongoDB.
+- "off": Essa opção desativa a ação de validação. Nenhum erro ou aviso é gerado e os documentos são inseridos ou atualizados na coleção, independentemente de atenderem ou não à regra de validação. É importante ter cuidado ao desativar completamente a validação, pois isso pode permitir a gravação de dados inválidos na coleção.  
+  
+É importante considerar cuidadosamente a ação de validação a ser usada com base nos requisitos do seu aplicativo e na importância de garantir a integridade dos dados. A opção validationAction permite que você controle como os documentos inválidos são tratados durante as operações de gravação.  
+  
+  
+  
+  
+  
 #### Links para download:
 - Mongo Compass: http://www.mongodb.com
 - NoSQLBooster: https://nosqlbooster.com/downloads
