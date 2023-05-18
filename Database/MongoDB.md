@@ -334,7 +334,12 @@ o comando runCommand é usado para executar comandos específicos do MongoDB em 
 - db.runCommand({ command })
 - db.runCommand ( { listCollections: 1, filter: { name: "contas" } } )
   
-  
+### Mudar uma regra de validação:
+O comando collMod no MongoDB é usado para modificar as opções de uma coleção existente. Ele permite alterar várias propriedades da coleção, como tamanho máximo, número máximo de documentos, índices e muito mais.
+- db.runCommand({ collMod: "<nome_da_colecao>", <opcoes> })
+- db.runCommand({ collMod: "minhaColecao", size: 100000000, capped: true })
+
+### Níveis de validação:
   
   
 #### Links para download:
