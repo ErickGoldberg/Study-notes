@@ -387,6 +387,21 @@ No MongoDB, existem duas abordagens principais para modelar relacionamentos entr
   
 A escolha entre dados incorporados e referências depende das características específicas do seu domínio e dos requisitos de consulta e manipulação de dados. Cada abordagem tem suas vantagens e considerações a serem levadas em conta, como desempenho, consistência e escala.  
   
+## DBRefs:
+
+DBRefs (Database References) são um mecanismo opcional fornecido pelo MongoDB para modelar relacionamentos entre documentos em diferentes coleções.
+
+Uma DBRef é uma referência a um documento em outra coleção do MongoDB e consiste em três campos principais:
+
+- $ref: O nome da coleção que contém o documento referenciado.
+- $id: O valor do _id do documento referenciado.
+- $db: O nome do banco de dados (opcional) que contém a coleção referenciada.
+  
+DBRefs são frequentemente utilizadas para estabelecer relacionamentos "um para muitos" ou "muitos para muitos" entre documentos.
+  
+Obs: É importante notar que as DBRefs não são uma funcionalidade nativa do MongoDB, mas sim uma convenção de estruturação de dados que pode ser seguida por aplicativos para estabelecer relacionamentos entre documentos. O MongoDB não realiza automaticamente o carregamento ou resolução das DBRefs, sendo necessário que a aplicação realize as consultas adicionais para obter os documentos referenciados, se necessário. 
+  
+  
 #### Links para download:
 - Mongo Compass: http://www.mongodb.com
 - NoSQLBooster: https://nosqlbooster.com/downloads
