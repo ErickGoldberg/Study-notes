@@ -379,8 +379,13 @@ Aqui estão os principais conceitos relacionados às transações ACID no MongoD
   
 Obs: Lembre-se de que nem todas as operações suportam transações ACID, e apenas replicações de conjuntos de réplicas (replica sets) e grupos de servidores (sharded clusters) podem ser usados com transações.    
   
+## Dados incorporados VS referências:
+No MongoDB, existem duas abordagens principais para modelar relacionamentos entre documentos: dados incorporados (embedded) e referências.
   
+- Dados Incorporados (Embedded): Nessa abordagem, os dados relacionados são incorporados diretamente em um único documento. Isso significa que os campos do documento contêm os dados de outros documentos relacionados. Os dados incorporados são adequados quando você tem relacionamentos "um para um" ou "um para poucos" entre entidades.  
+- Referências: Nessa abordagem, os documentos relacionados são armazenados separadamente e referenciados uns aos outros por meio de um campo que contém uma referência ao documento relacionado. Esse campo geralmente contém o _id do documento relacionado. As referências são adequadas para relacionamentos "muitos para muitos" ou quando você precisa de uma separação clara entre entidades.
   
+A escolha entre dados incorporados e referências depende das características específicas do seu domínio e dos requisitos de consulta e manipulação de dados. Cada abordagem tem suas vantagens e considerações a serem levadas em conta, como desempenho, consistência e escala.  
   
 #### Links para download:
 - Mongo Compass: http://www.mongodb.com
