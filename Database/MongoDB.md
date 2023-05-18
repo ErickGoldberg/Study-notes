@@ -368,7 +368,16 @@ OBS.: Para realizar a criação de uma variável, é necessário utilizar a linh
 
 Após executar o comando e criar a variável, você pode utilizá-la como um filtro para buscar, modificar e remover documentos das coleções.
   
+## Transações ACID:
+No MongoDB, as transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade) estão disponíveis desde a versão 4.0 do banco de dados. As transações ACID fornecem uma maneira de garantir a integridade dos dados em operações que envolvem múltiplas coleções ou documentos.
+
+Aqui estão os principais conceitos relacionados às transações ACID no MongoDB:
+- Atomicidade: As transações ACID garantem que todas as operações em uma transação sejam tratadas como uma unidade atômica. Isso significa que todas as operações são executadas com sucesso ou nenhuma delas é aplicada. Se uma operação falhar, todas as alterações feitas pela transação são revertidas.
+- Consistência: As transações ACID garantem que os dados estejam em um estado consistente antes e depois da transação. As operações dentro de uma transação devem atender às regras de validação definidas e preservar a integridade dos dados.
+- Isolamento: O isolamento garante que as operações em uma transação sejam executadas em um ambiente isolado. Isso significa que as alterações feitas por uma transação não são visíveis para outras transações até que a transação seja confirmada.
+- Durabilidade: A durabilidade garante que as alterações feitas por uma transação sejam permanentes, mesmo em caso de falha do sistema. Depois que uma transação é confirmada, suas alterações são armazenadas de forma durável no disco e permanecem mesmo em caso de reinicialização do servidor.  
   
+Obs: Lembre-se de que nem todas as operações suportam transações ACID, e apenas replicações de conjuntos de réplicas (replica sets) e grupos de servidores (sharded clusters) podem ser usados com transações.    
   
   
   
