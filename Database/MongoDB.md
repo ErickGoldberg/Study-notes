@@ -360,6 +360,15 @@ A opção validationAction é usada para especificar a ação a ser tomada em re
   
 É importante considerar cuidadosamente a ação de validação a ser usada com base nos requisitos do seu aplicativo e na importância de garantir a integridade dos dados. A opção validationAction permite que você controle como os documentos inválidos são tratados durante as operações de gravação.  
   
+## Variáveis:
+Para criar uma variável, você pode utilizar o comando let:
+- let nome_variavel = $jsonSchema
+  
+OBS.: Para realizar a criação de uma variável, é necessário utilizar a linha de comando.
+
+Após executar o comando e criar a variável, você pode utilizá-la como um filtro para buscar, modificar e remover documentos das coleções.
+  
+  
   
   
   
