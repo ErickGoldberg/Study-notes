@@ -328,10 +328,11 @@ Valide documentos em relação ao esquema JSON fornecido
 ### Como verificar regras de validação:  
 O método getCollectionInfo é usado para obter informações sobre uma coleção específica em um banco de dados. Ele retorna um documento que descreve várias propriedades da coleção, como seu nome, tamanho, índices existentes, opções de criação e muito mais.
 - db.getCollectionInfo({ options })
+- db.getCollectionInfos( { name: "contas" } )  
 
 o comando runCommand é usado para executar comandos específicos do MongoDB em um banco de dados. Ele permite executar operações avançadas ou comandos internos que não estão disponíveis diretamente como métodos no shell do MongoDB.
 - db.runCommand({ command })
-
+- db.runCommand ( { listCollections: 1, filter: { name: "contas" } } )
   
   
   
