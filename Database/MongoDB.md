@@ -197,6 +197,12 @@ PRETTY:
 - O método pretty apresenta os campos do documento em blocos.
 - db.pessoal.find().pretty()  
   
+OUTROS:
+- findAndModify: Modifica e retorna um único documento de acordo com o filtro especificado na consulta.
+- findOneAndUpdate: Atualiza um único documento com base nos critérios especificados no filtro da consulta.
+- findOneAndReplace: Substitui um único documento de acordo com o filtro especificado na consulta.
+- findOneAndDelete: Exclui um único documento com base nos critérios especificados na consulta e retorna como resultado o documento excluído.
+  
 ### Pela linha de código:  
 - Para consultar dados em uma coleção
 utilizamos o método find(). Se a condição
