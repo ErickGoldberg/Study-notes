@@ -175,6 +175,18 @@ AGGREGATE:
 - O método aggregate() no MongoDB é usado para realizar operações de agregação em documentos de uma coleção. A agregação permite que você processe e transforme dados de maneira flexível, executando várias etapas em sequência para realizar operações como filtrar, agrupar, projetar, ordenar e calcular valores agregados.  
 - db.collection.aggregate([ etapa1, etapa2, ... ])
   
+LOOKUP:
+- A etapa $lookup no MongoDB é usada durante a agregação para realizar operações de junção entre várias coleções. Ela permite que você combine documentos de uma coleção com documentos de outra coleção com base em campos relacionados.  
+- {
+  $lookup: {
+    from: <coleção_destino>,
+    localField: <campo_local>,
+    foreignField: <campo_destino>,
+    as: <nome_do_campo>
+  }
+}
+- A etapa $lookup é útil quando você precisa combinar informações de diferentes coleções com base em campos relacionados. Isso permite que você obtenha dados relacionados em uma única consulta e realize análises e consultas mais complexas envolvendo várias coleções no MongoDB.
+  
 COUNT:
 - O método count é utilizado para contar o numero de documentos.
 - db.pessoal.count()
