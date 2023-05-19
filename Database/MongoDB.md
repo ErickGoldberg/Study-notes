@@ -262,6 +262,14 @@ serão mostrados.
 - { campo: { $slice: [ <número>, <quantidade> ] } }
 - db.collection.find({}, { arrayField: { $slice: -3 } })  
   
+### $group:
+A etapa $group no MongoDB é usada durante a agregação para agrupar documentos por um ou mais campos e realizar operações de agregação nos grupos resultantes. Essa etapa é uma das etapas fundamentais para a análise e resumos de dados em uma coleção. 
+- { $group: { _id: <expressão>, <campo1>: { <operador1>: <expressão1> }, ... } }
+- db.sales.aggregate([
+  { $group: { _id: "$product", totalSales: { $sum: "$quantity" } } }
+])
+- O resultado da operação $group será um conjunto de documentos agrupados, onde cada documento representa um grupo exclusivo identificado pelo valor do campo _id especificado.  
+  
 ## Validação de Schema:
 A validação de esquema permite criar regras de validação para seus campos, como tipos de dados permitidos e intervalos de valores.
 
