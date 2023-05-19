@@ -520,12 +520,53 @@ db.Materializados.insertMany([
   
 ])  
   
+## Condicionais:
+O MongoDB não possui construções de controle de fluxo, como if e switch, diretamente nas consultas. No entanto, você pode alcançar resultados semelhantes usando as etapas de agregação.
+
+Para simular um if em uma consulta do MongoDB, você pode usar a etapa $cond na agregação. O $cond permite que você avalie uma condição e retorne um valor com base nessa condição. Aqui está um exemplo:
   
+db.collection.aggregate([{
   
+    $project: {
   
+      field: {
   
+        $cond: {
   
+          if: { $eq: ["$someField", "someValue"] },
   
+          then: "Value if true",
+  
+          else: "Value if false"
+  
+        }}}}])
+  
+  Para simular um switch em uma consulta do MongoDB, você pode encadear várias etapas $cond. Cada etapa $cond representa um caso no switch, e você pode fornecer uma condição para cada caso. Aqui está um exemplo:
+  
+ db.collection.aggregate([{
+  
+    $project: {
+  
+      field: {
+  
+        $switch: {
+  
+          branches: [
+  
+            { case: { $eq: ["$someField", "value1"] }, then: "Result 1" },
+  
+            { case: { $eq: ["$someField", "value2"] }, then: "Result 2" },
+  
+            { case: { $eq: ["$someField", "value3"] }, then: "Result 3" },
+  
+            // ...
+  
+          ],
+  
+          default: "Default Result"
+  
+        }}}}])
+ 
   
   
   
