@@ -248,6 +248,12 @@ serão mostrados.
 -  db.pessoal.createIndex({profissao: "text"})
 - db.pessoal.find( { $text: { $search: "Engenheiro" } } )
   
+### $slice:
+- O operador $slice no MongoDB é usado para retornar uma parte de um array em um documento. Ele permite que você selecione um subconjunto dos elementos de um array com base em uma posição de início e uma quantidade específica de elementos a serem retornados.
+- O operador $slice pode ser usado em conjunto com a projeção em uma consulta ou com o operador de atualização $set em uma operação de atualização.  
+- { campo: { $slice: [ <número>, <quantidade> ] } }
+- db.collection.find({}, { arrayField: { $slice: -3 } })  
+  
 ## Validação de Schema:
 A validação de esquema permite criar regras de validação para seus campos, como tipos de dados permitidos e intervalos de valores.
 
