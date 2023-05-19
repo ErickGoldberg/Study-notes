@@ -282,6 +282,17 @@ A etapa $group no MongoDB é usada durante a agregação para agrupar documentos
 ])
 - O resultado da operação $group será um conjunto de documentos agrupados, onde cada documento representa um grupo exclusivo identificado pelo valor do campo _id especificado.  
   
+### $unionWith:
+Com o operador $unionWith é possível realizar consultas complexas que recuperam dados de várias coleções em uma única consulta, além de retornar os resultados combinados. Isso é útil quando se deseja realizar uma análise mais ampla dos dados, pois nem sempre os dados são armazenados fisicamente em uma única coleção dentro do banco de dados.
+
+Ao usar o operador $unionWith, é importante que as coleções envolvidas tenham esquemas semelhantes. Se as coleções tiverem campos ou campos com tipos de dados diferentes, pode ser necessário converter ou transformar os dados antes de executar a operação de união. Este operador também suporta outras opções que podem ser usadas para ajustar o comportamento da operação. Algumas dessas opções incluem:
+- pipeline: permite que você especifique um pipeline de agregação para ser aplicado aos resultados combinados.
+- collation: permite especificar uma regra de ordem de classificação para a união.  
+- db.coleção.aggregate( [
+   { $project: { _id: 0 } },
+   { $unionWith: {<coleção>} }
+])
+  
 ## Validação de Schema:
 A validação de esquema permite criar regras de validação para seus campos, como tipos de dados permitidos e intervalos de valores.
 
