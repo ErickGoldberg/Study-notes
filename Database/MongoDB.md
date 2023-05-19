@@ -167,6 +167,14 @@ SKIP:
 LIMIT: 
  - Especifica o número máximo de documentos a serem retornados.
   
+DISTINCT:
+- A função distinct() no MongoDB é usada para retornar uma lista de valores únicos encontrados em um campo específico de uma coleção. Ela retorna os valores distintos presentes no campo especificado, eliminando quaisquer duplicatas.  
+- db.collection.distinct("campo")
+
+AGGREGATE:
+- O método aggregate() no MongoDB é usado para realizar operações de agregação em documentos de uma coleção. A agregação permite que você processe e transforme dados de maneira flexível, executando várias etapas em sequência para realizar operações como filtrar, agrupar, projetar, ordenar e calcular valores agregados.  
+- db.collection.aggregate([ etapa1, etapa2, ... ])
+  
 COUNT:
 - O método count é utilizado para contar o numero de documentos.
 - db.pessoal.count()
