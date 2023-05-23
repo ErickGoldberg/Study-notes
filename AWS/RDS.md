@@ -43,6 +43,20 @@ Uma replica é uma cópia assíncrona de uma instância de banco de dados RDS em
 
 As replicas no RDS são gerenciadas automaticamente pela AWS, e você pode criar replicas em outras zonas de disponibilidade na mesma região ou até mesmo em regiões diferentes para garantir a resiliência do banco de dados. Além disso, as replicas podem ser promovidas a instâncias de produção em caso de falhas, tornando o processo de recuperação mais rápido.
 
+#### Replica de Leitura (Read Replica):
+Uma replica de leitura é uma cópia assíncrona do banco de dados primário que é usada para distribuir a carga de leitura entre várias instâncias de banco de dados. Essas replicas são usadas principalmente para melhorar o desempenho e a escalabilidade do sistema, permitindo que as consultas de leitura sejam executadas nas replicas em vez de na instância primária.
+As replicas de leitura são atualizadas continuamente com as alterações feitas na instância primária, usando a replicação assíncrona. Isso significa que pode haver um pequeno atraso entre as alterações na instância primária e sua replicação para as replicas de leitura. As replicas de leitura são somente leitura, o que significa que as operações de gravação (escrita) devem ser realizadas na instância primária.
+
+Uma vantagem das replicas de leitura é que elas podem ser criadas em diferentes zonas de disponibilidade dentro da mesma região, ou até mesmo em regiões geograficamente distintas. Isso fornece maior disponibilidade e tolerância a falhas. Além disso, as replicas de leitura podem ser promovidas para se tornarem instâncias autônomas em caso de falha da instância primária.
+
+#### Replica de Backup (Backup Replica):
+Uma replica de backup é uma cópia sincronizada do banco de dados primário que é criada para fins de backup. Essa replica é usada para fornecer uma cópia atualizada dos dados caso seja necessário restaurar o banco de dados em caso de falha ou perda de dados acidental.
+A replica de backup é criada automaticamente pelo RDS quando você ativa a opção de backup multi-AZ (Multi-AZ backup). A replicação síncrona é usada para garantir que a replica de backup esteja sempre atualizada com os dados da instância primária.
+
+Ao contrário da replica de leitura, a replica de backup não está disponível para consultas de leitura. Sua finalidade principal é garantir a disponibilidade e a recuperação de dados em caso de necessidade de restauração.
+
+Ambos os tipos de replica (leitura e backup) são gerenciados automaticamente pelo RDS, e você pode criar, modificar e excluir replicas usando a console de gerenciamento do RDS, a API ou a interface de linha de comando (CLI).
+
 ### Backup:
 O backup no Amazon RDS envolve a criação de cópias dos dados do seu banco de dados em intervalos regulares. Esses backups são armazenados de forma segura na AWS e podem ser usados para restaurar o banco de dados em caso de falhas ou perda de dados acidental.
 
