@@ -55,6 +55,14 @@ Os snapshots são armazenados de forma durável e podem ser retidos pelo tempo q
 
 Tanto os backups quanto os snapshots são importantes para garantir a disponibilidade e a proteção dos dados no RDS. Eles fornecem opções de recuperação em caso de falhas, erros humanos ou necessidade de clonagem de bancos de dados para outros propósitos, como desenvolvimento ou testes.
 
+## Disponibilidade no RDS:
+### Multi-AZ Deployment (Implantação Multi-AZ):
+Ao criar uma instância de banco de dados no RDS, você pode optar por configurá-la em uma implantação Multi-AZ. Nesse caso, o RDS replica automaticamente seu banco de dados primário em uma zona de disponibilidade secundária em tempo real. Essa replicação síncrona garante que haja uma cópia atualizada dos dados em uma zona de disponibilidade separada. Em caso de falha na zona primária, o RDS realiza uma promoção automática da replica para se tornar a instância primária, minimizando o tempo de inatividade.
 
+### Auto Scaling (Dimensionamento Automático):
+O RDS oferece recursos de auto scaling para ajudar a ajustar automaticamente a capacidade de computação do banco de dados com base nas demandas de carga de trabalho. Você pode configurar políticas de auto scaling para aumentar ou diminuir a quantidade de recursos, como instâncias de banco de dados, conforme necessário. Isso garante que você tenha a capacidade adequada para lidar com picos de tráfego e evita a sobrecarga ou subutilização dos recursos.
+
+### Read Replicas (Replicas de Leitura):
+As replicas de leitura permitem que você crie cópias assíncronas de leitura do banco de dados para distribuir a carga de leitura e melhorar o desempenho. As replicas são replicadas a partir da instância primária e fornecem leitura escalável dos dados. Se a instância primária falhar, você pode promover uma replica de leitura para se tornar a instância primária e minimizar o impacto na disponibilidade.
 
 Links úteis: https://aws.amazon.com/pt/rds/  &&  https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html
