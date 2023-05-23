@@ -14,13 +14,9 @@ Na tabela a seguir, é possível encontrar uma comparação dos modelos de geren
 
 ## Vantagens da amazon RDS:
 - Você pode usar os produtos de banco de dados que já conhece com: MariaDB, Microsoft SQL Server, MySQL, Oracle e PostgreSQL.
-
 - O Amazon RDS gerencia backups, patches de software, detecção automática de falhas e recuperação.
-
 - Você pode ativar backups automatizados ou pode criar manualmente seus próprios snapshots de backup. Você pode usar esses backups para restaurar um banco de dados. O processo de restauração do Amazon RDS funciona de maneira confiável e eficiente.
-
 - Você pode obter alta disponibilidade com uma instância primária e uma instância secundária síncrona que pode ser usada para failover em caso de problemas. Também é possível usar réplicas de leitura para aumentar a escalabilidade de leitura.
-
 - Além da segurança em seu pacote de banco de dados, você pode ajudar a controlar quem pode acessar seus bancos de dados do RDS. Para fazer isso, você pode usar o AWS Identity and Access Management (IAM) para definir usuários e permissões. Você também pode ajudar a proteger seus bancos de dados colocando-os em uma nuvem privada virtual (VPC).
 
 ## Instâncias de banco de dados:
@@ -28,12 +24,11 @@ Uma instância de banco de dados é um ambiente isolado de banco de dados na Nuv
 
 Sua instância de banco de dados pode conter um ou mais bancos de dados criados pelo usuário. É possível acessar a instância de banco de dados usando as mesmas ferramentas e os mesmos aplicativos usados com uma instância de banco de dados independente. Crie e modifique uma instância de banco de dados usando a AWS Command Line Interface (AWS CLI), a API do Amazon RDS ou o AWS Management Console.
 
-##Classes da instância de banco de dados:
+## Classes da instância de banco de dados:
 A classe de instância de banco de dados determina a capacidade de computação e de memória de uma instância de banco de dados. Uma classe de instância de banco de dados consiste no tipo e no tamanho de instância de banco de dados. Cada tipo de instância oferece diferentes capacidades de computação, memória e armazenamento. Por exemplo, db.m6g é uma classe de instância de banco de dados de uso geral com a tecnologia de processadores Graviton2 da AWS. No tipo de instância db.m6g, db.m6g.2xlarge é uma classe de instância de banco de dados.
 
 ## Mecanismos de banco de dados:
 Um mecanismo de banco de dados é o software de banco de dados relacional específico que é executado na sua instância de banco de dados. Atualmente, o Amazon RDS oferece suporte aos seguintes mecanismos:
-
 - MariaDB
 - Microsoft SQL Server
 - MySQL
