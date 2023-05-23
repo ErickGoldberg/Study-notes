@@ -65,4 +65,12 @@ O RDS oferece recursos de auto scaling para ajudar a ajustar automaticamente a c
 ### Read Replicas (Replicas de Leitura):
 As replicas de leitura permitem que você crie cópias assíncronas de leitura do banco de dados para distribuir a carga de leitura e melhorar o desempenho. As replicas são replicadas a partir da instância primária e fornecem leitura escalável dos dados. Se a instância primária falhar, você pode promover uma replica de leitura para se tornar a instância primária e minimizar o impacto na disponibilidade.
 
+### Pontos de Verificação Automáticos (Automated Backups):
+O RDS oferece a funcionalidade de pontos de verificação automáticos, que criam backups regulares dos seus bancos de dados. Esses backups são armazenados em um local seguro na AWS e podem ser usados para restaurar o banco de dados em caso de falha. Os pontos de verificação automáticos podem ser retidos por um período configurável, permitindo a recuperação de dados de um momento anterior, se necessário.
+
+### Multi-Region Deployment (Implantação em Múltiplas Regiões):
+Para aumentar ainda mais a disponibilidade, o RDS oferece a opção de implantação em múltiplas regiões. Isso envolve a criação de instâncias de banco de dados em diferentes regiões geográficas para garantir a continuidade do serviço, mesmo se uma região inteira se tornar inacessível. As replicas podem ser configuradas entre regiões para garantir a replicação dos dados em uma localidade geograficamente separada.
+
+Esses recursos e estratégias de disponibilidade fornecidos pelo Amazon RDS ajudam a garantir que seus bancos de dados estejam disponíveis e funcionando de forma confiável. Eles reduzem o tempo de inatividade, protegem contra falhas e fornecem a flexibilidade necessária para lidar com variações de carga de trabalho e cenários de recuperação de desastres.
+
 Links úteis: https://aws.amazon.com/pt/rds/  &&  https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html
