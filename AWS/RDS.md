@@ -37,4 +37,24 @@ Um mecanismo de banco de dados é o software de banco de dados relacional espec�
 
 Cada mecanismo de banco de dados tem seus próprios recursos compatíveis, e cada versão de um mecanismo de banco de dados pode incluir recursos específicos. O suporte para recursos do Amazon RDS varia entre Regiões da AWS e versões específicas de cada mecanismo de banco de dados. Além disso, cada mecanismo de banco de dados tem um conjunto de parâmetros em um grupo de parâmetros de banco de dados que controlam o comportamento dos bancos de dados que ele gerencia.
 
+## Principais funcionalidades:
+### Replica:
+Uma replica é uma cópia assíncrona de uma instância de banco de dados RDS em tempo real. Ela é usada para melhorar a disponibilidade do banco de dados e permitir a leitura escalável dos dados. Ao criar replicas, você pode distribuir a carga de leitura entre várias instâncias, aumentando assim o desempenho geral do sistema.
+
+As replicas no RDS são gerenciadas automaticamente pela AWS, e você pode criar replicas em outras zonas de disponibilidade na mesma região ou até mesmo em regiões diferentes para garantir a resiliência do banco de dados. Além disso, as replicas podem ser promovidas a instâncias de produção em caso de falhas, tornando o processo de recuperação mais rápido.
+
+### Backup:
+O backup no Amazon RDS envolve a criação de cópias dos dados do seu banco de dados em intervalos regulares. Esses backups são armazenados de forma segura na AWS e podem ser usados para restaurar o banco de dados em caso de falhas ou perda de dados acidental.
+
+O RDS oferece duas opções de backup: backups automáticos e backups manuais. Os backups automáticos são habilitados por padrão e são criados regularmente de acordo com uma programação definida. Eles são armazenados na AWS por um período de retenção configurável. Os backups manuais, como o nome sugere, são iniciados manualmente pelo usuário e permitem a criação de pontos de recuperação adicionais.
+
+### Snapshot:
+Um snapshot é uma imagem dos dados do seu banco de dados em um momento específico. Ao criar um snapshot, uma cópia pontual de todo o banco de dados é tirada e armazenada na AWS. Os snapshots podem ser usados para criar novas instâncias de banco de dados, restaurar bancos de dados existentes ou copiar dados para outro local.
+
+Os snapshots são armazenados de forma durável e podem ser retidos pelo tempo que você precisar. Eles são independentes dos backups automáticos e manuais mencionados anteriormente. Isso significa que você pode criar snapshots independentes do cronograma de backup e retê-los pelo tempo que for necessário.
+
+Tanto os backups quanto os snapshots são importantes para garantir a disponibilidade e a proteção dos dados no RDS. Eles fornecem opções de recuperação em caso de falhas, erros humanos ou necessidade de clonagem de bancos de dados para outros propósitos, como desenvolvimento ou testes.
+
+
+
 Links úteis: https://aws.amazon.com/pt/rds/  &&  https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html
