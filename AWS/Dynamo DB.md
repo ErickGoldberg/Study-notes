@@ -30,4 +30,12 @@ O DynamoDB oferece recursos de segurança robustos para proteger seus dados. Ele
 
 O DynamoDB é altamente integrado com outros serviços da AWS. Você pode usar o DynamoDB como armazenamento de dados para aplicativos web, móveis, de jogos e IoT, além de aproveitar a integração com serviços como AWS Lambda, Amazon CloudWatch, AWS X-Ray e Amazon Redshift para análise e monitoramento.
 
-O Amazon DynamoDB é uma opção poderosa para aplicativos que exigem armazenamento e recuperação rápidos de dados em escala. Com sua escal
+O Amazon DynamoDB é uma opção poderosa para aplicativos que exigem armazenamento e recuperação rápidos de dados em escala.
+
+## Índices:
+O banco de dados DynamoDB possui dois tipos de índices secundários: os locais e os globais. Os índices são chamados de secundários pois ao criar a tabela nós já definimos uma chave primária (junção entre partition key e sort key) e esse é nosso índice “primário”, embora esse termo não seja muito comum.
+
+Os índices secundários locais (Local Secondary Index ou LSI) e índices secundários globais (Global Secondary Index ou GSI) são muito semelhantes, tendo apenas as seguintes diferenças:
+
+Um LSI precisa ser implementado no momento da criação da tabela. Não é possível criá-los depois. Já um GSI pode ser feito a qualquer momento após a criação da tabela;
+LSI não pode ter como sua definição uma outra partition key. Apenas a sort key pode ser diferente. Já um GSI pode ter tanto partiion key quanto sort key, diferentes do que foi definido na tabela.
