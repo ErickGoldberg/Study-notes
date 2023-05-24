@@ -35,3 +35,17 @@ As regras de uma ACL podem permitir ou negar o tráfego com base no endereço IP
 As ACLs são avaliadas em ordem sequencial. Isso significa que a primeira regra correspondente a um pacote é aplicada e as regras subsequentes não são avaliadas. Por isso, é importante considerar a ordem das regras ao configurar uma ACL.
 
 As ACLs podem ser usadas para adicionar uma camada adicional de segurança à sua VPC, permitindo que você controle de forma granular o tráfego entre as sub-redes e defina políticas de segurança específicas para segmentos de rede individuais.
+
+## Security Groups:
+Security Groups são outro recurso disponível nas Virtual Private Clouds (VPCs) da Amazon Web Services (AWS) e são usados para controlar o tráfego de rede para instâncias específicas dentro de uma VPC. Enquanto as ACLs controlam o tráfego em nível de sub-rede, os Security Groups controlam o tráfego em nível de instância.
+
+Os Security Groups são grupos virtuais de segurança que atuam como firewalls em nível de instância. Cada instância dentro de uma VPC deve ser atribuída a um ou mais Security Groups. Cada Security Group possui regras de entrada e saída que especificam o tráfego permitido para a instância associada a ele.
+
+### Características/Pontos-chave:
+- Regras de entrada e saída: Cada Security Group possui uma lista de regras de entrada e saída. As regras de entrada controlam o tráfego que é permitido acessar a instância, enquanto as regras de saída controlam o tráfego que a instância pode enviar para outros destinos.
+- Controle baseado em IP e porta: As regras de um Security Group podem ser definidas para permitir ou negar tráfego com base no endereço IP de origem ou destino, no protocolo utilizado (por exemplo, TCP, UDP) e na porta de origem ou destino.
+- Comportamento semelhante a uma lista branca: Por padrão, todas as conexões de entrada são negadas e apenas o tráfego que corresponde às regras definidas é permitido. Isso significa que o tráfego não especificado nas regras é automaticamente bloqueado.
+- Comunicação entre Security Groups: Os Security Groups podem ser configurados para permitir a comunicação entre instâncias associadas a diferentes grupos de segurança. Isso permite que você defina políticas de segurança mais granulares para suas instâncias.
+- Alterações em tempo real: As alterações nas regras de um Security Group são aplicadas em tempo real. Isso significa que as alterações têm efeito imediato nas instâncias associadas ao Security Group, sem a necessidade de reiniciar as instâncias.
+
+Os Security Groups são uma camada fundamental de segurança na AWS, permitindo que você controle o tráfego de rede para suas instâncias de forma granular. Eles desempenham um papel essencial na implementação de políticas de segurança e no isolamento de recursos dentro de uma VPC.
