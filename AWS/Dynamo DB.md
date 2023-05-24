@@ -56,3 +56,13 @@ A precificação do Amazon DynamoDB, serviço de banco de dados NoSQL oferecido 
 Além disso, é importante levar em consideração outros fatores que podem impactar o custo total do DynamoDB, como armazenamento, transferência de dados e operações adicionais, como consultas e varreduras. Cada região da AWS pode ter preços diferentes, portanto, é recomendável verificar a página de preços da AWS ou usar a calculadora de preços da AWS para obter detalhes específicos sobre os custos do DynamoDB na sua região.
 
 É importante ressaltar que as informações sobre a precificação estão atualizadas até a data de corte do meu conhecimento, em setembro de 2021. Recomenda-se verificar a página oficial de preços da AWS para obter informações mais atualizadas sobre a precificação do DynamoDB.
+
+## Tabelas globais
+Tabelas globais são um recurso muito interessante para tornar a disponibilidade do seu banco de dados ainda maior. Uma tabela global é basicamente uma tabela que não pertence a uma região específica da AWS, mas sim está replicada em todas as regiões.
+
+Segundo a própria documentação da AWS, ela consiste em diversas tabelas replicadas (uma por região da AWS), que o DynamoDB trata como uma única unidade. Cada réplica possui o mesmo nome de tabela e o mesmo esquema de chave primária. Quando uma aplicação grava dados em uma tabela-réplica em uma região, o DynamoDB propaga automaticamente a gravação nas outras tabelas-réplicas nas outras Regiões da AWS.
+
+## DAX
+O DynamoDB Accelerator (DAX) é um cache em memória totalmente gerenciado e altamente disponível para o Amazon DynamoDB. O DAX faz todo o trabalho pesado necessário para adicionar aceleração em memória às tabelas do DynamoDB, sem que devs tenham de gerenciar invalidação de cache, preenchimento de dados ou gerenciamento de clusters.
+
+Sendo assim, essa funcionalidade, quando habilitada, adiciona uma camada de cache ao seu banco de dados DynamoDB para aumentar ainda mais a performance, mas isso vem com um custo, claro. O DynamoDB cobra pela capacidade de DAX por hora.
