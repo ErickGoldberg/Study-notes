@@ -22,3 +22,16 @@ Cada sub-rede possui um intervalo de endereços IP específico, que é um subcon
 Por exemplo, considerando uma rede com o endereço IP 192.168.0.0 e uma máscara de sub-rede 255.255.255.0, é possível criar várias sub-redes dentro dessa rede, atribuindo diferentes intervalos de endereços IP a cada sub-rede. Cada sub-rede terá seu próprio intervalo de endereços IP e poderá ter suas próprias configurações de roteamento e segurança.
 
 As sub-redes são amplamente utilizadas em redes corporativas e em infraestruturas de nuvem, como a Amazon Web Services (AWS) e o Microsoft Azure, para segmentar e organizar a rede em partes menores. Elas permitem um melhor gerenciamento do tráfego, isolamento de segmentos e implementação de políticas de segurança granulares.
+
+## ACL(Access Control List):
+ACL (Access Control List), ou Lista de Controle de Acesso, é um recurso disponível nas Virtual Private Clouds (VPCs) da Amazon Web Services (AWS). Uma ACL é uma tabela de regras de segurança que controla o tráfego de entrada e saída para sub-redes específicas dentro de uma VPC.
+
+As ACLs são aplicadas a nível de sub-rede e funcionam em conjunto com os grupos de segurança da VPC para fornecer camadas adicionais de controle de acesso e segurança para os recursos da VPC. Enquanto os grupos de segurança controlam o tráfego de entrada e saída para instâncias individuais dentro de uma sub-rede, as ACLs controlam o tráfego em um nível de sub-rede mais amplo.
+
+Cada sub-rede em uma VPC tem uma ACL associada a ela por padrão. Uma ACL padrão permite todo o tráfego de entrada e saída. No entanto, você pode criar e personalizar ACLs para atender às necessidades específicas da sua aplicação ou ambiente.
+
+As regras de uma ACL podem permitir ou negar o tráfego com base no endereço IP de origem ou destino, no protocolo utilizado (por exemplo, TCP, UDP) e na porta de origem ou destino. Você pode definir regras de entrada e regras de saída separadas para controlar o tráfego em ambas as direções.
+
+As ACLs são avaliadas em ordem sequencial. Isso significa que a primeira regra correspondente a um pacote é aplicada e as regras subsequentes não são avaliadas. Por isso, é importante considerar a ordem das regras ao configurar uma ACL.
+
+As ACLs podem ser usadas para adicionar uma camada adicional de segurança à sua VPC, permitindo que você controle de forma granular o tráfego entre as sub-redes e defina políticas de segurança específicas para segmentos de rede individuais.
