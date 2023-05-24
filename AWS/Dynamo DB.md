@@ -39,3 +39,20 @@ Os índices secundários locais (Local Secondary Index ou LSI) e índices secund
 
 Um LSI precisa ser implementado no momento da criação da tabela. Não é possível criá-los depois. Já um GSI pode ser feito a qualquer momento após a criação da tabela;
 LSI não pode ter como sua definição uma outra partition key. Apenas a sort key pode ser diferente. Já um GSI pode ter tanto partiion key quanto sort key, diferentes do que foi definido na tabela.
+
+## Price:
+A precificação do Amazon DynamoDB, serviço de banco de dados NoSQL oferecido pela Amazon Web Services (AWS), é baseada em vários fatores, incluindo capacidade provisionada (Provisioned Capacity) e capacidade sob demanda (On-Demand Capacity).
+### Capacidade provisionada (Provisioned Capacity):
+- Taxa horária: Você paga uma taxa por hora pela capacidade de leitura e gravação provisionada que você configurou.
+- Capacidade de leitura provisionada: Você define a quantidade de capacidade de leitura por segundo (Throughput Capacity Units - TCUs) necessária para sua tabela.
+- Capacidade de gravação provisionada: Você define a quantidade de capacidade de gravação por segundo (Throughput Capacity Units - TCUs) necessária para sua tabela.
+- Preço por TCU: Existem diferentes níveis de preços para capacidade de leitura provisionada e capacidade de gravação provisionada, dependendo da região e do volume contratado.
+
+### Capacidade sob demanda (On-Demand Capacity):
+- Com a capacidade sob demanda, você não precisa provisionar antecipadamente a capacidade de leitura e gravação. O DynamoDB ajusta automaticamente a capacidade conforme necessário para lidar com os picos de tráfego.
+- Você paga pelo uso real da capacidade de leitura e gravação, calculado em unidades de capacidade de leitura (Read Capacity Units - RCUs) e unidades de capacidade de gravação (Write Capacity Units - WCUs).
+- Há um preço por RCU e WCU com base na região em que você está usando o DynamoDB.
+
+Além disso, é importante levar em consideração outros fatores que podem impactar o custo total do DynamoDB, como armazenamento, transferência de dados e operações adicionais, como consultas e varreduras. Cada região da AWS pode ter preços diferentes, portanto, é recomendável verificar a página de preços da AWS ou usar a calculadora de preços da AWS para obter detalhes específicos sobre os custos do DynamoDB na sua região.
+
+É importante ressaltar que as informações sobre a precificação estão atualizadas até a data de corte do meu conhecimento, em setembro de 2021. Recomenda-se verificar a página oficial de preços da AWS para obter informações mais atualizadas sobre a precificação do DynamoDB.
