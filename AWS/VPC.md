@@ -11,3 +11,14 @@ O VPC permite que você tenha controle total sobre a sua rede virtual, incluindo
 - Integração com outros serviços da AWS: O VPC é altamente integrado com outros serviços da AWS, como o Amazon EC2, Amazon RDS (Relational Database Service), Amazon S3 (Simple Storage Service) e outros. Isso permite que você crie aplicativos e serviços completos usando a infraestrutura da AWS em seu ambiente de VPC.
 
 O VPC é um componente fundamental para a construção de infraestruturas escaláveis e seguras na AWS. Ele oferece controle total sobre a rede virtual e permite a criação de uma arquitetura personalizada para atender às necessidades específicas do seu aplicativo ou negócio.
+
+## Sub-rede:
+Uma sub-rede (subnet, em inglês) é uma divisão lógica de uma rede maior em redes menores. Ela permite que você crie segmentos de rede separados dentro de uma rede maior, usando uma máscara de sub-rede para determinar quais dispositivos pertencem a cada segmento.
+
+As sub-redes são usadas principalmente para melhorar o desempenho, a segurança e a organização de uma rede. Ao dividir uma rede em sub-redes, é possível controlar o tráfego de rede, limitar a comunicação entre diferentes segmentos e facilitar a administração e o gerenciamento da rede.
+
+Cada sub-rede possui um intervalo de endereços IP específico, que é um subconjunto do intervalo de endereços IP da rede principal. A máscara de sub-rede é usada para determinar quais bits do endereço IP identificam a sub-rede e quais bits identificam os dispositivos individuais dentro da sub-rede.
+
+Por exemplo, considerando uma rede com o endereço IP 192.168.0.0 e uma máscara de sub-rede 255.255.255.0, é possível criar várias sub-redes dentro dessa rede, atribuindo diferentes intervalos de endereços IP a cada sub-rede. Cada sub-rede terá seu próprio intervalo de endereços IP e poderá ter suas próprias configurações de roteamento e segurança.
+
+As sub-redes são amplamente utilizadas em redes corporativas e em infraestruturas de nuvem, como a Amazon Web Services (AWS) e o Microsoft Azure, para segmentar e organizar a rede em partes menores. Elas permitem um melhor gerenciamento do tráfego, isolamento de segmentos e implementação de políticas de segurança granulares.
