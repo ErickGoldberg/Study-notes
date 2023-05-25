@@ -32,6 +32,27 @@ O DynamoDB é altamente integrado com outros serviços da AWS. Você pode usar o
 
 O Amazon DynamoDB é uma opção poderosa para aplicativos que exigem armazenamento e recuperação rápidos de dados em escala.
 
+## Partition key/Sort key:
+No Amazon DynamoDB, a Sort Key e a Partition Key são dois elementos-chave que compõem a estrutura de indexação e organização dos dados armazenados na tabela.
+
+- Partition Key (Chave de Partição):
+
+A Partition Key é usada para determinar a partição física onde os dados serão armazenados no DynamoDB. É responsável por distribuir os dados de forma uniforme nas diferentes partições para garantir uma escalabilidade e desempenho eficientes. A escolha de uma boa Partition Key é fundamental para distribuir a carga de acesso aos dados e evitar hotspots (partições com acesso intenso).
+
+A Partition Key é especificada durante a criação da tabela e deve ser um atributo obrigatório em cada item da tabela. É com base na Partition Key que o DynamoDB decide em qual partição o item será armazenado. Por exemplo, em uma tabela que armazena dados de usuários, a Partition Key pode ser o ID do usuário.
+
+- Sort Key (Chave de Ordenação):
+
+A Sort Key é usada em conjunto com a Partition Key para definir a ordem de classificação dos itens armazenados dentro de cada partição. A combinação da Partition Key e da Sort Key é chamada de chave de partição-sorte.
+
+A Sort Key permite que os itens sejam ordenados em ordem crescente ou decrescente com base em um determinado atributo. Isso facilita a recuperação de itens em uma ordem específica, permitindo consultas eficientes e filtragens com base nos valores do atributo da Sort Key.
+
+Por exemplo, em uma tabela de pedidos, a Partition Key pode ser o ID do cliente e a Sort Key pode ser a data do pedido. Isso permitiria recuperar todos os pedidos de um determinado cliente em uma ordem cronológica.
+
+A combinação única da Partition Key e da Sort Key determina a identidade exclusiva de cada item na tabela do DynamoDB.
+
+Ao projetar um esquema de tabela no DynamoDB, é essencial escolher as chaves de partição e de ordenação corretas para garantir uma distribuição eficiente dos dados e atender às necessidades de acesso e consulta dos aplicativos. O projeto adequado das chaves de partição e de ordenação pode resultar em um melhor desempenho, escalabilidade e flexibilidade na utilização do DynamoDB.
+
 ## Índices:
 O banco de dados DynamoDB possui dois tipos de índices secundários: os locais e os globais. Os índices são chamados de secundários pois ao criar a tabela nós já definimos uma chave primária (junção entre partition key e sort key) e esse é nosso índice “primário”, embora esse termo não seja muito comum.
 
