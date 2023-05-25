@@ -64,8 +64,10 @@ Em resumo, o Internet Gateway permite a comunicação entre a VPC e a Internet p
 Logs na VPC (Virtual Private Cloud) se referem às informações registradas sobre eventos e atividades que ocorrem dentro da sua VPC na Amazon Web Services (AWS). Esses logs são importantes para monitorar e auditar o tráfego de rede, identificar possíveis problemas de segurança, solucionar problemas de conectividade e obter insights sobre o uso e desempenho da sua VPC.
 
 Existem diferentes tipos de logs relacionados à VPC que podem ser coletados e analisados. Alguns exemplos incluem:
-
-
+- VPC Flow Logs: Os VPC Flow Logs registram informações sobre o tráfego de rede que entra e sai das instâncias dentro da VPC. Esses logs contêm detalhes, como endereços IP de origem e destino, portas usadas, protocolos, quantidade de dados transferidos e informações de tempo. Eles podem ser usados para monitorar o tráfego de rede, detectar atividades suspeitas, solucionar problemas de conectividade e cumprir requisitos de conformidade.
+- CloudTrail Logs: O AWS CloudTrail registra eventos relacionados à atividade da conta da AWS. Isso inclui ações realizadas na VPC, como criação, modificação ou exclusão de recursos. Os logs do CloudTrail podem ser usados para rastrear alterações na configuração da VPC, monitorar ações de usuários e identificar atividades não autorizadas.
+- Amazon VPC Flow Logs para o AWS Lambda: Esses logs fornecem informações detalhadas sobre invocações de função do AWS Lambda que ocorrem dentro da VPC. Eles registram dados como identificador da função, resultado da invocação, duração da execução e informações de rede. Esses logs são úteis para monitorar o desempenho e o comportamento das funções do Lambda na VPC.
+- EventBridge Logs: O Amazon EventBridge permite a integração e o roteamento de eventos entre vários serviços da AWS. Os logs do EventBridge registram informações sobre eventos recebidos, regras aplicadas, ações executadas e resultados das ações. Eles ajudam a entender como os eventos estão sendo processados e monitorar o fluxo de eventos em sua VPC.
 
 
 Ao analisar esses logs, você pode identificar problemas de segurança, entender o tráfego de rede, detectar padrões de uso, solucionar problemas de conectividade e obter insights valiosos para otimizar o desempenho e a segurança da sua VPC. Existem várias ferramentas e serviços disponíveis na AWS para coletar, armazenar e analisar esses logs, como o Amazon CloudWatch Logs, o Amazon S3 e serviços de análise de dados.
