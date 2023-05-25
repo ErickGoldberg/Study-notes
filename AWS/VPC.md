@@ -49,3 +49,13 @@ Os Security Groups são grupos virtuais de segurança que atuam como firewalls e
 - Alterações em tempo real: As alterações nas regras de um Security Group são aplicadas em tempo real. Isso significa que as alterações têm efeito imediato nas instâncias associadas ao Security Group, sem a necessidade de reiniciar as instâncias.
 
 Os Security Groups são uma camada fundamental de segurança na AWS, permitindo que você controle o tráfego de rede para suas instâncias de forma granular. Eles desempenham um papel essencial na implementação de políticas de segurança e no isolamento de recursos dentro de uma VPC.
+
+## Conceitos importantes:
+- Internet Gateway: 
+O Internet Gateway (IGW) é um componente-chave de uma Virtual Private Cloud (VPC) na Amazon Web Services (AWS). Ele permite a comunicação entre sua VPC e a Internet pública. O IGW funciona como uma porta de entrada que permite que as instâncias dentro da VPC se conectem à Internet e sejam acessíveis a partir dela. É usado para permitir o tráfego de entrada e saída entre a VPC e os recursos externos à rede, como serviços web, servidores externos e usuários remotos.
+- NAT (Network Address Translation): 
+O NAT é uma técnica usada para mapear endereços IP entre redes. Na AWS, o NAT é frequentemente usado para permitir que instâncias dentro de uma VPC se conectem à Internet sem ter um endereço IP público atribuído diretamente a elas. Existem dois tipos de NAT na AWS: NAT Gateway e NAT Instance. Ambos fornecem uma maneira de traduzir endereços IP privados das instâncias em endereços IP públicos para fins de comunicação com a Internet.
+- VPC Endpoints: 
+Os VPC Endpoints são conexões privadas que permitem acessar serviços da AWS sem precisar passar pela Internet pública. Em vez disso, eles permitem que você se comunique diretamente com serviços da AWS usando a rede privada da VPC. Isso proporciona maior segurança e pode ajudar a reduzir custos de transferência de dados. Existem dois tipos principais de VPC Endpoints: Interface Endpoints e Gateway Endpoints. Os Interface Endpoints são usados para acessar serviços da AWS hospedados na AWS PrivateLink, enquanto os Gateway Endpoints são usados para acessar serviços específicos, como o Amazon S3 e o DynamoDB, de maneira privada, sem roteamento pela Internet.
+
+Em resumo, o Internet Gateway permite a comunicação entre a VPC e a Internet pública, o NAT é usado para permitir que as instâncias na VPC acessem a Internet sem ter endereços IP públicos atribuídos diretamente a elas, e os VPC Endpoints fornecem conexões privadas para acessar serviços da AWS sem a necessidade de roteamento pela Internet pública. Esses recursos desempenham papéis fundamentais na conectividade e segurança das VPCs na AWS.
