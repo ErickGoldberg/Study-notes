@@ -81,6 +81,19 @@ Os índices secundários locais (Local Secondary Index ou LSI) e índices secund
 Um LSI precisa ser implementado no momento da criação da tabela. Não é possível criá-los depois. Já um GSI pode ser feito a qualquer momento após a criação da tabela;
 LSI não pode ter como sua definição uma outra partition key. Apenas a sort key pode ser diferente. Já um GSI pode ter tanto partiion key quanto sort key, diferentes do que foi definido na tabela.
 
+### Projeção de atributos:
+A projeção de atributos em um índice do Amazon DynamoDB refere-se à seleção dos atributos que serão incluídos no índice como parte dos itens indexados. Em outras palavras, a projeção determina quais atributos serão disponibilizados para consulta quando você acessar o índice.
+
+Existem dois tipos de projeção de atributos no DynamoDB:
+- All (Todos) - A projeção inclui todos os atributos do item original na tabela. Isso significa que, quando você consulta o índice, terá acesso a todos os atributos do item.
+- Keys Only (Apenas Chaves) - A projeção inclui apenas as chaves do item original. Isso significa que, quando você consulta o índice, terá acesso apenas às chaves do item e não a outros atributos.
+
+A escolha da projeção de atributos depende das suas necessidades de consulta e do desempenho desejado. Se você precisa acessar todos os atributos do item diretamente do índice, deve optar pela projeção "All". Isso pode ser útil quando você deseja recuperar rapidamente todos os atributos de um item com base em um índice específico, evitando a necessidade de acessar a tabela principal.
+
+Por outro lado, se você só precisa acessar as chaves do item para identificar os itens relevantes, pode optar pela projeção "Keys Only". Isso pode ser útil quando você precisa localizar rapidamente itens com base em uma chave de pesquisa específica e não precisa dos demais atributos para essa operação.
+
+A projeção de atributos é uma opção de configuração quando você cria um índice no DynamoDB. É importante escolher a projeção adequada com base nos requisitos de consulta do seu aplicativo, pois isso afetará a eficiência e o desempenho das suas consultas no DynamoDB.
+
 ## Price:
 A precificação do Amazon DynamoDB, serviço de banco de dados NoSQL oferecido pela Amazon Web Services (AWS), é baseada em vários fatores, incluindo capacidade provisionada (Provisioned Capacity) e capacidade sob demanda (On-Demand Capacity).
 ### Capacidade provisionada (Provisioned Capacity):
