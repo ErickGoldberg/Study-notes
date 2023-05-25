@@ -69,5 +69,15 @@ Existem diferentes tipos de logs relacionados à VPC que podem ser coletados e a
 - Amazon VPC Flow Logs para o AWS Lambda: Esses logs fornecem informações detalhadas sobre invocações de função do AWS Lambda que ocorrem dentro da VPC. Eles registram dados como identificador da função, resultado da invocação, duração da execução e informações de rede. Esses logs são úteis para monitorar o desempenho e o comportamento das funções do Lambda na VPC.
 - EventBridge Logs: O Amazon EventBridge permite a integração e o roteamento de eventos entre vários serviços da AWS. Os logs do EventBridge registram informações sobre eventos recebidos, regras aplicadas, ações executadas e resultados das ações. Eles ajudam a entender como os eventos estão sendo processados e monitorar o fluxo de eventos em sua VPC.
 
-
 Ao analisar esses logs, você pode identificar problemas de segurança, entender o tráfego de rede, detectar padrões de uso, solucionar problemas de conectividade e obter insights valiosos para otimizar o desempenho e a segurança da sua VPC. Existem várias ferramentas e serviços disponíveis na AWS para coletar, armazenar e analisar esses logs, como o Amazon CloudWatch Logs, o Amazon S3 e serviços de análise de dados.
+
+### Bastion hosts:
+Bastion hosts, também conhecidos como jump hosts ou jump boxes, são instâncias de servidor que são implantadas em uma Virtual Private Cloud (VPC) para fornecer acesso seguro a recursos privados dentro da VPC. Eles servem como pontos de entrada seguros para administradores ou usuários autorizados acessarem instâncias ou serviços dentro da rede privada da VPC.
+
+Os Bastion hosts desempenham um papel importante na segurança da infraestrutura, pois fornecem uma camada adicional de proteção, evitando o acesso direto aos recursos privados da VPC a partir da Internet. Em vez disso, os usuários primeiro se conectam ao Bastion host e, em seguida, podem acessar outras instâncias ou serviços da VPC a partir dele.
+
+A principal função de um Bastion host é atuar como um ponto de salto (jump point) para acessar recursos privados. Quando um usuário se conecta ao Bastion host por meio de SSH (Secure Shell) ou outro protocolo seguro, ele se autentica e, em seguida, pode usar o Bastion host como um ponto intermediário para acessar outras instâncias ou serviços dentro da VPC.
+
+Além de fornecer acesso seguro, os Bastion hosts também podem ser configurados com regras de segurança rigorosas para controlar o tráfego de entrada e saída. Eles podem ser configurados para permitir apenas conexões de endereços IP específicos ou de faixas de endereços IP confiáveis, adicionando uma camada adicional de proteção.
+
+Em resumo, os Bastion hosts são instâncias de servidor implantadas em uma VPC para fornecer acesso seguro a recursos privados. Eles atuam como pontos de entrada para administradores ou usuários autorizados acessarem instâncias ou serviços dentro da rede privada da VPC, fornecendo uma camada adicional de segurança e controle de acesso.
