@@ -51,11 +51,21 @@ Os Security Groups são grupos virtuais de segurança que atuam como firewalls e
 Os Security Groups são uma camada fundamental de segurança na AWS, permitindo que você controle o tráfego de rede para suas instâncias de forma granular. Eles desempenham um papel essencial na implementação de políticas de segurança e no isolamento de recursos dentro de uma VPC.
 
 ## Conceitos importantes:
-- Internet Gateway: 
+### Internet Gateway: 
 O Internet Gateway (IGW) é um componente-chave de uma Virtual Private Cloud (VPC) na Amazon Web Services (AWS). Ele permite a comunicação entre sua VPC e a Internet pública. O IGW funciona como uma porta de entrada que permite que as instâncias dentro da VPC se conectem à Internet e sejam acessíveis a partir dela. É usado para permitir o tráfego de entrada e saída entre a VPC e os recursos externos à rede, como serviços web, servidores externos e usuários remotos.
-- NAT (Network Address Translation): 
+### NAT (Network Address Translation): 
 O NAT é uma técnica usada para mapear endereços IP entre redes. Na AWS, o NAT é frequentemente usado para permitir que instâncias dentro de uma VPC se conectem à Internet sem ter um endereço IP público atribuído diretamente a elas. Existem dois tipos de NAT na AWS: NAT Gateway e NAT Instance. Ambos fornecem uma maneira de traduzir endereços IP privados das instâncias em endereços IP públicos para fins de comunicação com a Internet.
-- VPC Endpoints: 
+### VPC Endpoints: 
 Os VPC Endpoints são conexões privadas que permitem acessar serviços da AWS sem precisar passar pela Internet pública. Em vez disso, eles permitem que você se comunique diretamente com serviços da AWS usando a rede privada da VPC. Isso proporciona maior segurança e pode ajudar a reduzir custos de transferência de dados. Existem dois tipos principais de VPC Endpoints: Interface Endpoints e Gateway Endpoints. Os Interface Endpoints são usados para acessar serviços da AWS hospedados na AWS PrivateLink, enquanto os Gateway Endpoints são usados para acessar serviços específicos, como o Amazon S3 e o DynamoDB, de maneira privada, sem roteamento pela Internet.
 
 Em resumo, o Internet Gateway permite a comunicação entre a VPC e a Internet pública, o NAT é usado para permitir que as instâncias na VPC acessem a Internet sem ter endereços IP públicos atribuídos diretamente a elas, e os VPC Endpoints fornecem conexões privadas para acessar serviços da AWS sem a necessidade de roteamento pela Internet pública. Esses recursos desempenham papéis fundamentais na conectividade e segurança das VPCs na AWS.
+
+### Logs:
+Logs na VPC (Virtual Private Cloud) se referem às informações registradas sobre eventos e atividades que ocorrem dentro da sua VPC na Amazon Web Services (AWS). Esses logs são importantes para monitorar e auditar o tráfego de rede, identificar possíveis problemas de segurança, solucionar problemas de conectividade e obter insights sobre o uso e desempenho da sua VPC.
+
+Existem diferentes tipos de logs relacionados à VPC que podem ser coletados e analisados. Alguns exemplos incluem:
+
+
+
+
+Ao analisar esses logs, você pode identificar problemas de segurança, entender o tráfego de rede, detectar padrões de uso, solucionar problemas de conectividade e obter insights valiosos para otimizar o desempenho e a segurança da sua VPC. Existem várias ferramentas e serviços disponíveis na AWS para coletar, armazenar e analisar esses logs, como o Amazon CloudWatch Logs, o Amazon S3 e serviços de análise de dados.
