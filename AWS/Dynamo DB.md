@@ -111,6 +111,20 @@ Além disso, é importante levar em consideração outros fatores que podem impa
 
 É importante ressaltar que as informações sobre a precificação estão atualizadas até a data de corte do meu conhecimento, em setembro de 2021. Recomenda-se verificar a página oficial de preços da AWS para obter informações mais atualizadas sobre a precificação do DynamoDB.
 
+## Classes de tabelas:
+No Amazon DynamoDB, as classes de tabelas se referem às categorias de tabelas disponíveis para armazenamento de dados. O DynamoDB oferece duas classes de tabelas diferentes: Tabelas de Propósito Geral e Tabelas de Leitura Intensiva.
+
+
+
+
+
+
+Ao usar as tabelas de leitura intensiva, você pode configurar um cluster do DAX para atender às solicitações de leitura do aplicativo. O DAX gerencia automaticamente o cache e mantém os dados sincronizados com as tabelas principais do DynamoDB.
+
+As tabelas de leitura intensiva são adequadas para aplicativos que exigem um alto desempenho de leitura, como painéis de controle, aplicativos em tempo real, caches e muito mais.
+
+É importante entender os requisitos do seu aplicativo e o padrão de acesso aos dados ao escolher a classe de tabela apropriada no DynamoDB. As tabelas de propósito geral são ideais para casos de uso com requisitos variáveis de leitura e gravação, enquanto as tabelas de leitura intensiva são recomendadas para aplicativos com foco em leitura de alto desempenho.
+
 ## Tabelas globais
 Tabelas globais são um recurso muito interessante para tornar a disponibilidade do seu banco de dados ainda maior. Uma tabela global é basicamente uma tabela que não pertence a uma região específica da AWS, mas sim está replicada em todas as regiões.
 
