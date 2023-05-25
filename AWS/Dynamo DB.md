@@ -114,7 +114,15 @@ Além disso, é importante levar em consideração outros fatores que podem impa
 ## Classes de tabelas:
 No Amazon DynamoDB, as classes de tabelas se referem às categorias de tabelas disponíveis para armazenamento de dados. O DynamoDB oferece duas classes de tabelas diferentes: Tabelas de Propósito Geral e Tabelas de Leitura Intensiva.
 
+### Tabelas de Propósito Geral:
+As tabelas de propósito geral são adequadas para uma ampla variedade de casos de uso. Elas fornecem armazenamento de dados com desempenho previsível, baixa latência de leitura e gravação, além de escala automática. Essas tabelas são altamente recomendadas para cargas de trabalho com padrões de acesso imprevisíveis ou variáveis.
 
+- Capacidade Provisionada: Nesse modelo, você precisa provisionar capacidade de leitura e gravação para a tabela com base em suas necessidades esperadas. Você especifica a quantidade desejada de capacidade de leitura (Throughput de Leitura) e gravação (Throughput de Gravação) em unidades de capacidade.
+- Escala Automática: Nesse modelo, você permite que o DynamoDB gerencie automaticamente a capacidade de leitura e gravação para a tabela, dimensionando-a com base na demanda. O DynamoDB monitora a taxa de utilização e 
+ajusta a capacidade automaticamente para garantir o desempenho adequado. Você define apenas limites superiores (máximos) para a capacidade de leitura e gravação.
+
+### Tabelas de Leitura Intensiva (DynamoDB Accelerator - DAX):
+As tabelas de leitura intensiva são projetadas para cenários em que a leitura é a operação predominante. Elas utilizam o serviço DynamoDB Accelerator (DAX), que é uma camada de cache in-memory totalmente gerenciada para o DynamoDB. O DAX oferece latência extremamente baixa para consultas de leitura, reduzindo a carga sobre as tabelas principais do DynamoDB.
 
 
 
