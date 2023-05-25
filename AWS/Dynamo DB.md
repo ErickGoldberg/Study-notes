@@ -53,6 +53,26 @@ A combinação única da Partition Key e da Sort Key determina a identidade excl
 
 Ao projetar um esquema de tabela no DynamoDB, é essencial escolher as chaves de partição e de ordenação corretas para garantir uma distribuição eficiente dos dados e atender às necessidades de acesso e consulta dos aplicativos. O projeto adequado das chaves de partição e de ordenação pode resultar em um melhor desempenho, escalabilidade e flexibilidade na utilização do DynamoDB.
 
+## Consultas:
+No Amazon DynamoDB, existem duas operações principais para recuperar dados de uma tabela: Scan e Query. Ambas têm propósitos diferentes e são usadas em situações específicas.
+
+### Scan:
+A operação Scan examina toda a tabela para recuperar todos os itens que atendem aos critérios de filtro especificados. É uma operação mais lenta e intensiva em termos de recursos, pois precisa ler todos os itens da tabela, independentemente da sua distribuição nas partições.
+
+O Scan é útil quando você deseja recuperar todos os itens da tabela ou quando não possui informações suficientes para definir critérios de consulta mais específicos. No entanto, devido à sua natureza de varredura completa da tabela, o Scan pode ter impacto no desempenho e na capacidade de provisionamento do DynamoDB, especialmente para tabelas grandes.
+
+### Query:
+A operação Query é usada para buscar itens em uma tabela com base em critérios de filtro especificados, incluindo a chave de partição e, opcionalmente, a chave de ordenação. A Query é mais eficiente e rápida do que o Scan, pois acessa diretamente os itens que estão em uma determinada partição ou combinação de partição-sorte.
+
+A Query é ideal para recuperar um conjunto específico de itens com base em valores de chave conhecidos ou utilizando operadores de comparação. Ela é especialmente útil quando se trata de tabelas grandes, pois permite que você busque itens de forma seletiva, evitando a necessidade de examinar todos os itens da tabela.
+
+Em resumo, a diferença entre Scan e Query no DynamoDB é a seguinte:
+
+- O Scan examina toda a tabela e recupera todos os itens que atendem aos critérios de filtro, mas é mais lento e intensivo em recursos.
+- A Query busca itens com base em valores de chave conhecidos e é mais eficiente e rápida, pois acessa diretamente os itens de uma partição ou combinação de partição-sorte.
+
+A escolha entre Scan e Query depende das suas necessidades de consulta e desempenho. Em geral, é recomendado utilizar Query sempre que possível para recuperar itens específicos, enquanto o Scan deve ser usado com cuidado e apenas quando necessário para varrer toda a tabela.
+
 ## Índices:
 O banco de dados DynamoDB possui dois tipos de índices secundários: os locais e os globais. Os índices são chamados de secundários pois ao criar a tabela nós já definimos uma chave primária (junção entre partition key e sort key) e esse é nosso índice “primário”, embora esse termo não seja muito comum.
 
