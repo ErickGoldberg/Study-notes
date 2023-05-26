@@ -29,6 +29,24 @@ O AWS Lambda é altamente integrado com outros serviços da AWS. Você pode faci
 
 O AWS Lambda fornece ferramentas para monitorar e depurar suas funções, como registros detalhados, métricas de desempenho e integração com serviços de monitoramento, como CloudWatch.
 
+- Análise os logs enquanto trabalha:
+
+Imagine a criação de uma função do AWS Lambda para coletar os logs do AWS Cloudtrail ou de outros aplicativos de log, como o Cloudwatch. O Lambda observa os triggers e as entradas de log específicas, chamando uma notificação do SNS quando isso acontece. Essas notificações também podem ser facilmente enviadas ao Slack, ao Jabber ou a sistemas de suporte, como o Zendesk, por chamadas nos endpoints da API no Lambda.
+
+- Boa automação antiga de backups e rotina diária:
+
+As funções do Lambda podem ser chamadas dentro do cronograma, o que o torna uma ferramenta de automação perfeita para tarefas repetitivas, como a verificação de recursos ociosos, a criação de backups, a geração de relatórios e a execução de vários outros trabalhos de rotina. Basta usar as bibliotecas boto3 do Python e se livrar do trabalho de administração mundano para sempre!
+
+- Suporte a várias tarefas do AWS S3:
+
+Se o usuário configurar o AWS Lambda para receber notificações de eventos do S3, ele poderá executar qualquer processamento de objetos armazenados em depósitos do S3. Por exemplo, poderá usá-lo para geração de miniaturas de imagens sem a necessidade de se preocupar com recursos suficientes, porque o Lambda fará o escalonamento tanto quanto for necessário.
+
+- Otimização de operações de backend:
+
+O backend de um site não deve ser a fonte de interrupções para a experiência do usuário final. O Lambda pode fazer o parse da entrada do visitante e armazená-lo em um banco de dados (ou processar a entrada de qualquer outra forma) enquanto o site renderiza a próxima página. Os dados de entrada serão enviados para o banco de dados ou aplicativo necessário e usados no devido tempo, enquanto o visitante desfruta da experiência perfeita do site!
+
+O AWS Lambda pode e deve ser um dos principais recursos para lidar com tarefas repetitivas ou demoradas, junto com os outros trabalhos pesados do mundo de processamento de dados. Ele libera os principais serviços online para se concentrar em tarefas frontend de alta prioridade, como responder rapidamente a solicitações de usuários, o que permite descarregar muitos processos que, de outra forma, deixariam o sistema mais lento.
+
 O AWS Lambda é amplamente utilizado para construir aplicativos sem servidor, microsserviços, pipelines de processamento de dados, automação de tarefas, integrações de serviços, entre outros casos de uso. Ele permite que você desenvolva e execute código de forma mais ágil e escalável, sem se preocupar com a infraestrutura subjacente.
 
 ## Tipos de inicialização de função:
