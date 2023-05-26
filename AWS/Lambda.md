@@ -23,3 +23,12 @@ O AWS Lambda é altamente integrado com outros serviços da AWS. Você pode faci
 O AWS Lambda fornece ferramentas para monitorar e depurar suas funções, como registros detalhados, métricas de desempenho e integração com serviços de monitoramento, como CloudWatch.
 
 O AWS Lambda é amplamente utilizado para construir aplicativos sem servidor, microsserviços, pipelines de processamento de dados, automação de tarefas, integrações de serviços, entre outros casos de uso. Ele permite que você desenvolva e execute código de forma mais ágil e escalável, sem se preocupar com a infraestrutura subjacente.
+
+## Tipos de inicialização de função:
+Existem duas diferentes inicializações de uma função na AWS Lambda: quente (hot) ou fria (cold).
+
+Cold start é quando a runtime não está sendo executada, então tudo deve ser inicializado e só depois nossa função handler é executada. Isso é necessário quando a função passa um determinado tempo sem ser executada. A AWS Lambda automaticamente interrompe a execução da runtime.
+
+Hot start é quando a runtime já está em execução, precisando apenas executar nossa função handler. Essa é a inicialização mais comum quando nossa função é executada com frequência.
+
+Algumas runtimes possuem uma maior demora para realizar o cold start, como é o caso de Java e C#. Nesses casos, não é incomum nós executarmos periodicamente a função para manter a runtime sempre executando, caso nossa função não receba muitas requisições sempre. Isso garante uma inicialização mais rápida (mas há o custo de executar a função nesses momentos também).
