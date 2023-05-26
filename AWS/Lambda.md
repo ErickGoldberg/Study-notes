@@ -3,6 +3,13 @@ O AWS Lambda é um serviço de computação sem servidor fornecido pela Amazon W
 
 O AWS Lambda é usado principalmente para executar funções ou pequenos trechos de código em resposta a eventos. Você pode escrever seu código usando várias linguagens de programação suportadas, como Python, Node.js, Java, C#, Go e outros. Essas funções são acionadas por eventos, como acionadores de tempo, alterações em buckets do Amazon S3, atualizações de tabelas no DynamoDB, invocações de API Gateway, entre outros.
 
+## O que é serverless:
+Serverless é um modelo de serviço de nuvem onde você não precisa se preocupar com a infraestrutura da sua aplicação. Esse servidor ainda existe, entretanto ele é totalmente gerenciado pelo provedor de nuvem, te permitindo focar somente na lógica do seu negócio.
+
+Um diferencial do Serveless é que você paga somente o que sua aplicação utilizar. Ao contrário de uma EC2 tradicional, você pode ser cobrado pelo tempo ocioso nessa EC2, em momentos onde sua aplicação não tem nenhuma atividade.
+
+Além do Lambda, temos outros exemplos de serviços da AWS que funcionam no modelo de Serveless. Alguns exemplos são o S3 para armazenamento de arquivos, o AWS RDS Aurora e DynamoDB para banco de dados, e SNS e SQS, serviços usados para gerenciar filas e mensageiria.
+
 ## Principais características e benefícios:
 - Escalabilidade Automática: 
 
