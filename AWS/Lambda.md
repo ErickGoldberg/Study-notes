@@ -39,3 +39,10 @@ Cold start é quando a runtime não está sendo executada, então tudo deve ser 
 Hot start é quando a runtime já está em execução, precisando apenas executar nossa função handler. Essa é a inicialização mais comum quando nossa função é executada com frequência.
 
 Algumas runtimes possuem uma maior demora para realizar o cold start, como é o caso de Java e C#. Nesses casos, não é incomum nós executarmos periodicamente a função para manter a runtime sempre executando, caso nossa função não receba muitas requisições sempre. Isso garante uma inicialização mais rápida (mas há o custo de executar a função nesses momentos também).
+
+## Quando não utilizar Lambda:
+existem algumas situações onde não é interessante utilizar Lambda. A primeira situação é:
+- Rodar uma aplicação web tradicional. Você até consegue fazer isso, mapeando os eventos enviados com uma requisição web que sua aplicação utiliza, porém você estará subutilizando o potencial do Lambda, publicando uma aplicação completa dentro de uma única função e executando trechos de código que podem ser redundantes, como a configuração de rotas.
+- Processos de longa duração também não são recomendados. O tempo limite de execução de uma função é de 15 minutos. Isso pode acontecer ao processar um grande volume de dados de uma só vez. O ideal nesse caso é quebrar esse processo em partes menores, e executar somente uma unidade por função, ao invés de processar várias unidades de uma vez.
+- Uma função lambda também não tem acesso a um disco permanente. A manipulação de arquivos pelo lambda acontece em um disco efêmero e de baixa capacidade, tornando impossível manipular arquivos muito grandes numa função. Dessa forma é necessário recorrer a um serviço de armazenamento externo como o S3.
+- Por fim, temos que considerar o vendor lock-in. Em outras palavras, ao desenvolver uma função lambda não será possível migrar o código para outro provedor no futuro. Para migrar o Lambda para Azure Functions, por exemplo, posteriormente você precisa reimplementar toda a lógica que trata os eventos e suas integrações com outros serviços. Praticamente, você irá criar uma nova função.
