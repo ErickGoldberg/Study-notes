@@ -8,3 +8,8 @@ São duas linguagens de programação diferentes, porém uma é o superconjunto 
 - Processo de refatoração mais fácil;
 - Autocomplete da linguagem, muito boa no vscode;
 - Poder adotar gradualmente typescript em uma base de código;
+
+## Principais funcionalidades:
+- É possível usar o modificador de acesso private para restringir o acesso a membros de uma classe. Quando um membro é declarado como private, ele só pode ser acessado dentro da própria classe em que foi declarado.
+- Podem ter o tipo do dado para ter uma certa "validação", como: number, string, date... 
+- Pode ser configurado para o tipo do dado não aceitar "any" (obrigatório dizer o tipo do dado)
