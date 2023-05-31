@@ -26,3 +26,7 @@ let numeros: Array<number> = [1, 2, 3, 4, 5];
   }
 }
 ~~~
+- É possível declarar um array que não disponibiliza a remoção ou inclusão de novos items. Ex:
+~~~
+const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
+~~~
