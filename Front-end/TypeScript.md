@@ -11,5 +11,18 @@ São duas linguagens de programação diferentes, porém uma é o superconjunto 
 
 ## Principais funcionalidades:
 - É possível usar o modificador de acesso private para restringir o acesso a membros de uma classe. Quando um membro é declarado como private, ele só pode ser acessado dentro da própria classe em que foi declarado.
-- Podem ter o tipo do dado para ter uma certa "validação", como: number, string, date... 
-- Pode ser configurado para o tipo do dado não aceitar "any" (obrigatório dizer o tipo do dado)
+- Podem ter o tipo do dado para ter uma certa "validação", como: number, string, date... Ex:
+~~~
+let nome: string = "João";
+let idade: number = 25;
+let numeros: Array<number>;
+let numeros: Array<number> = [1, 2, 3, 4, 5];
+~~~
+- Pode ser configurado para o tipo do dado não aceitar "any" (obrigatório dizer o tipo do dado). Ex: 
+~~~
+{
+  "compilerOptions": {
+    "noImplicitAny": true
+  }
+}
+~~~
