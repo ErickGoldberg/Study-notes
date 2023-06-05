@@ -43,3 +43,17 @@ age = "vinte e cinco"; // válido, age é do tipo string
 No exemplo acima, a variável age pode ter um valor do tipo number ou do tipo string. Isso significa que você pode atribuir tanto um valor numérico quanto um valor de texto a essa variável.
 
 Os tipos de união são uma ferramenta poderosa para modelar situações em que um valor pode ter diferentes tipos possíveis. Eles permitem que você escreva código mais flexível e expressivo, enquanto ainda se beneficia do sistema de tipos do TypeScript para evitar erros comuns.
+
+### Strict Null Checks:
+Strict Null Checks(Verificações Estritas de Nulos) é uma configuração no TypeScript que ajuda a evitar erros relacionados a valores nulos ou indefinidos (null e undefined). Quando habilitado, o compilador do TypeScript impõe regras mais rigorosas para lidar com valores potencialmente nulos ou indefinidos.
+
+Por padrão, o TypeScript permite que você atribua null ou undefined a qualquer variável, mesmo que ela tenha um tipo específico. Isso pode levar a erros difíceis de depurar, pois o TypeScript não faz verificações estritas sobre esses valores.
+
+No entanto, com as "Strict Null Checks" habilitadas, o TypeScript força você a ser mais explícito ao lidar com valores nulos ou indefinidos, evitando que esses valores sejam atribuídos acidentalmente a variáveis que não foram explicitamente marcadas como opcionais.
+
+A habilitação das "Strict Null Checks" traz os seguintes benefícios:
+
+
+
+
+Ao ativar essa opção, o compilador do TypeScript realizará verificações mais rigorosas e emitirá erros e avisos sempre que houver um risco de valores nulos ou indefinidos não tratados. Isso ajuda a melhorar a segurança e a robustez do seu código TypeScript.
