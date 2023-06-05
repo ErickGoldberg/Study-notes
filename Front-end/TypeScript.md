@@ -52,8 +52,16 @@ Por padrão, o TypeScript permite que você atribua null ou undefined a qualquer
 No entanto, com as "Strict Null Checks" habilitadas, o TypeScript força você a ser mais explícito ao lidar com valores nulos ou indefinidos, evitando que esses valores sejam atribuídos acidentalmente a variáveis que não foram explicitamente marcadas como opcionais.
 
 A habilitação das "Strict Null Checks" traz os seguintes benefícios:
+- Identificação de valores nulos e indefinidos: Com as verificações estritas, o TypeScript consegue detectar quando você está tentando atribuir ou usar um valor potencialmente nulo ou indefinido sem tratá-lo adequadamente.
+- Maior segurança durante a execução: Ao lidar com valores nulos ou indefinidos de forma explícita, você evita erros relacionados a acessos inválidos ou propriedades indefinidas durante a execução do código.
+- Melhor qualidade do código: As "Strict Null Checks" incentivam boas práticas de programação, como a verificação de nulos e indefinidos antes de usá-los e o uso de tipos opcionais de forma adequada.
 
-
-
-
+Para habilitar as "Strict Null Checks" em um projeto TypeScript, você precisa configurar a opção strictNullChecks para true no arquivo tsconfig.json do seu projeto:
+~~~
+{
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}
+~~~
 Ao ativar essa opção, o compilador do TypeScript realizará verificações mais rigorosas e emitirá erros e avisos sempre que houver um risco de valores nulos ou indefinidos não tratados. Isso ajuda a melhorar a segurança e a robustez do seu código TypeScript.
