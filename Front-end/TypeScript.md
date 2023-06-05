@@ -65,3 +65,16 @@ Para habilitar as "Strict Null Checks" em um projeto TypeScript, você precisa c
 }
 ~~~
 Ao ativar essa opção, o compilador do TypeScript realizará verificações mais rigorosas e emitirá erros e avisos sempre que houver um risco de valores nulos ou indefinidos não tratados. Isso ajuda a melhorar a segurança e a robustez do seu código TypeScript.
+
+### Decorators:
+Decorators são uma funcionalidade que permite adicionar metadados e comportamentos extras a classes, métodos, propriedades e parâmetros de função. Eles são anexados usando a sintaxe @nomeDoDecorator imediatamente antes do elemento ao qual estão sendo aplicados.
+
+Os Decorators são amplamente utilizados em frameworks e bibliotecas populares, como Angular, NestJS e TypeORM, para adicionar funcionalidades extras aos componentes, rotas, serviços e entidades. Eles desempenham um papel fundamental na programação orientada a aspectos (AOP) ao permitir a separação de preocupações (conhecida como "aspectos") do código principal.
+
+Os Decorators podem ser usados para uma variedade de finalidades, incluindo:
+- Modificar comportamentos: Você pode usar decorators para adicionar comportamentos extras a classes, métodos ou propriedades. Por exemplo, um decorator pode adicionar validações, cache, autenticação, tratamento de erros, entre outros.
+- Anotações e metadados: Decorators permitem adicionar metadados aos elementos decorados. Esses metadados podem ser usados ​​em tempo de execução ou durante o processo de construção, fornecendo informações adicionais sobre a estrutura do código.
+- Extensão de funcionalidade: Os decorators podem estender a funcionalidade de bibliotecas e frameworks, permitindo que você crie suas próprias extensões personalizadas para atender às suas necessidades específicas.
+- Logging e monitoramento: Decorators podem ser usados para registrar informações de log, monitorar o desempenho e rastrear o comportamento do código em tempo de execução.
+
+É importante mencionar que o uso de decorators requer suporte da versão do ECMAScript (ES) que está sendo usada. No TypeScript, é possível habilitar o suporte a decorators adicionando a opção "experimentalDecorators": true ao arquivo tsconfig.json do seu projeto.
