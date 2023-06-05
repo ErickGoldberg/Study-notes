@@ -30,3 +30,16 @@ let numeros: Array<number> = [1, 2, 3, 4, 5];
 ~~~
 const nomes: ReadonlyArray<string> = ['a', 'b', 'c'];
 ~~~
+
+### Union Types:
+Union Types(Tipos de União) permitem que você defina uma variável, parâmetro de função ou retorno de função que pode ter mais de um tipo possível. Isso permite que você trabalhe com valores que podem ter diferentes tipos, aumentando a flexibilidade e expressividade do sistema de tipos.
+
+Para criar um tipo de união, você utiliza o operador de pipe (|) para separar os tipos que a variável pode assumir. Por exemplo:
+~~~
+let age: number | string;
+age = 25; // válido, age é do tipo number
+age = "vinte e cinco"; // válido, age é do tipo string
+~~~
+No exemplo acima, a variável age pode ter um valor do tipo number ou do tipo string. Isso significa que você pode atribuir tanto um valor numérico quanto um valor de texto a essa variável.
+
+Os tipos de união são uma ferramenta poderosa para modelar situações em que um valor pode ter diferentes tipos possíveis. Eles permitem que você escreva código mais flexível e expressivo, enquanto ainda se beneficia do sistema de tipos do TypeScript para evitar erros comuns.
