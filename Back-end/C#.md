@@ -56,7 +56,35 @@ class Musica
 }
 ~~~
 
+### Get & Set:
+Utilizando o mesmo exemplo anterior:
+~~~
+using System;
 
+class EscolaDoRock
+{
+    private string titulo;
+    private int anoLancamento;
+
+    public string Titulo
+    {
+        get { return titulo; }
+        set { titulo = value; }
+    }
+
+    public int AnoLancamento
+    {
+        get { return anoLancamento; }
+        set { anoLancamento = value; }
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Título: {Titulo}");
+        Console.WriteLine($"Ano de Lançamento: {AnoLancamento}");
+    }
+}
+~~~
 
 ## Links úteis:
 - https://learn.microsoft.com/pt-br/dotnet/csharp/
