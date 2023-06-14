@@ -29,6 +29,27 @@ matriz[2, 1] = 60; // Define o valor da sexta célula (linha 2, coluna 1)
 Console.WriteLine(matriz[1, 1]); // Saída: 40
 ~~~
 
+## Lambdas:
+### Vantagens:
+- Concisão: As lambdas permitem escrever código de forma mais concisa, eliminando a necessidade de definir métodos separados para funções simples.
+- Legibilidade: As lambdas são mais fáceis de ler e entender, especialmente quando o critério de filtragem ou a lógica do código é curto e direto.
+- Flexibilidade: As lambdas podem ser usadas em várias situações, como filtrar, ordenar, mapear ou reduzir coleções de dados. Elas permitem que você especifique a lógica do código diretamente no local onde é necessário, sem a necessidade de criar métodos adicionais.
+- Encerramento de escopo: As lambdas têm acesso às variáveis do escopo em que são definidas, o que permite que você capture e utilize valores externos dentro da expressão lambda. Isso pode ser útil em casos onde você precisa fazer referência a variáveis externas dentro de um loop, por exemplo.
+
+Exemplo: 
+- Código sem usar lambda:
+~~~
+public int Somar(int a, int b)
+{
+    int resultado = a + b;
+    return resultado;
+}
+~~~
+- Mesmo código usando lambda:
+~~~
+public int Somar(int a, int b) => a + b;
+~~~
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
