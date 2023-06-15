@@ -108,6 +108,7 @@ class EscolaDoRock
 ~~~
 
 ### Construtor:
+Obs: Não precisa declarar set se tiver construtor
 ~~~
 public Carro(string marca, string modelo, int ano)
     {
