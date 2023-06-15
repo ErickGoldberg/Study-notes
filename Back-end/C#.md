@@ -107,6 +107,19 @@ class EscolaDoRock
 }
 ~~~
 
+### Construtor:
+~~~
+public Carro(string marca, string modelo, int ano)
+    {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+    
+    
+ Carro meuCarro = new Carro("Ford", "Mustang", 2021);    
+~~~
+
 ## Links úteis:
 - https://learn.microsoft.com/pt-br/dotnet/csharp/
 - https://learn.microsoft.com/pt-br/visualstudio/get-started/csharp/?view=vs-2022
