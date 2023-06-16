@@ -53,3 +53,10 @@ export default {
 <style>
 </style>
 ~~~
+
+
+
+### Links úteis:
+- https://vuejs.org/
+- https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
+- https://cursos.alura.com.br/formacao-vuejs3
