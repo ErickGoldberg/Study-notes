@@ -140,6 +140,37 @@ O Vue.js tem um roteador oficial chamado Vue Router, que permite criar aplicativ
 ### Ferramentas de desenvolvimento:
 O ecossistema Vue.js inclui várias ferramentas úteis para facilitar o desenvolvimento, como a extensão Vue DevTools para navegador, que oferece recursos avançados de depuração e inspeção de componentes.
 
+## Sintaxe:
+### Diretivas: 
+- v-if: A diretiva v-if é usada para renderização condicional de elementos. Ela permite que você mostre ou oculte elementos com base em uma expressão condicional. Por exemplo:
+~~~
+<div v-if="showMessage">
+  {{ message }}
+</div>
+~~~
+- v-for: A diretiva v-for é usada para renderização de listas ou iteração de arrays. Ela permite que você itere sobre uma coleção e crie elementos repetidos com base nos itens dessa coleção. Por exemplo:
+~~~
+<ul>
+  <li v-for="item in items" :key="item.id">
+    {{ item.name }}
+  </li>
+</ul>
+~~~
+- v-on: A diretiva v-on (ou @) é usada para lidar com eventos e associar manipuladores de eventos a elementos. Ela permite que você reaja a eventos do DOM e execute métodos ou expressões quando esses eventos ocorrem. Por exemplo:
+~~~
+<button v-on:click="handleClick">Clique aqui</button>
+~~~
+~~~
+<button @click="counter++">Clique aqui</button>
+~~~
+- v-bind: A diretiva v-bind é usada para ligação de atributos HTML a expressões no modelo de dados. Ela permite que você associe dinamicamente valores de atributos com base nos dados do componente. Por exemplo:
+~~~
+<img v-bind:src="imageUrl">
+~~~
+- v-model: Essa diretiva é usada para criar uma ligação bidirecional entre um elemento de formulário e uma propriedade no modelo de dados. Ela permite que você vincule o valor do elemento do formulário a uma variável do Vue.js e sincronize automaticamente as alterações de ambos os lados.
+- v-text: Essa diretiva é usada para definir o conteúdo de um elemento como o valor de uma expressão no modelo de dados. É semelhante a usar {{ }}, mas evita interpolação e, em vez disso, define o conteúdo diretamente.
+- v-html: Essa diretiva é usada para renderizar conteúdo HTML dinâmico no elemento. É útil quando você deseja exibir HTML gerado dinamicamente, mas tenha cuidado ao usá-lo para evitar vulnerabilidades de segurança.
+
 ### Links úteis:
 - https://vuejs.org/
 - https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
