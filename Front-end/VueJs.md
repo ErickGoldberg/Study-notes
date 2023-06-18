@@ -115,7 +115,30 @@ export default {
 </style>
 ~~~
 
+## Principais funcionalidades:
+### Binding de dados bidirecional: 
+O Vue.js permite a ligação de dados bidirecional entre a camada de visualização e o modelo de dados subjacente, facilitando a atualização automática da interface do usuário quando os dados são modificados.
 
+### Diretivas: 
+As diretivas são recursos especiais do Vue.js que permitem adicionar comportamento reativo aos elementos HTML. Alguns exemplos populares de diretivas são v-bind, v-if, v-for e v-on.
+
+### Sistema de componentes: 
+O Vue.js oferece um sistema de componentes robusto, permitindo a criação de componentes personalizados reutilizáveis. Os componentes encapsulam a estrutura HTML, a lógica e o estilo, facilitando a manutenção e organização do código.
+
+### Renderização condicional: 
+O Vue.js oferece suporte à renderização condicional, permitindo mostrar ou ocultar elementos com base em condições definidas. Isso é útil para exibir ou ocultar partes da interface do usuário com base no estado do aplicativo.
+
+### Gestão de estado:
+O Vue.js fornece uma maneira conveniente de gerenciar o estado do aplicativo usando a biblioteca Vuex. O Vuex oferece uma arquitetura de gerenciamento de estado centralizada e reativa, que ajuda a lidar com a complexidade de aplicativos grandes.
+
+### Animações e transições: 
+O Vue.js facilita a adição de animações e transições elegantes aos elementos da interface do usuário. Ele fornece classes e ganchos especiais para criar efeitos de transição suaves ao adicionar, remover ou atualizar elementos.
+
+### Roteamento: 
+O Vue.js tem um roteador oficial chamado Vue Router, que permite criar aplicativos de página única (SPA) com navegação por rotas. O Vue Router simplifica a criação de rotas e a navegação entre diferentes páginas ou componentes em seu aplicativo.
+
+### Ferramentas de desenvolvimento:
+O ecossistema Vue.js inclui várias ferramentas úteis para facilitar o desenvolvimento, como a extensão Vue DevTools para navegador, que oferece recursos avançados de depuração e inspeção de componentes.
 
 ### Links úteis:
 - https://vuejs.org/
