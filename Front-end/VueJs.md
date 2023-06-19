@@ -203,6 +203,59 @@ Ao definir métodos no objeto Vue, eles se tornam acessíveis dentro do escopo d
 
 Usar a seção methods ajuda a manter seu código organizado e facilita a reutilização de lógica em seu componente Vue. É uma parte essencial do Vue.js para adicionar interatividade e funcionalidade aos componentes.
 
+### Emits:
+Em Vue.js, a funcionalidade emits é usada para criar e gerenciar eventos personalizados em um componente. Por meio dos eventos emits, um componente pode notificar outros componentes pai ou escutar eventos personalizados emitidos por outros componentes.
+
+Ao definir a opção emits em um componente, você especifica uma lista de eventos que o componente pode emitir. Isso serve como uma documentação dos eventos que o componente é capaz de emitir e permite que o Vue.js faça a validação dos eventos emitidos, fornecendo erros em tempo de execução quando um evento não especificado é emitido.
+
+Aqui está um exemplo de como usar a opção emits em um componente Vue:
+~~~
+<template>
+  <button @click="incrementCounter">Incrementar</button>
+</template>
+
+<script>
+  export default {
+    emits: ['increment'],
+    methods: {
+      incrementCounter() {
+        this.$emit('increment');
+      }
+    }
+  };
+</script>
+~~~
+Neste exemplo, temos um componente de botão que, quando clicado, emite um evento personalizado chamado "increment". A opção emits é definida com um array contendo o nome do evento personalizado ("increment").
+
+Ao emitir o evento usando this.$emit('increment'), o componente notifica os componentes pais que o evento "increment" ocorreu. Os componentes pais podem então ouvir esse evento usando a sintaxe @increment ou v-on:increment em seu template e executar ações apropriadas em resposta a ele.
+
+Para ouvir eventos personalizados emitidos por um componente, você pode usar a diretiva v-on (ou seu atalho @) no template do componente pai. Aqui está um exemplo de como ouvir o evento "increment" emitido pelo componente de botão:
+~~~
+<template>
+  <div>
+    <Button @increment="handleIncrement" />
+  </div>
+</template>
+
+<script>
+  import Button from './Button.vue';
+
+  export default {
+    components: {
+      Button
+    },
+    methods: {
+      handleIncrement() {
+        // Lógica a ser executada quando o evento "increment" for emitido
+      }
+    }
+  };
+</script>
+~~~
+Neste exemplo, o componente pai importa e usa o componente de botão e ouve o evento "increment" usando @increment="handleIncrement". O método handleIncrement será chamado sempre que o evento "increment" for emitido pelo componente de botão.
+
+Os emits fornecem uma maneira clara e controlada de definir e usar eventos personalizados em componentes Vue. Eles facilitam a comunicação entre componentes e permitem a criação de componentes mais reutilizáveis e modularizados.
+
 ### Links úteis:
 - https://vuejs.org/
 - https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
