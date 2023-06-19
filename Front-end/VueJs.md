@@ -293,7 +293,38 @@ As propriedades calculadas podem ser usadas em expressões, interpoladas em temp
 
 Em resumo, a propriedade computed é usada para definir propriedades calculadas em um componente Vue, permitindo a criação de lógica de cálculo dinâmica baseada em outras propriedades reativas.
 
-### Links úteis:
+### Slots:
+Em Vue.js, os slots são uma funcionalidade poderosa que permitem a criação de componentes reutilizáveis e flexíveis, permitindo que você injete conteúdo personalizado dentro desses componentes. Os slots permitem que você defina áreas de conteúdo em um componente que podem ser preenchidas com conteúdo específico quando o componente é usado.
+
+Existem dois tipos principais de slots em Vue.js: slots nomeados (named slots) e slots padrão (default slots).
+- Slots nomeados: 
+Os slots nomeados permitem que você defina áreas de conteúdo específicas em um componente, que podem ser preenchidas com conteúdo personalizado ao usar o componente. Para criar um slot nomeado, você usa a sintaxe <slot> com um atributo name especificando o nome do slot. Aqui está um exemplo:
+```
+<!-- Componente "Card" com um slot nomeado "header" -->
+<template>
+  <div class="card">
+    <div class="card-header">
+      <slot name="header"></slot>
+    </div>
+    <div class="card-body">
+      <slot></slot> <!-- Slot padrão -->
+    </div>
+  </div>
+</template>
+```
+- Slots padrão: 
+Os slots padrão são usados para definir o conteúdo padrão que será inserido em um componente caso nenhum conteúdo específico seja fornecido. Eles são definidos usando a sintaxe <slot></slot> diretamente no corpo do componente. Aqui está um exemplo:
+~~~
+  <!-- Componente "Button" com um slot padrão -->
+<template>
+  <button class="btn">
+    <slot>Texto Padrão</slot>
+  </button>
+</template>
+~~~
+Os slots permitem que você crie componentes flexíveis e reutilizáveis, pois permitem que o usuário do componente insira conteúdo personalizado onde for necessário. Com slots, você pode personalizar a aparência e o comportamento dos componentes sem a necessidade de modificá-los diretamente, promovendo a reutilização de código e a modularidade em seu aplicativo Vue.js.  
+  
+## Links úteis:
 - https://vuejs.org/
 - https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
 - https://cursos.alura.com.br/formacao-vuejs3
