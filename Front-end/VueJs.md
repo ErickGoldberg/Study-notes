@@ -256,6 +256,43 @@ Neste exemplo, o componente pai importa e usa o componente de botão e ouve o ev
 
 Os emits fornecem uma maneira clara e controlada de definir e usar eventos personalizados em componentes Vue. Eles facilitam a comunicação entre componentes e permitem a criação de componentes mais reutilizáveis e modularizados.
 
+### Computed:
+Em Vue.js, a propriedade computed é usada para definir propriedades calculadas em um componente. As propriedades calculadas são propriedades que são derivadas de outras propriedades no componente, e seu valor é calculado dinamicamente com base nas dependências definidas.
+
+As propriedades calculadas são úteis quando você precisa realizar cálculos complexos, transformações ou filtragens de dados com base em outras propriedades no componente, mas deseja tratá-las como propriedades reativas. Em vez de chamar um método a cada vez que você precisa acessar o valor calculado, você pode usar uma propriedade calculada, que é atualizada automaticamente sempre que suas dependências mudam.
+
+Aqui está um exemplo de como usar a propriedade computed em um componente Vue:
+~~~
+<template>
+  <div>
+    <p>Valor: {{ valor }}</p>
+    <p>Dobro: {{ dobro }}</p>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        valor: 5
+      };
+    },
+    computed: {
+      dobro() {
+        return this.valor * 2;
+      }
+    }
+  };
+</script>
+~~~
+da propriedade calculada sempre que a propriedade valor for modificada.
+
+Uma característica importante das propriedades calculadas é que elas são armazenadas em cache e só são recalculadas quando suas dependências mudam. Isso melhora o desempenho, evitando cálculos desnecessários.
+
+As propriedades calculadas podem ser usadas em expressões, interpoladas em templates e até mesmo em outras propriedades calculadas. Isso permite uma composição e reutilização de lógica complexa de forma limpa e declarativa.
+
+Em resumo, a propriedade computed é usada para definir propriedades calculadas em um componente Vue, permitindo a criação de lógica de cálculo dinâmica baseada em outras propriedades reativas.
+
 ### Links úteis:
 - https://vuejs.org/
 - https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
