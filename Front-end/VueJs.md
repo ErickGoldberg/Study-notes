@@ -171,6 +171,38 @@ O ecossistema Vue.js inclui várias ferramentas úteis para facilitar o desenvol
 - v-text: Essa diretiva é usada para definir o conteúdo de um elemento como o valor de uma expressão no modelo de dados. É semelhante a usar {{ }}, mas evita interpolação e, em vez disso, define o conteúdo diretamente.
 - v-html: Essa diretiva é usada para renderizar conteúdo HTML dinâmico no elemento. É útil quando você deseja exibir HTML gerado dinamicamente, mas tenha cuidado ao usá-lo para evitar vulnerabilidades de segurança.
 
+### Methods:
+No Vue.js, a seção methods é usada para definir métodos no objeto Vue. Esses métodos são chamados a partir de eventos, diretivas ou outros métodos dentro do componente Vue. A seção methods permite que você defina a lógica de manipulação de eventos e outras funcionalidades no componente. Exemplo:
+~~~
+<div id="app">
+  <button v-on:click="incrementCounter">Clique para aumentar</button>
+  <p>Contador: {{ counter }}</p>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    incrementCounter() {
+      this.counter++;
+    }
+  }
+});
+</script>
+~~~
+Neste exemplo, temos um botão que, quando clicado, chama o método incrementCounter definido na seção methods do componente Vue. Esse método incrementa o valor da propriedade counter no objeto de dados usando this.counter++.
+
+Os métodos definidos na seção methods podem receber argumentos e realizar várias tarefas, como manipular dados, fazer chamadas de API, atualizar o estado do componente, interagir com outros componentes, entre outras ações.
+
+Ao definir métodos no objeto Vue, eles se tornam acessíveis dentro do escopo do componente e podem ser referenciados em várias partes do componente, como eventos, diretivas ou mesmo em outros métodos.
+
+Usar a seção methods ajuda a manter seu código organizado e facilita a reutilização de lógica em seu componente Vue. É uma parte essencial do Vue.js para adicionar interatividade e funcionalidade aos componentes.
+
 ### Links úteis:
 - https://vuejs.org/
 - https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
