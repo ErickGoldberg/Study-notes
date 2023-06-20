@@ -403,8 +403,6 @@ Agora você pode adicionar links de navegação em seu aplicativo para acessar a
 </template>
 ~~~
 
-2 / 2
-
 Em Vue.js, o roteamento é usado para criar aplicativos de página única (SPA) com navegação entre diferentes páginas ou componentes. O roteamento permite que você defina diferentes rotas, associando-as a componentes específicos que serão renderizados quando a rota correspondente for acessada.
 
 O Vue Router é a biblioteca oficial de roteamento para Vue.js e fornece um conjunto de recursos para gerenciar o roteamento em um aplicativo Vue.
@@ -413,8 +411,7 @@ Para começar a usar o Vue Router, você precisa instalar a biblioteca e configu
 
 Passo 1: Instalar o Vue Router via CDN:
 
-html
-Copy code
+~~~
 <!-- index.html -->
 <body>
   <div id="app">
@@ -425,10 +422,11 @@ Copy code
   <script src="https://unpkg.com/vue-router@3.5.3"></script>
   <script src="app.js"></script>
 </body>
+~~~
+
 Passo 2: Criar os componentes para as rotas:
 
-html
-Copy code
+~~~
 <!-- components/Home.vue -->
 <template>
   <div>
@@ -444,10 +442,11 @@ Copy code
     <!-- Conteúdo da página "Sobre" -->
   </div>
 </template>
+~~~
+
 Passo 3: Configurar as rotas e inicializar o Vue Router:
 
-javascript
-Copy code
+~~~
 // app.js
 const Home = { template: '<home></home>' };
 const About = { template: '<about></about>' };
@@ -465,6 +464,7 @@ new Vue({
   el: '#app',
   router
 });
+~~~
 Neste exemplo, criamos dois componentes Vue: Home e About. Esses componentes serão renderizados quando a rota correspondente for acessada.
 
 Em seguida, definimos um array routes que contém as configurações das rotas. Cada objeto de rota possui uma propriedade path que especifica o caminho da rota e uma propriedade component que define o componente a ser renderizado.
@@ -475,8 +475,7 @@ Finalmente, criamos uma instância do Vue e vinculamos o Vue Router a ela usando
 
 Agora você pode adicionar links de navegação em seu aplicativo para acessar as rotas definidas. Por exemplo, para criar links de navegação para a página inicial e a página "Sobre", você pode usar a diretiva router-link fornecida pelo Vue Router:
 
-html
-Copy code
+~~~
 <!-- App.vue -->
 <template>
   <div>
@@ -486,6 +485,7 @@ Copy code
     <router-view></router-view>
   </div>
 </template>
+~~~
 A diretiva router-link cria links de navegação que alteram a URL e renderizam o componente correspondente à rota definida.
 
 O componente <router-view> é usado para renderizar o componente correspondente à rota atualmente acessada.
@@ -495,6 +495,42 @@ Dessa forma, você pode navegar entre as diferentes páginas/componentes do seu 
 Este é um exemplo básico de como configurar rotas usando o Vue Router. O Vue Router oferece muitos recursos adicionais, como rotas aninhadas, passagem de parâmetros, navegação programática, entre outros. Você pode consultar a documentação oficial do Vue Router para obter mais informações sobre esses recursos.
 
 Espero que isso ajude a entender o conceito de roteamento em Vue.js e como implementá-lo em seu aplicativo
+
+### Roteamento via CDN:
+Exemplo:
+~~~
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Incluir os arquivos do Vue.js e Vue Router via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Definir o router-view -->
+    <router-view></router-view>
+  </div>
+
+  <script>
+    // Criar instância do Vue Router e definir rotas
+    const router = new VueRouter({
+      routes: [
+        { path: '/', component: HomeComponent },
+        { path: '/about', component: AboutComponent },
+        // ...definir outras rotas
+      ]
+    });
+
+    // Criar instância do Vue e vincular ao elemento #app
+    new Vue({
+      el: '#app',
+      router: router
+    });
+  </script>
+</body>
+</html>
+~~~
   
 ## Links úteis:
 - https://vuejs.org/
