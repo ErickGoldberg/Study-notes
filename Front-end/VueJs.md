@@ -417,6 +417,27 @@ Além disso, você também pode definir propriedades com tipos específicos, val
 
 Em resumo, o props permite a passagem de dados do componente pai para o componente filho, definindo uma interface de comunicação entre eles. Isso permite que os componentes sejam mais flexíveis e reutilizáveis, pois podem receber valores externos para renderizar dinamicamente seu conteúdo ou comportamento com base nesses dados.
 
+### Watchers:
+Em Vue.js, os watchers (observadores) são uma funcionalidade que permite que você observe e reaja a mudanças específicas em uma variável reativa. Eles são úteis quando você precisa executar uma lógica personalizada sempre que uma variável for modificada.
+
+Os watchers são definidos dentro de um componente Vue e são criados usando a opção watch. Você pode observar uma ou várias variáveis reativas e executar uma função de callback sempre que essas variáveis mudarem.
+
+Aqui está um exemplo básico de como usar watchers no Vue.js:
+~~~
+export default {
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  watch: {
+    counter(newValue, oldValue) {
+      console.log('Counter changed:', newValue);
+    },
+  },
+};
+~~~
+
 ### Slots:
 Em Vue.js, os slots são uma funcionalidade poderosa que permitem a criação de componentes reutilizáveis e flexíveis, permitindo que você injete conteúdo personalizado dentro desses componentes. Os slots permitem que você defina áreas de conteúdo em um componente que podem ser preenchidas com conteúdo específico quando o componente é usado.
 
