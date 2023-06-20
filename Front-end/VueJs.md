@@ -549,6 +549,15 @@ O uso do Vuex é recomendado em aplicativos Vue.js de médio a grande porte, nos
 
 Para usar o Vuex em seu aplicativo Vue.js, você precisa instalar a biblioteca do Vuex, criar uma store, definir o estado e usar getters, mutations e actions conforme necessário.
 
+### Store no vuex:
+No Vuex, a "store" é o objeto central que contém o estado, as mutações, as actions e os getters do aplicativo Vue.js. Ela age como um repositório centralizado de dados compartilhados que pode ser acessado por todos os componentes do aplicativo.
+
+A store no Vuex é criada usando a classe Vuex.Store. Ela é uma instância que armazena e gerencia o estado global do aplicativo. A store é injetada na instância principal do Vue para que todos os componentes possam acessar e modificar o estado conforme necessário.
+
+A store no Vuex fornece um local centralizado para armazenar, atualizar e acessar o estado do aplicativo, permitindo que os componentes se comuniquem e compartilhem dados de forma previsível e consistente. Ela promove um fluxo de dados unidirecional, onde os componentes disparam mutações ou actions para modificar o estado e os componentes reagem às alterações do estado por meio de getters ou diretamente observando o estado.
+
+Em resumo, a store é o coração do Vuex, onde o estado global do aplicativo é mantido e gerenciado. Ela fornece uma maneira organizada e controlada de compartilhar dados entre os componentes do Vue.js.
+
 ### Como usar vuex:
 Para usar o Vuex pelo CDN em seu projeto Vue.js, você precisa incluir o arquivo do Vuex diretamente em sua página HTML antes de iniciar seu aplicativo Vue.js. Aqui estão as etapas:
 
