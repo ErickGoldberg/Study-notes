@@ -371,6 +371,52 @@ export default {
 ~~~
 Em resumo, o setup é uma função usada em componentes baseados em função no Vue.js 3. Ela fornece um local para definir a lógica do componente, criar estado reativo, definir métodos e configurar efeitos reativos. O setup permite que você use recursos e funcionalidades do Vue de maneira flexível e mais declarativa em seus componentes.
 
+### Props:
+Em Vue.js, o props é uma opção que permite a passagem de dados de um componente pai para um componente filho. Ele é usado para criar uma interface de comunicação entre componentes, permitindo que os componentes recebam valores externos.
+
+Ao definir a opção props em um componente, você está declarando as propriedades que o componente pai pode passar para o componente filho. As propriedades podem ser valores estáticos ou dados dinâmicos do componente pai.
+
+Aqui está um exemplo de como usar o props em um componente:
+~~~
+// Componente filho: ChildComponent.vue
+<template>
+  <div>
+    <h2>Child Component</h2>
+    <p>Message from parent: {{ message }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['message'], // Definindo a propriedade 'message'
+};
+</script>
+~~~
+~~~
+<!-- Componente pai: ParentComponent.vue -->
+<template>
+  <div>
+    <h1>Parent Component</h1>
+    <ChildComponent message="Hello from parent" /> <!-- Passando o valor para a propriedade 'message' -->
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent,
+  },
+};
+</script>
+~~~
+No exemplo acima, o componente filho ChildComponent recebe a propriedade message do componente pai ParentComponent. A propriedade é declarada no componente filho usando props: ['message'], indicando que o componente está esperando receber uma propriedade chamada message. No componente pai, a propriedade é passada para o componente filho usando message="Hello from parent". Assim, o valor "Hello from parent" é exibido no componente filho.
+
+Além disso, você também pode definir propriedades com tipos específicos, valores padrão, requisitos de validação e até mesmo usar objetos ou notação de objetos em cascata para passar várias propriedades. Você pode encontrar mais informações sobre as opções avançadas de props na documentação oficial do Vue.js.
+
+Em resumo, o props permite a passagem de dados do componente pai para o componente filho, definindo uma interface de comunicação entre eles. Isso permite que os componentes sejam mais flexíveis e reutilizáveis, pois podem receber valores externos para renderizar dinamicamente seu conteúdo ou comportamento com base nesses dados.
+
 ### Slots:
 Em Vue.js, os slots são uma funcionalidade poderosa que permitem a criação de componentes reutilizáveis e flexíveis, permitindo que você injete conteúdo personalizado dentro desses componentes. Os slots permitem que você defina áreas de conteúdo em um componente que podem ser preenchidas com conteúdo específico quando o componente é usado.
 
