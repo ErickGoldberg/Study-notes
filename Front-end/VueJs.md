@@ -293,6 +293,84 @@ As propriedades calculadas podem ser usadas em expressões, interpoladas em temp
 
 Em resumo, a propriedade computed é usada para definir propriedades calculadas em um componente Vue, permitindo a criação de lógica de cálculo dinâmica baseada em outras propriedades reativas.
 
+### Setup:
+Em Vue.js 3, o setup é uma opção de configuração introduzida no novo sistema de composição do Vue. Ele é usado nos componentes baseados em função para definir o comportamento do componente e fornecer acesso a recursos e funcionalidades do Vue.
+
+A função setup é executada antes da renderização do componente e é onde você pode definir a lógica do componente, como a definição de dados, a criação de métodos, a configuração de efeitos reativos e a interação com o ciclo de vida do componente.
+
+Aqui estão algumas coisas que você pode fazer dentro do setup:
+
+1. Definir dados: Você pode retornar um objeto a partir do setup, que será usado como o estado do componente. Por exemplo:
+~~~
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      message: 'Hello, Vue!',
+    });
+
+    return { state };
+  },
+};
+~~~
+2. Criar métodos: Você pode definir funções dentro do setup que podem ser chamadas pelos componentes. Por exemplo:
+~~~
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      count: 0,
+    });
+
+    function increment() {
+      state.count++;
+    }
+
+    return { state, increment };
+  },
+};
+~~~
+3. Configurar efeitos reativos: Você pode usar os hooks de efeito reativo, como watch e onMounted, dentro do setup para observar e reagir a alterações de estado ou executar código quando o componente é montado. Por exemplo:
+~~~
+import { reactive, watch, onMounted } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      count: 0,
+    });
+
+    watch(() => {
+      console.log('Count changed:', state.count);
+    });
+
+    onMounted(() => {
+      console.log('Component mounted');
+    });
+
+    return { state };
+  },
+};
+~~~
+O setup também permite que você interaja com as propriedades, eventos e referências do componente por meio de parâmetros passados para a função. Por exemplo:
+~~~
+import { reactive } from 'vue';
+
+export default {
+  props: ['initialValue'],
+  setup(props) {
+    const state = reactive({
+      value: props.initialValue,
+    });
+
+    return { state };
+  },
+};
+~~~
+Em resumo, o setup é uma função usada em componentes baseados em função no Vue.js 3. Ela fornece um local para definir a lógica do componente, criar estado reativo, definir métodos e configurar efeitos reativos. O setup permite que você use recursos e funcionalidades do Vue de maneira flexível e mais declarativa em seus componentes.
+
 ### Slots:
 Em Vue.js, os slots são uma funcionalidade poderosa que permitem a criação de componentes reutilizáveis e flexíveis, permitindo que você injete conteúdo personalizado dentro desses componentes. Os slots permitem que você defina áreas de conteúdo em um componente que podem ser preenchidas com conteúdo específico quando o componente é usado.
 
