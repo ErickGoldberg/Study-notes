@@ -531,6 +531,23 @@ Exemplo:
 </body>
 </html>
 ~~~
+
+## Vuex:
+O Vuex é um padrão de gerenciamento de estado para aplicativos Vue.js. Ele é usado para gerenciar o estado centralizado em uma aplicação Vue de grande escala. O Vuex funciona como uma "store" centralizada para os dados do aplicativo, permitindo que os componentes acessem e modifiquem o estado de forma previsível e consistente.
+
+O principal objetivo do Vuex é resolver o problema da comunicação entre componentes em um aplicativo Vue complexo. À medida que um aplicativo cresce, pode se tornar difícil rastrear e manter o estado compartilhado entre vários componentes. O Vuex fornece uma solução para esse problema, permitindo que você defina um estado global e use getters, mutations e actions para interagir com ele.
+
+Aqui estão os principais conceitos do Vuex:
+
+- State (Estado): O estado é um objeto reativo que contém os dados compartilhados do aplicativo. É a fonte única de verdade para todo o aplicativo.
+- Getters: Os getters são métodos computados que fornecem acesso aos dados do estado. Eles permitem que você filtre, calcule ou formate os dados do estado de maneira consistente.
+- Mutations: As mutações são responsáveis por modificar o estado do Vuex. Elas são funções síncronas que recebem o estado como parâmetro e podem ser chamadas pelos componentes para atualizar o estado.
+- Actions: As actions são semelhantes às mutações, mas são assíncronas. Elas são usadas para realizar operações assíncronas, como chamadas de API, antes de chamar as mutações para atualizar o estado.
+- Modules (Módulos): Os módulos permitem que você divida a store do Vuex em módulos menores e independentes. Cada módulo tem seu próprio estado, getters, mutations e actions, facilitando o gerenciamento do estado em aplicativos maiores.
+
+O uso do Vuex é recomendado em aplicativos Vue.js de médio a grande porte, nos quais o gerenciamento de estado se torna complexo. Ele promove um fluxo de dados unidirecional e organizado, tornando o código mais previsível, testável e escalável.
+
+Para usar o Vuex em seu aplicativo Vue.js, você precisa instalar a biblioteca do Vuex, criar uma store, definir o estado e usar getters, mutations e actions conforme necessário.
   
 ## Links úteis:
 - https://vuejs.org/
