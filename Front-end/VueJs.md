@@ -323,6 +323,65 @@ Os slots padrão são usados para definir o conteúdo padrão que será inserido
 </template>
 ~~~
 Os slots permitem que você crie componentes flexíveis e reutilizáveis, pois permitem que o usuário do componente insira conteúdo personalizado onde for necessário. Com slots, você pode personalizar a aparência e o comportamento dos componentes sem a necessidade de modificá-los diretamente, promovendo a reutilização de código e a modularidade em seu aplicativo Vue.js.  
+
+## Roteamento: 
+Em Vue.js, o roteamento é usado para criar aplicativos de página única (SPA) com navegação entre diferentes páginas ou componentes. O roteamento permite que você defina diferentes rotas, associando-as a componentes específicos que serão renderizados quando a rota correspondente for acessada.
+
+O Vue Router é a biblioteca oficial de roteamento para Vue.js e fornece um conjunto de recursos para gerenciar o roteamento em um aplicativo Vue.
+
+Para começar a usar o Vue Router, você precisa instalar a biblioteca e configurar suas rotas. Aqui está um exemplo básico de como fazer isso:
+
+Passo 1: Instalar o Vue Router via CDN:
+~~~
+<!-- index.html -->
+<body>
+  <div id="app">
+    <!-- O conteúdo do aplicativo será renderizado aqui -->
+  </div>
+
+  <script src="https://unpkg.com/vue@2.6.14"></script>
+  <script src="https://unpkg.com/vue-router@3.5.3"></script>
+  <script src="app.js"></script>
+</body>
+~~~
+Passo 2: Criar os componentes para as rotas:
+~~~
+<!-- components/Home.vue -->
+<template>
+  <div>
+    <h1>Página Inicial</h1>
+    <!-- Conteúdo da página inicial -->
+  </div>
+</template>
+
+<!-- components/About.vue -->
+<template>
+  <div>
+    <h1>Sobre</h1>
+    <!-- Conteúdo da página "Sobre" -->
+  </div>
+</template>
+~~~
+Passo 3: Configurar as rotas e inicializar o Vue Router:
+~~~
+// app.js
+const Home = { template: '<home></home>' };
+const About = { template: '<about></about>' };
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About }
+];
+
+const router = new VueRouter({
+  routes
+});
+
+new Vue({
+  el: '#app',
+  router
+});
+~~~
   
 ## Links úteis:
 - https://vuejs.org/
