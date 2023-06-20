@@ -548,6 +548,49 @@ Aqui estão os principais conceitos do Vuex:
 O uso do Vuex é recomendado em aplicativos Vue.js de médio a grande porte, nos quais o gerenciamento de estado se torna complexo. Ele promove um fluxo de dados unidirecional e organizado, tornando o código mais previsível, testável e escalável.
 
 Para usar o Vuex em seu aplicativo Vue.js, você precisa instalar a biblioteca do Vuex, criar uma store, definir o estado e usar getters, mutations e actions conforme necessário.
+
+### Como usar vuex:
+Para usar o Vuex pelo CDN em seu projeto Vue.js, você precisa incluir o arquivo do Vuex diretamente em sua página HTML antes de iniciar seu aplicativo Vue.js. Aqui estão as etapas:
+
+1. Abra sua página HTML onde você está desenvolvendo seu projeto Vue.js.
+
+2. Adicione as seguintes linhas ao cabeçalho (<head>) da página para incluir os arquivos do Vue.js e do Vuex via CDN:
+~~~
+<!-- Incluir o arquivo do Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<!-- Incluir o arquivo do Vuex -->
+<script src="https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.js"></script>
+~~~
+3. Em seguida, você pode criar um novo arquivo JavaScript (por exemplo, store.js) e definir suas configurações do Vuex, incluindo estado, mutations, actions e getters.
+
+Por exemplo:
+~~~
+const store = new Vuex.Store({
+  state: {
+    // Defina o estado inicial aqui
+  },
+  mutations: {
+    // Defina as mutações aqui
+  },
+  actions: {
+    // Defina as actions aqui
+  },
+  getters: {
+    // Defina os getters aqui
+  }
+});
+~~~
+4. Em seu componente raiz (geralmente chamado de App.vue ou main.js), você pode criar uma instância Vue e configurá-la com a opção store para conectar seu aplicativo Vue.js ao Vuex.
+
+Por exemplo:
+~~~
+new Vue({
+  // ... outras opções
+  store: store
+}).$mount('#app');
+~~~
+
   
 ## Links úteis:
 - https://vuejs.org/
