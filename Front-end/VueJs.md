@@ -795,6 +795,46 @@ Neste exemplo, importamos o mixin myMixin e o aplicamos ao componente MeuCompone
 Você também pode aplicar vários mixins a um único componente, fornecendo-os em uma matriz na opção mixins. A ordem dos mixins na matriz afeta a precedência das opções em caso de conflito.
 
 Os mixins são úteis para compartilhar lógica comum entre componentes, reduzindo a repetição de código e facilitando a manutenção. No entanto, é importante usá-los com cuidado e evitar conflitos ou sobreposição indesejada de opções entre mixins e componentes.
+
+## Hooks:
+Em Vue.js, os hooks são métodos especiais que são chamados em momentos específicos do ciclo de vida de um componente. Eles permitem que você execute código personalizado em diferentes estágios do ciclo de vida do componente, como antes de ser montado, quando é atualizado ou antes de ser destruído.
+
+Os hooks são úteis para executar tarefas específicas em momentos cruciais do ciclo de vida do componente, como inicializar dados, realizar chamadas de API, manipular eventos, criar ou destruir recursos, entre outros.
+
+Existem vários hooks disponíveis em Vue.js. Aqui estão os principais:
+
+- beforeCreate: Chamado antes do componente ser inicializado. Neste ponto, as opções do componente ainda não foram mescladas e as propriedades do componente não estão disponíveis.
+- created: Chamado após o componente ser inicializado. Neste ponto, as opções do componente foram mescladas, as propriedades do componente estão disponíveis e a instância do componente foi criada.
+- beforeMount: Chamado antes do componente ser montado no DOM. Neste ponto, o template do componente foi compilado e está prestes a ser renderizado.
+- mounted: Chamado após o componente ser montado no DOM. Neste ponto, o componente está renderizado no DOM e você pode interagir com os elementos DOM dentro do componente.
+- beforeUpdate: Chamado antes que o componente seja atualizado, quando ocorrem alterações nas propriedades ou nos dados do componente. Neste ponto, as alterações ainda não foram aplicadas ao DOM.
+- updated: Chamado após o componente ser atualizado e as alterações terem sido aplicadas ao DOM. Neste ponto, você pode interagir com o DOM atualizado.
+- beforeUnmount: Chamado antes do componente ser desmontado e destruído. Neste ponto, o componente ainda está no DOM.
+- unmounted: Chamado após o componente ser desmontado e destruído. Neste ponto, o componente não está mais no DOM e foi destruído.
+
+Para usar um hook em um componente Vue, basta adicionar um método com o nome correspondente ao hook. Por exemplo:
+~~~
+export default {
+  name: 'MeuComponente',
+  created() {
+    console.log('O componente foi criado');
+  },
+  mounted() {
+    console.log('O componente foi montado no DOM');
+  },
+  beforeUnmount() {
+    console.log('O componente está prestes a ser desmontado');
+  },
+  unmounted() {
+    console.log('O componente foi desmontado');
+  }
+}
+~~~
+No exemplo acima, definimos os hooks created, mounted, beforeUnmount e unmounted no componente MeuComponente. Quando esses eventos ocorrerem no ciclo de vida do componente, as respectivas funções de callback serão chamadas.
+
+Os hooks permitem que você controle e personalize o comportamento do seu componente em diferentes estágios do ciclo de vida. Eles são muito úteis para realizar ações específicas em momentos precisos e para interagir com o DOM e outros recursos do Vue.js.
+
+É importante mencionar que os hooks de ciclo de vida estão disponíveis apenas em componentes Vue Single-File (.vue) ou em componentes criados com defineComponent na API Composition. Em outros casos, como componentes funcionais ou mixins, outros métodos podem ser usados para realizar tarefas específicas.
   
 ## Links úteis:
 - https://vuejs.org/
