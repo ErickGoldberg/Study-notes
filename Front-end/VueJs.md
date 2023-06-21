@@ -778,7 +778,23 @@ export default myMixin;
 Neste exemplo, criamos um mixin chamado myMixin. Ele define um objeto com propriedades data, métodos increment e logMessage, e um hook do ciclo de vida created. Essas opções podem ser reutilizadas em vários componentes.
 
 Para aplicar o mixin a um componente, você usa a opção mixins na definição do componente. Aqui está um exemplo de como aplicar o mixin a um componente Vue:
+~~~
+// MeuComponente.vue
+import myMixin from './mixin.js';
 
+export default {
+  name: 'MeuComponente',
+  mixins: [myMixin],
+  mounted() {
+    this.logMessage(); // Chamando o método do mixin
+  }
+}
+~~~
+Neste exemplo, importamos o mixin myMixin e o aplicamos ao componente MeuComponente usando a opção mixins. Agora, o componente MeuComponente terá acesso às propriedades, métodos e hooks do ciclo de vida definidos no mixin.
+
+Você também pode aplicar vários mixins a um único componente, fornecendo-os em uma matriz na opção mixins. A ordem dos mixins na matriz afeta a precedência das opções em caso de conflito.
+
+Os mixins são úteis para compartilhar lógica comum entre componentes, reduzindo a repetição de código e facilitando a manutenção. No entanto, é importante usá-los com cuidado e evitar conflitos ou sobreposição indesejada de opções entre mixins e componentes.
   
 ## Links úteis:
 - https://vuejs.org/
