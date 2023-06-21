@@ -835,6 +835,26 @@ No exemplo acima, definimos os hooks created, mounted, beforeUnmount e unmounted
 Os hooks permitem que você controle e personalize o comportamento do seu componente em diferentes estágios do ciclo de vida. Eles são muito úteis para realizar ações específicas em momentos precisos e para interagir com o DOM e outros recursos do Vue.js.
 
 É importante mencionar que os hooks de ciclo de vida estão disponíveis apenas em componentes Vue Single-File (.vue) ou em componentes criados com defineComponent na API Composition. Em outros casos, como componentes funcionais ou mixins, outros métodos podem ser usados para realizar tarefas específicas.
+
+## Composition APIs:
+As Composition APIs são uma nova forma de criar componentes Vue no Vue.js 3. Elas fornecem uma alternativa às opções de componentes baseados em objetos usadas no Vue.js 2.x, permitindo uma organização mais modular e reutilizável do código.
+
+As Composition APIs são baseadas no conceito de "composição" de funcionalidades, onde você pode agrupar e reutilizar lógicas relacionadas em um único local. Isso é alcançado usando os seguintes recursos principais das Composition APIs:
+
+- setup(): Em vez de usar as opções data, computed, methods etc. no objeto do componente, você usa a função setup() para definir o estado do componente e retornar os dados, métodos e outros elementos que serão usados pelo componente. A função setup() é executada antes do componente ser renderizado.
+- reactive(): É uma função que cria um objeto reativo, semelhante ao objeto data em componentes baseados em objetos do Vue.js 2.x. Você pode usar reactive() para criar dados reativos que serão usados pelo seu componente.
+- ref(): É uma função que cria uma referência reativa para um valor. Os valores encapsulados em ref() podem ser atualizados e observados reativamente. ref() é especialmente útil para criar e manipular valores primitivos.
+- watch(): Permite que você observe as mudanças em uma dependência reativa específica e execute uma ação quando ela mudar. O watch() substitui o uso de watch dentro das opções do componente.
+- computed(): É uma função que define uma propriedade computada reativa. Em vez de usar a opção computed no objeto do componente, você pode usar computed() para definir propriedades computadas reativas.
+- provide / inject: Esses métodos permitem a comunicação entre componentes pai e filhos sem a necessidade de passar propriedades manualmente entre eles. O componente pai pode fornecer um valor e o componente filho pode injetá-lo.
+
+Esses são apenas alguns dos recursos principais das Composition APIs. Existem outros recursos e funções que permitem uma abordagem mais modular e reutilizável ao escrever componentes Vue.
+
+As Composition APIs fornecem maior flexibilidade e clareza na organização do código, facilitando a reutilização de lógica entre diferentes componentes e melhorando a escalabilidade do seu aplicativo Vue.js.
+
+Para usar as Composition APIs, você precisa do Vue.js 3.x. Você pode criar componentes Vue usando a sintaxe de template <script setup> em arquivos Single-File Components (SFCs) ou usar o método defineComponent() para definir componentes usando a API Composition.
+
+A documentação oficial do Vue.js possui exemplos detalhados e guias sobre o uso das Composition APIs. Recomendo consultar a documentação para obter informações mais detalhadas e exemplos práticos.
   
 ## Links úteis:
 - https://vuejs.org/
