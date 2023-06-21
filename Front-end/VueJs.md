@@ -745,6 +745,40 @@ new Vue({
 }).$mount('#app');
 ~~~
 
+## Mixin:
+Em Vue.js, um mixin é um objeto reutilizável que contém opções de componente. Ele permite compartilhar funcionalidades entre vários componentes, evitando a duplicação de código.
+
+Com um mixin, você pode definir propriedades, métodos, hooks do ciclo de vida e outros elementos de um componente e, em seguida, aplicá-los a um ou mais componentes. Isso permite que você reutilize e compartilhe lógica comum entre os componentes sem a necessidade de herança ou duplicação de código.
+
+Para criar um mixin, você define um objeto com as opções que deseja compartilhar. Aqui está um exemplo simples:
+~~~
+// mixin.js
+const myMixin = {
+  data() {
+    return {
+      message: 'Mixin Example',
+      count: 0
+    }
+  },
+  methods: {
+    increment() {
+      this.count++
+    },
+    logMessage() {
+      console.log(this.message)
+    }
+  },
+  created() {
+    console.log('Mixin created')
+  }
+}
+
+export default myMixin;
+~~~
+Neste exemplo, criamos um mixin chamado myMixin. Ele define um objeto com propriedades data, métodos increment e logMessage, e um hook do ciclo de vida created. Essas opções podem ser reutilizadas em vários componentes.
+
+Para aplicar o mixin a um componente, você usa a opção mixins na definição do componente. Aqui está um exemplo de como aplicar o mixin a um componente Vue:
+
   
 ## Links úteis:
 - https://vuejs.org/
