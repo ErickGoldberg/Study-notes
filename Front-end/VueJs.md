@@ -293,6 +293,9 @@ As propriedades calculadas podem ser usadas em expressões, interpoladas em temp
 
 Em resumo, a propriedade computed é usada para definir propriedades calculadas em um componente Vue, permitindo a criação de lógica de cálculo dinâmica baseada em outras propriedades reativas.
 
+#### Methods x computed x emits:
+Os methods são usados para definir funções para manipulação de eventos e lógica geral, as computed properties são usadas para computar valores com base em propriedades reativas e os emits são usados para comunicar eventos personalizados entre componentes. Cada um deles tem um propósito específico e pode ser usado em conjunto para criar componentes Vue flexíveis e reativos.
+
 ### Setup:
 Em Vue.js 3, o setup é uma opção de configuração introduzida no novo sistema de composição do Vue. Ele é usado nos componentes baseados em função para definir o comportamento do componente e fornecer acesso a recursos e funcionalidades do Vue.
 
