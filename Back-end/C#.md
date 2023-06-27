@@ -50,6 +50,21 @@ public int Somar(int a, int b)
 public int Somar(int a, int b) => a + b;
 ~~~
 
+## Dictionary:
+Em C#, um dicionário é uma estrutura de dados que armazena pares chave-valor, onde cada chave é única. É uma implementação da interface genérica Dictionary<TKey, TValue> da biblioteca padrão do .NET.
+
+Para usar um dicionário em C#, você precisa importar o namespace System.Collections.Generic. Aqui está um exemplo de como criar e usar um dicionário em C#:
+
+~~~
+
+~~~
+
+Neste exemplo, criamos um dicionário que mapeia strings para inteiros. Podemos adicionar itens ao dicionário usando o método Add, onde especificamos a chave e o valor correspondente. Podemos acessar valores no dicionário usando a sintaxe de indexação, fornecendo a chave entre colchetes. Podemos verificar se uma chave existe no dicionário usando o método ContainsKey. Para atualizar um valor, simplesmente atribuímos um novo valor à chave correspondente. E para remover um item, usamos o método Remove.
+
+Podemos iterar sobre os pares chave-valor no dicionário usando um loop foreach. A variável par representa cada par chave-valor durante a iteração.
+
+Os dicionários em C# são extremamente úteis quando você precisa armazenar e recuperar dados de forma eficiente usando uma chave única. Eles fornecem um acesso rápido aos valores com base nas chaves, o que os torna uma escolha comum para muitos cenários de programação.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
