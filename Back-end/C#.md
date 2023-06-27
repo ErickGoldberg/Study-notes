@@ -56,7 +56,45 @@ Em C#, um dicionário é uma estrutura de dados que armazena pares chave-valor, 
 Para usar um dicionário em C#, você precisa importar o namespace System.Collections.Generic. Aqui está um exemplo de como criar e usar um dicionário em C#:
 
 ~~~
+using System;
+using System.Collections.Generic;
 
+class Program
+{
+    static void Main()
+    {
+        // Criando um dicionário de strings
+        Dictionary<string, int> dicionario = new Dictionary<string, int>();
+
+        // Adicionando itens ao dicionário
+        dicionario.Add("Maçã", 10);
+        dicionario.Add("Laranja", 5);
+        dicionario.Add("Banana", 7);
+
+        // Acessando itens no dicionário
+        Console.WriteLine(dicionario["Maçã"]); // Saída: 10
+
+        // Verificando se uma chave existe no dicionário
+        bool existeChave = dicionario.ContainsKey("Laranja");
+        Console.WriteLine(existeChave); // Saída: True
+
+        // Atualizando um valor no dicionário
+        dicionario["Banana"] = 15;
+
+        // Removendo um item do dicionário
+        dicionario.Remove("Maçã");
+
+        // Iterando sobre os pares chave-valor no dicionário
+        foreach (KeyValuePair<string, int> par in dicionario)
+        {
+            Console.WriteLine(par.Key + ": " + par.Value);
+        }
+
+        // Saída:
+        // Laranja: 5
+        // Banana: 15
+    }
+}
 ~~~
 
 Neste exemplo, criamos um dicionário que mapeia strings para inteiros. Podemos adicionar itens ao dicionário usando o método Add, onde especificamos a chave e o valor correspondente. Podemos acessar valores no dicionário usando a sintaxe de indexação, fornecendo a chave entre colchetes. Podemos verificar se uma chave existe no dicionário usando o método ContainsKey. Para atualizar um valor, simplesmente atribuímos um novo valor à chave correspondente. E para remover um item, usamos o método Remove.
