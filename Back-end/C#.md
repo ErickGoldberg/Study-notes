@@ -209,6 +209,9 @@ public Carro(string marca, string modelo, int ano)
 
 ## Atalhos:
 - Identar: CTRL + K + D
+- Renomear variavél: Ctrl +	R, Ctrl	+ R	(Ctrl +	R duas vezes).
+- ctor	+	+	:	declara	um	construtor	dentro	da	classe;
+- prop	+	+	:	declara	uma	propriedade	dentro	da	classe;
 
 ## Links úteis:
 - https://learn.microsoft.com/pt-br/dotnet/csharp/
