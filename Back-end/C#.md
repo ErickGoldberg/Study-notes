@@ -1,6 +1,20 @@
 # C#
 é uma linguagem de programação orientada a objetos e orientada a componentes que é fortemente tipada. O C# permite que os desenvolvedores criem muitos tipos de aplicativos seguros e robustos que são executados no .NET. 
 
+## Estruturação:
+### Assembly:
+Em C#, um assembly é um arquivo compilado que contém código executável, metadados e recursos relacionados a um programa. Um assembly pode ser uma biblioteca de classes (.dll) ou um executável (.exe). Ele é a unidade fundamental de implantação e reutilização de código em C#.
+
+Um assembly pode ser criado a partir de um único projeto ou de vários projetos dentro de uma solução. Ele contém uma ou mais namespaces e tipos, como classes, estruturas, interfaces e assim por diante. Além disso, um assembly pode fazer referência a outros assemblies para usar seu código e recursos.
+
+Quando você compila um programa em C#, o compilador cria um ou mais assemblies. Esses assemblies podem ser implantados em outras máquinas ou compartilhados com outros desenvolvedores para uso em seus próprios projetos. Um assembly também pode ser versionado, permitindo atualizações e correções futuras.
+
+### Namespace:
+Um namespace é uma estrutura de organização lógica que ajuda a evitar conflitos de nomes e permite agrupar tipos relacionados em uma hierarquia. Ele é usado para organizar o código em unidades lógicas e criar um escopo separado para os tipos definidos dentro dele.
+
+Um namespace fornece um prefixo aos tipos definidos dentro dele, evitando colisões de nome com tipos definidos em outros namespaces. Isso é especialmente útil quando você está usando bibliotecas ou frameworks diferentes que podem ter tipos com o mesmo nome.
+
+
 ## Arrays:
 ### Unidimensional:
 ~~~
