@@ -207,7 +207,11 @@ public Carro(string marca, string modelo, int ano)
  Carro meuCarro = new Carro("Ford", "Mustang", 2021);    
 ~~~
 
+## Atalhos:
+- Identar: CTRL + K + D
+
 ## Links úteis:
 - https://learn.microsoft.com/pt-br/dotnet/csharp/
 - https://learn.microsoft.com/pt-br/visualstudio/get-started/csharp/?view=vs-2022
 - https://learn.microsoft.com/pt-br/dotnet/framework/
+- https://www.caelum.com.br/apostila/apostila-csharp-orientacao-objetos.pdf
