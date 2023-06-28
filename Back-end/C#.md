@@ -14,6 +14,25 @@ Um namespace é uma estrutura de organização lógica que ajuda a evitar confli
 
 Um namespace fornece um prefixo aos tipos definidos dentro dele, evitando colisões de nome com tipos definidos em outros namespaces. Isso é especialmente útil quando você está usando bibliotecas ou frameworks diferentes que podem ter tipos com o mesmo nome.
 
+Exemplo:
+~~~
+namespace MeuNamespace
+{
+    // Definição de tipos (classes, estruturas, interfaces, etc.) aqui
+}
+~~~
+Para usar tipos definidos em um namespace em seu código, você pode fazer referência ao namespace usando a diretiva "using". Por exemplo:
+~~~
+using MeuNamespace.Pasta1;
+
+class MinhaClasse
+{
+    // Uso de tipos definidos em MeuNamespace.Pasta1
+}
+~~~
+A diretiva "using" permite que você use os tipos do namespace sem ter que especificar o nome completo do namespace toda vez.
+
+- Em resumo, o assembly é um arquivo compilado que contém código executável e recursos relacionados, enquanto o namespace é uma estrutura de organização lógica que ajuda a evitar conflitos de nome e agrupar tipos relacionados.
 
 ## Arrays:
 ### Unidimensional:
