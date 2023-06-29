@@ -178,6 +178,12 @@ O trabalho do Garbage Collector é identificar esses objetos inacessíveis e lib
 
 O Garbage Collector utiliza um algoritmo chamado "marcador-e-varredor" (mark-and-sweep) para determinar quais objetos estão em uso e quais não estão. Durante a fase de marcação, o Garbage Collector percorre todas as referências a partir de um conjunto inicial de raízes (como variáveis estáticas, referências em pilha, etc.) e marca todos os objetos que estão acessíveis a partir dessas raízes. Em seguida, durante a fase de varredura, o Garbage Collector percorre toda a memória, desalocando os objetos não marcados e liberando a memória associada a eles.
 
+É importante ressaltar que o desenvolvedor não precisa se preocupar explicitamente em liberar a memória alocada para objetos. O Garbage Collector cuida dessa tarefa de forma transparente. No entanto, é possível influenciar o comportamento do Garbage Collector por meio de técnicas como a liberação explícita de recursos não gerenciados usando o método Dispose(), implementando a interface IDisposable ou usando construções como using.
+
+O uso do Garbage Collector em C# facilita a programação, reduzindo a necessidade de gerenciamento manual de memória e evitando problemas comuns, como vazamentos de memória. No entanto, é importante entender como o Garbage Collector funciona para escrever um código eficiente e evitar práticas que possam afetar negativamente o desempenho, como o uso excessivo de objetos temporários ou referências a objetos que permanecem vivos por um tempo prolongado.
+
+Em resumo, o Garbage Collector em C# é um componente do tempo de execução do .NET que gerencia a memória automaticamente, identificando e liberando objetos que não estão mais em uso. Ele utiliza um algoritmo de marcação e varredura para rastrear os objetos alocados e desalocar a memória associada a eles. O Garbage Collector simplifica a programação ao eliminar a necessidade de gerenciamento manual de memória, ajudando a evitar vazamentos de memória e facilitando o desenvolvimento de aplicativos mais robustos.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
