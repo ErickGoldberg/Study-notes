@@ -197,7 +197,24 @@ int? numero = null;
 numero = 10; // atribui um valor inteiro válido
 numero = null; // atribui o valor null
 ~~~
+Você pode verificar se uma variável nullable tem um valor definido usando a propriedade HasValue. Além disso, para acessar o valor subjacente de uma variável nullable, você pode usar a propriedade Value, mas é necessário ter cuidado, pois, se a variável for null, ocorrerá uma exceção InvalidOperationException. Para evitar a exceção, é recomendável verificar se a variável tem um valor usando HasValue antes de acessar o Value.
 
+Aqui está um exemplo que demonstra o uso dessas propriedades:
+~~~
+int? numero = 10;
+
+if (numero.HasValue)
+{
+    Console.WriteLine("O número tem um valor: " + numero.Value);
+}
+else
+{
+    Console.WriteLine("O número é nulo.");
+}
+~~~
+O tipo nullable é especialmente útil quando se trabalha com bancos de dados, onde colunas podem ter valores nulos, ou ao lidar com dados opcionais ou valores padrão em APIs.
+
+Em resumo, o tipo nullable em C# permite que variáveis de tipos de valor armazenem um valor válido do tipo subjacente ou o valor null. Isso é útil quando você precisa representar a ausência de um valor ou quando precisa diferenciar entre um valor nulo e um valor padrão do tipo subjacente. O tipo nullable é criado adicionando o símbolo de interrogação (?) após o tipo de valor e oferece propriedades como HasValue e Value para verificar e acessar os valores.
 
 ## Orientação a objetos:
 ### Classe e método:
