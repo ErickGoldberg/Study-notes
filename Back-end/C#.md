@@ -184,6 +184,21 @@ O uso do Garbage Collector em C# facilita a programação, reduzindo a necessida
 
 Em resumo, o Garbage Collector em C# é um componente do tempo de execução do .NET que gerencia a memória automaticamente, identificando e liberando objetos que não estão mais em uso. Ele utiliza um algoritmo de marcação e varredura para rastrear os objetos alocados e desalocar a memória associada a eles. O Garbage Collector simplifica a programação ao eliminar a necessidade de gerenciamento manual de memória, ajudando a evitar vazamentos de memória e facilitando o desenvolvimento de aplicativos mais robustos.
 
+### Nullable:
+Em C#, o tipo nullable é usado para permitir que variáveis de tipos de valor armazenem um valor adicional: null. Normalmente, os tipos de valor, como int, double, bool, etc., não podem ser atribuídos a null, pois são considerados tipos de valor não anuláveis, o que significa que eles devem ter um valor válido.
+
+No entanto, com o tipo nullable, você pode declarar uma variável de tipo de valor que pode armazenar um valor válido do tipo subjacente ou o valor null. Isso é útil quando você precisa representar a ausência de um valor ou quando precisa diferenciar entre um valor nulo e um valor padrão do tipo subjacente.
+
+Para criar uma variável nullable em C#, você adiciona o símbolo de interrogação (?) após o tipo de valor. Aqui está um exemplo:
+~~~
+int? numero = null;
+~~~
+~~~
+numero = 10; // atribui um valor inteiro válido
+numero = null; // atribui o valor null
+~~~
+
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
