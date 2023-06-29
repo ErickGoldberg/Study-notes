@@ -216,6 +216,27 @@ O tipo nullable é especialmente útil quando se trabalha com bancos de dados, o
 
 Em resumo, o tipo nullable em C# permite que variáveis de tipos de valor armazenem um valor válido do tipo subjacente ou o valor null. Isso é útil quando você precisa representar a ausência de um valor ou quando precisa diferenciar entre um valor nulo e um valor padrão do tipo subjacente. O tipo nullable é criado adicionando o símbolo de interrogação (?) após o tipo de valor e oferece propriedades como HasValue e Value para verificar e acessar os valores.
 
+### Coalescência nula:
+A coalescência nula, também conhecida como operador de fusão nula ou operador de coalescência nula, é um recurso do C# que permite atribuir um valor padrão a uma expressão que possa resultar em null. Ela é representada pelo operador ??.
+
+O operador de coalescência nula tem a seguinte sintaxe:
+~~~
+expressao1 ?? expressao2
+~~~
+A expressão1 representa a expressão que será avaliada e pode resultar em null. A expressão2 representa o valor padrão que será atribuído caso a expressão1 seja null.
+
+O operador de coalescência nula funciona da seguinte maneira:
+
+- Se a expressão1 não for null, o valor da expressão1 será retornado.
+- Se a expressão1 for null, o valor da expressão2 será retornado.
+Aqui está um exemplo simples:
+~~~
+string nome = null;
+string nomeCompleto = nome ?? "Nome não disponível";
+
+Console.WriteLine(nomeCompleto); // Saída: "Nome não disponível"
+~~~
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
