@@ -169,6 +169,15 @@ As structs são frequentemente usadas para representar tipos de dados pequenos e
 
 Em resumo, as structs em C# são tipos de dados que permitem agrupar diferentes variáveis relacionadas em uma única unidade de valor. Elas são tipos de valor, com comportamento de cópia por valor, e são úteis para representar tipos pequenos e imutáveis, comumente utilizados em cenários de alto desempenho.
 
+### Garbage collector:
+O Garbage Collector (Coletor de Lixo) em C# é um componente do tempo de execução do .NET que gerencia a memória de forma automática e ajuda a lidar com a desalocação de objetos que não estão mais em uso.
+
+Quando você cria objetos em um programa C#, a memória é alocada para armazenar esses objetos. No entanto, em algum momento, esses objetos podem se tornar inacessíveis, ou seja, não há mais referências a eles no programa. Quando isso acontece, esses objetos não são mais necessários e ocupam espaço de memória desnecessariamente.
+
+O trabalho do Garbage Collector é identificar esses objetos inacessíveis e liberar a memória ocupada por eles, tornando-a disponível para uso posterior. O Garbage Collector executa periodicamente em segundo plano, rastreando os objetos alocados e determinando quais deles são elegíveis para coleta.
+
+O Garbage Collector utiliza um algoritmo chamado "marcador-e-varredor" (mark-and-sweep) para determinar quais objetos estão em uso e quais não estão. Durante a fase de marcação, o Garbage Collector percorre todas as referências a partir de um conjunto inicial de raízes (como variáveis estáticas, referências em pilha, etc.) e marca todos os objetos que estão acessíveis a partir dessas raízes. Em seguida, durante a fase de varredura, o Garbage Collector percorre toda a memória, desalocando os objetos não marcados e liberando a memória associada a eles.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
