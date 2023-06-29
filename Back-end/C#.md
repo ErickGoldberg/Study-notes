@@ -237,6 +237,50 @@ string nomeCompleto = nome ?? "Nome não disponível";
 Console.WriteLine(nomeCompleto); // Saída: "Nome não disponível"
 ~~~
 
+### Lista:
+Em C#, as listas são uma estrutura de dados fornecida pela biblioteca padrão do .NET Framework que permite armazenar e manipular uma coleção de elementos de forma dinâmica. A lista é uma implementação da interface List<T> e oferece várias operações convenientes para adicionar, remover, pesquisar e acessar elementos da coleção.
+
+Aqui estão algumas características e vantagens das listas em C#:
+
+- Dinamicidade: As listas têm tamanho dinâmico, o que significa que você pode adicionar e remover elementos facilmente sem se preocupar com o redimensionamento manual da coleção.
+- Acesso por índice: As listas permitem acessar elementos com base em seus índices. Isso facilita a recuperação rápida de elementos específicos.
+- Operações de adição e remoção: As listas fornecem métodos para adicionar elementos no final da lista (Add), inserir elementos em uma posição específica (Insert), remover elementos (Remove), remover elementos em uma posição específica (RemoveAt), remover todos os elementos (Clear), entre outras operações úteis.
+- Iteração simplificada: As listas podem ser facilmente percorridas usando um loop foreach, o que torna a iteração sobre os elementos da lista muito conveniente.
+- Tipagem forte: As listas em C# são tipadas, o que significa que você pode especificar o tipo de elementos que a lista pode conter. Isso oferece segurança de tipo durante a compilação e evita erros de tipo em tempo de execução.
+- Métodos e propriedades auxiliares: As listas fornecem métodos e propriedades úteis, como Count (para obter o número de elementos na lista), Contains (para verificar se a lista contém um elemento específico), Sort (para classificar os elementos da lista) e muito mais.
+
+No entanto, as listas também têm algumas desvantagens:
+
+- Inserção e remoção em posições intermediárias: Embora as listas permitam a inserção e a remoção de elementos em posições específicas, essas operações podem ser mais lentas quando comparadas com estruturas de dados como LinkedList ou ArrayList.
+- Consumo de memória: As listas alocam um bloco contíguo de memória para armazenar seus elementos, o que pode resultar em desperdício de memória se a lista for redimensionada frequentemente ou se o tamanho estimado da lista for significativamente maior do que o número real de elementos.
+
+Aqui está um exemplo básico de como usar uma lista em C#:
+~~~
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> nomes = new List<string>();
+
+        nomes.Add("João");
+        nomes.Add("Maria");
+        nomes.Add("José");
+
+        Console.WriteLine("Elementos da lista:");
+
+        foreach (string nome in nomes)
+        {
+            Console.WriteLine(nome);
+        }
+    }
+}
+~~~
+
+Em resumo, as listas em C# são estruturas de dados flexíveis e convenientes que oferecem operações poderosas para manipular coleções de elementos. Elas têm tamanho dinâmico, permitem acesso por índice, fornecem métodos úteis e são tipadas. No entanto, a inserção e remoção em posições intermediárias podem ser mais lentas e o consumo de memória pode ser uma preocupação em determinados casos.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
