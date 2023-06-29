@@ -153,6 +153,22 @@ Neste exemplo, criamos uma struct chamada "Ponto" com duas variáveis de membro 
 
 Você pode inicializar uma struct usando o construtor padrão ou especificando valores para suas variáveis de membro:
 
+~~~
+Ponto ponto1 = new Ponto(); // inicialização com construtor padrão
+ponto1.X = 10;
+ponto1.Y = 20;
+
+Ponto ponto2 = new Ponto() { X = 5, Y = 15 }; // inicialização com valores específicos
+~~~
+
+As structs também podem ter métodos, propriedades e eventos, assim como as classes. No entanto, é importante observar que, diferentemente das classes, as structs não podem herdar de outras structs ou classes e não podem ser base de herança.
+
+As structs são frequentemente usadas para representar tipos de dados pequenos e imutáveis, como pontos, coordenadas, intervalos, etc. Além disso, as structs são frequentemente utilizadas em cenários onde o desempenho é crucial, pois evitam a alocação de memória no heap.
+
+É importante ter cuidado ao usar structs, especialmente quando são passadas como argumentos de método ou atribuídas a variáveis, para evitar cópias desnecessárias e impacto no desempenho do programa.
+
+Em resumo, as structs em C# são tipos de dados que permitem agrupar diferentes variáveis relacionadas em uma única unidade de valor. Elas são tipos de valor, com comportamento de cópia por valor, e são úteis para representar tipos pequenos e imutáveis, comumente utilizados em cenários de alto desempenho.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
