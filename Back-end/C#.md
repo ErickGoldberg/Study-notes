@@ -136,6 +136,23 @@ Podemos iterar sobre os pares chave-valor no dicionário usando um loop foreach.
 
 Os dicionários em C# são extremamente úteis quando você precisa armazenar e recuperar dados de forma eficiente usando uma chave única. Eles fornecem um acesso rápido aos valores com base nas chaves, o que os torna uma escolha comum para muitos cenários de programação.
 
+### Struct:
+Em C#, a struct é um tipo de dado que permite agrupar diferentes tipos de variáveis relacionadas em uma única unidade. Ela é semelhante a uma classe, mas possui algumas diferenças importantes em seu comportamento e uso.
+
+Uma struct é um tipo de valor, o que significa que, quando você atribui uma struct a outra variável ou passa uma struct como argumento para um método, uma cópia do valor da struct é criada. Isso é diferente das classes, que são tipos de referência, onde a atribuição ou passagem de uma classe para outra variável cria uma referência compartilhada ao mesmo objeto.
+
+~~~
+struct Ponto
+{
+    public int X;
+    public int Y;
+}
+~~~
+
+Neste exemplo, criamos uma struct chamada "Ponto" com duas variáveis de membro públicas: "X" e "Y". Essas variáveis representam as coordenadas x e y de um ponto no plano.
+
+Você pode inicializar uma struct usando o construtor padrão ou especificando valores para suas variáveis de membro:
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
