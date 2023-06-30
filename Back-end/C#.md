@@ -169,6 +169,17 @@ As structs são frequentemente usadas para representar tipos de dados pequenos e
 
 Em resumo, as structs em C# são tipos de dados que permitem agrupar diferentes variáveis relacionadas em uma única unidade de valor. Elas são tipos de valor, com comportamento de cópia por valor, e são úteis para representar tipos pequenos e imutáveis, comumente utilizados em cenários de alto desempenho.
 
+### Funções para string:
+- Formatar: ToLower(), ToUpper(), Trim()
+- Buscar: IndexOf, LastIndexOf
+- Recortar: Substring(inicio), Substring(inicio, tamanho)
+- Substituir: Replace(char, char), Replace(string, string)
+- String.IsNullOrEmpty(str), String.IsNullOrWhiteSpace(str)
+- str.Split(' ')
+- Conversão para numero: int x = int.Parse(str), int x =Convert.ToInt32(str)
+- Conversão de número: str = x.ToString(), str = x.ToString("C"), str =
+x.ToString("C3"), str = x.ToString("F2")
+
 ### Garbage collector:
 O Garbage Collector (Coletor de Lixo) em C# é um componente do tempo de execução do .NET que gerencia a memória de forma automática e ajuda a lidar com a desalocação de objetos que não estão mais em uso.
 
