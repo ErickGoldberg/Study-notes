@@ -402,8 +402,42 @@ class Program
 }
 ~~~
 
-csharp
+### Base:
+A palavra-chave "base" é usada em uma classe derivada para acessar membros da classe base, como métodos, propriedades ou construtores. Você pode usar "base" para chamar a implementação do método da classe base antes de fazer modificações adicionais ou para acessar propriedades e campos da classe base.
 
+Aqui está um exemplo de como usar o "base" em C#:
+~~~
+class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        base.MakeSound();  // Chama o método MakeSound() da classe base.
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog dog = new Dog();
+        dog.MakeSound();
+        /* 
+        Output:
+        The animal makes a sound.
+        The dog barks.
+        */
+    }
+}
+~~~
 
 ## Atalhos:
 - Identar: CTRL + K + D
