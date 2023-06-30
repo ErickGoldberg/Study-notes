@@ -363,6 +363,48 @@ public Carro(string marca, string modelo, int ano)
  Carro meuCarro = new Carro("Ford", "Mustang", 2021);    
 ~~~
 
+### Override:
+A palavra-chave "override" é usada para indicar que um método em uma classe derivada está substituindo (ou "sobrescrevendo") um método de mesma assinatura na classe base. Ao usar "override", você está modificando o comportamento padrão do método na classe base e fornecendo uma implementação específica para a classe derivada.
+Para usar "override", você precisa seguir algumas regras:
+
+- O método na classe derivada deve ter a mesma assinatura (nome, tipo e ordem dos parâmetros) do método na classe base.
+- O método na classe base deve ser declarado como "virtual", "abstract" ou "override" (se já for uma substituição de outro método).
+- O modificador de acesso do método na classe derivada não pode ser menos acessível do que o modificador de acesso do método na classe base.
+
+Aqui está um exemplo de como usar o "override" em C#:
+~~~
+class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal animal = new Animal();
+        animal.MakeSound();  // Output: The animal makes a sound.
+
+        Dog dog = new Dog();
+        dog.MakeSound();  // Output: The dog barks.
+    }
+}
+~~~
+
+csharp
+
+
 ## Atalhos:
 - Identar: CTRL + K + D
 - Renomear variavél: Ctrl +	R, Ctrl	+ R	(Ctrl +	R duas vezes).
