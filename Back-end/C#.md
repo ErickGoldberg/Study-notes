@@ -452,6 +452,18 @@ Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios
 
 5. StreamWriter: A classe StreamWriter é usada para gravar caracteres em um fluxo de bytes, como um arquivo. Ela facilita a gravação de texto em um arquivo, permitindo a escrita de linhas ou caracteres individuais.
 
+6. Bloco using: O bloco using é usado para garantir que os recursos sejam liberados corretamente após o uso. Ele permite que você trabalhe com recursos como arquivos, streams, etc., dentro do escopo do bloco using e, assim que sair do escopo, esses recursos serão automaticamente liberados.
+
+7. Directory: A classe Directory fornece métodos estáticos para criar, mover, renomear e realizar outras operações em diretórios. Ela permite a manipulação de diretórios no sistema de arquivos.
+
+8. DirectoryInfo: A classe DirectoryInfo fornece uma representação de alto nível de um diretório existente no sistema de arquivos. Ela permite acessar informações sobre o diretório, como nome, data de criação, arquivos contidos, entre outros. Também fornece métodos para manipular o diretório, como criar, renomear e excluir.
+
+9. Path: A classe Path fornece métodos estáticos para manipular caminhos de arquivo e diretório. Ela permite combinar, extrair informações e realizar outras operações em caminhos de arquivos e diretórios.
+
+10. IOException: A IOException é uma exceção que é lançada quando ocorre um erro de E/S (entrada/saída) ao trabalhar com arquivos, como falha na leitura ou gravação. Ela permite tratar exceções relacionadas a operações de arquivo.
+
+Esses são apenas alguns conceitos relacionados a arquivos e diretórios em C#. O .NET Framework oferece uma ampla gama de classes e recursos para facilitar a manipulação de operações de E/S em arquivos e diretórios.  
+
 ## Atalhos:
 - Identar: CTRL + K + D
 - Renomear variavél: Ctrl +	R, Ctrl	+ R	(Ctrl +	R duas vezes).
