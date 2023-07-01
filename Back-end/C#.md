@@ -439,6 +439,25 @@ class Program
 }
 ~~~
 
+### Interface:
+
+Em C#, uma interface é uma estrutura que define um contrato entre duas entidades: uma classe e a entidade que a utiliza. Ela define um conjunto de membros (métodos, propriedades, eventos e indexadores) que a classe que implementa a interface deve fornecer.
+
+Aqui estão algumas características e conceitos importantes relacionados a interfaces em C#:
+
+Declaração: Uma interface é declarada usando a palavra-chave interface seguida pelo nome da interface. Por convenção, o nome da interface começa com uma letra "I" maiúscula.
+
+~~~
+public interface IExemplo
+{
+    void Metodo1();
+    int Propriedade { get; set; }
+    event EventHandler Evento;
+}
+~~~
+
+- Implementação: Uma classe pode implementar uma ou mais interfaces. Isso é feito usando a palavra-chave class seguida pelo nome da classe e uma lista separada por vírgulas de interfaces que a classe implementa.
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
