@@ -439,6 +439,19 @@ class Program
 }
 ~~~
 
+## Arquivos e diretórios:
+Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
+
+1. File: A classe File fornece métodos estáticos para criar, copiar, excluir, mover e realizar outras operações em arquivos. Ela é útil para operações básicas de manipulação de arquivos, como leitura e gravação.
+
+2. FileInfo: A classe FileInfo fornece uma representação de alto nível de um arquivo existente no sistema de arquivos. Ela permite acessar informações sobre o arquivo, como nome, tamanho, data de criação, entre outros. Também fornece métodos para manipular o arquivo, como copiar, mover, renomear, excluir, ler e gravar.
+
+3. FileStream: A classe FileStream permite a leitura e gravação de dados brutos em um arquivo. Ela fornece um fluxo de bytes para ler e gravar dados em um arquivo de maneira eficiente.
+
+4. StreamReader: A classe StreamReader é usada para ler caracteres de um fluxo de bytes, como um arquivo. Ela facilita a leitura de texto de um arquivo, permitindo a leitura de linhas ou caracteres individuais.
+
+5. StreamWriter: A classe StreamWriter é usada para gravar caracteres em um fluxo de bytes, como um arquivo. Ela facilita a gravação de texto em um arquivo, permitindo a escrita de linhas ou caracteres individuais.
+
 ## Atalhos:
 - Identar: CTRL + K + D
 - Renomear variavél: Ctrl +	R, Ctrl	+ R	(Ctrl +	R duas vezes).
