@@ -524,6 +524,24 @@ public class Exemplo : IExemplo
 
 As interfaces são uma parte fundamental da programação orientada a objetos em C#. Elas permitem definir contratos claros, promovem a reutilização de código e facilitam a implementação de polimorfismo e extensibilidade em suas classes.
 
+## Generics:
+Generics em C# é um recurso que permite criar classes, interfaces, métodos e delegados que podem ser parametrizados com tipos específicos. Isso proporciona flexibilidade e reutilização de código, pois você pode escrever código genérico que funciona com diferentes tipos de dados, sem precisar repetir o código para cada tipo individualmente.
+
+Aqui estão alguns conceitos importantes relacionados a generics em C#:
+
+Declaração de uma classe genérica:
+Você pode declarar uma classe genérica usando a sintaxe <T>, onde "T" é um parâmetro de tipo que representa um tipo desconhecido.
+
+~~~
+public class Exemplo<T>
+{
+    // Código da classe genérica
+}
+~~~
+
+Uso de tipo genérico:
+Dentro da classe genérica, você pode usar o tipo genérico "T" como se fosse um tipo real. Ele pode ser usado para declarar variáveis, parâmetros de método, propriedades e retornos de método.
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
