@@ -542,6 +542,42 @@ public class Exemplo<T>
 Uso de tipo genérico:
 Dentro da classe genérica, você pode usar o tipo genérico "T" como se fosse um tipo real. Ele pode ser usado para declarar variáveis, parâmetros de método, propriedades e retornos de método.
 
+~~~
+public class Exemplo<T>
+{
+    private T dado;
+
+    public Exemplo(T valor)
+    {
+        dado = valor;
+    }
+
+    public T GetDado()
+    {
+        return dado;
+    }
+}
+~~~
+
+Restrições de tipo:
+Você pode aplicar restrições aos parâmetros de tipo genérico usando a palavra-chave where. As restrições de tipo especificam que tipo ou tipos devem ser usados para substituir o parâmetro genérico.
+
+~~~
+public class Exemplo<T> where T : IComparable
+{
+    // Restrição de tipo: T deve implementar a interface IComparable
+}
+~~~
+
+Métodos genéricos:
+Você também pode declarar métodos genéricos que recebem ou retornam tipos genéricos. Isso permite que você escreva código genérico para operações que funcionam com vários tipos.
+
+~~~
+public class Exemplo
+{
+    public void MetodoGeneri<|endoftext|>
+~~~
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
