@@ -292,6 +292,50 @@ class Program
 
 Em resumo, as listas em C# são estruturas de dados flexíveis e convenientes que oferecem operações poderosas para manipular coleções de elementos. Elas têm tamanho dinâmico, permitem acesso por índice, fornecem métodos úteis e são tipadas. No entanto, a inserção e remoção em posições intermediárias podem ser mais lentas e o consumo de memória pode ser uma preocupação em determinados casos.
 
+### Conjuntos:
+Em C#, um conjunto é uma estrutura de dados que armazena elementos únicos. Os conjuntos são implementados pela classe HashSet<T> da biblioteca padrão do .NET.
+
+Para usar conjuntos em C#, você deve primeiro importar o namespace System.Collections.Generic. Em seguida, você pode criar um objeto HashSet<T> e adicionar elementos a ele.
+
+Aqui está um exemplo básico de como usar conjuntos em C#:
+
+~~~
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Criando um conjunto de números inteiros
+        HashSet<int> conjunto = new HashSet<int>();
+
+        // Adicionando elementos ao conjunto
+        conjunto.Add(1);
+        conjunto.Add(2);
+        conjunto.Add(3);
+
+        // Verificando se um elemento está presente no conjunto
+        bool contem = conjunto.Contains(2);
+        Console.WriteLine(contem);  // Saída: True
+
+        // Removendo um elemento do conjunto
+        conjunto.Remove(3);
+
+        // Percorrendo os elementos do conjunto
+        foreach (int elemento in conjunto)
+        {
+            Console.WriteLine(elemento);
+        }
+        // Saída: 1, 2
+    }
+}
+~~~
+
+Neste exemplo, criamos um conjunto de números inteiros e adicionamos alguns elementos a ele. Em seguida, verificamos se o número 2 está presente no conjunto, removemos o número 3 e percorremos os elementos restantes.
+
+Os conjuntos em C# são úteis quando você precisa armazenar elementos únicos e não se preocupa com a ordem dos elementos. Eles são eficientes para verificar se um elemento está presente no conjunto e para remover elementos duplicados de uma lista.
+
 ## Orientação a objetos:
 ### Classe e método:
 Exemplo:
