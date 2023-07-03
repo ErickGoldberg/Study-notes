@@ -662,6 +662,23 @@ Neste exemplo, criamos um extension method chamado Reverse para a classe string.
 
 Extension methods são úteis para adicionar funcionalidades a tipos existentes sem modificar suas definições. Eles podem ser usados para melhorar a legibilidade do código e fornecer métodos personalizados para tipos primitivos ou classes de terceiros.
 
+### Delegates:
+Em C#, um delegate é um tipo que representa referências a métodos. Ele pode ser visto como um ponteiro para um método, permitindo que você passe métodos como parâmetros, armazene-os em variáveis ​​e invoque-os posteriormente.
+
+Os delegates fornecem um mecanismo flexível e poderoso para a implementação de callbacks e eventos. Eles são amplamente utilizados em cenários como programação assíncrona, manipulação de eventos, chamada de métodos em tempo de execução com base em condições, entre outros.
+
+A declaração de um delegate envolve especificar a assinatura do método que ele pode representar. Aqui está a sintaxe básica para declarar um delegate em C#:
+
+~~~
+delegate tipoRetorno NomeDelegate(tipoParametro1 parametro1, tipoParametro2 parametro2, ...);
+~~~
+
+Por exemplo, vamos criar um delegate chamado OperacaoMatematica que representa um método que recebe dois inteiros como parâmetros e retorna um inteiro:
+
+~~~
+delegate int OperacaoMatematica(int a, int b);
+~~~
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
