@@ -679,6 +679,47 @@ Por exemplo, vamos criar um delegate chamado OperacaoMatematica que representa u
 delegate int OperacaoMatematica(int a, int b);
 ~~~
 
+Agora, podemos usar esse delegate para referenciar diferentes métodos que correspondam à assinatura especificada. Vamos criar duas funções que correspondem a essa assinatura:
+
+~~~
+int Soma(int a, int b)
+{
+    return a + b;
+}
+
+int Subtracao(int a, int b)
+{
+    return a - b;
+}
+~~~
+
+Em seguida, podemos criar uma instância do delegate OperacaoMatematica e atribuir a ela uma referência ao método Soma ou Subtracao:
+
+~~~
+OperacaoMatematica operacao = Soma;
+int resultado = operacao(5, 3); // resultado = 8
+
+operacao = Subtracao;
+resultado = operacao(5, 3); // resultado = 2
+~~~
+
+Observe que podemos atribuir diferentes métodos ao mesmo delegate, desde que eles correspondam à assinatura especificada.
+
+Além disso, os delegates também podem ser combinados usando o operador + e -=, permitindo que você tenha múltiplos métodos associados ao delegate. Quando o delegate é invocado, todos os métodos associados são chamados na ordem em que foram adicionados.
+
+~~~
+OperacaoMatematica operacao = Soma;
+operacao += Subtracao;
+
+int resultado = operacao(5, 3);
+// resultado = 8 (retorno do método Soma)
+// resultado = 2 (retorno do método Subtracao)
+~~~
+
+Os delegates também são frequentemente usados em combinação com os eventos. Os eventos são um mecanismo de C# para notificar outras partes do código quando algo acontece. Ao declarar um evento, você também precisa especificar o delegate que será usado para lidar com o evento.
+
+Em resumo, os delegates em C# permitem que você trate métodos como objetos, referenciando-os, passando-os como parâmetros e invocando-os posteriormente. Eles são particularmente úteis em cenários onde é necessário implementar callbacks ou tratar eventos.
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
