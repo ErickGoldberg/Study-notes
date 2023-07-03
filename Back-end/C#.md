@@ -622,6 +622,46 @@ public class Exemplo
     public void MetodoGeneri<|endoftext|>
 ~~~
 
+### Extension methods:
+Em C#, extension methods (métodos de extensão) permitem adicionar novos métodos a tipos existentes sem modificar ou herdar desses tipos. Isso é útil quando você não pode modificar a definição de uma classe, como tipos primitivos ou classes de bibliotecas de terceiros.
+
+Para criar um extension method, você deve seguir as seguintes regras:
+
+1. Defina uma classe estática.
+2. Defina um método estático dentro da classe estática.
+3. Adicione o modificador this antes do primeiro parâmetro do método. O tipo desse parâmetro será o tipo que você deseja estender.
+Aqui está um exemplo de como criar e usar um extension method em C#:
+
+~~~
+using System;
+
+public static class StringExtensions
+{
+    public static string Reverse(this string str)
+    {
+        char[] chars = str.ToCharArray();
+        Array.Reverse(chars);
+        return new string(chars);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string texto = "Hello, World!";
+        string textoReverso = texto.Reverse();
+
+        Console.WriteLine(texto);          // Saída: Hello, World!
+        Console.WriteLine(textoReverso);   // Saída: !dlroW ,olleH
+    }
+}
+~~~
+
+Neste exemplo, criamos um extension method chamado Reverse para a classe string. O método Reverse recebe uma string como parâmetro e retorna a string invertida. Para usar o método, basta chamar o método diretamente na instância de string desejada.
+
+Extension methods são úteis para adicionar funcionalidades a tipos existentes sem modificar suas definições. Eles podem ser usados para melhorar a legibilidade do código e fornecer métodos personalizados para tipos primitivos ou classes de terceiros.
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
