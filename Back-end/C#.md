@@ -747,6 +747,12 @@ var result = customers
     .Select(c => c);
 ~~~
 
+Nesse exemplo, a variável customers representa a mesma coleção de objetos do tipo Customer. A consulta LINQ é expressa como uma sequência de métodos encadeados, onde cada método filtra, ordena ou seleciona os elementos da coleção.
+
+O LINQ oferece suporte a uma ampla gama de operações, como filtragem, ordenação, projeção, junção (join), agrupamento (group by) e agregação. Além disso, ele pode ser usado com vários provedores de dados, como LINQ to Objects (para consultas em coleções), LINQ to SQL (para consultas em bancos de dados SQL), LINQ to XML (para consultas em documentos XML) e assim por diante.
+
+O uso do LINQ traz benefícios significativos, como código mais legível e expressivo, redução da quantidade de código necessário para manipular dados e maior produtividade no desenvolvimento de aplicativos. Ele se tornou uma ferramenta poderosa para os desenvolvedores C# lidarem com consultas e manipulação de dados de forma eficiente e intuitiva.
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
