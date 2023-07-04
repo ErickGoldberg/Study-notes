@@ -720,6 +720,33 @@ Os delegates também são frequentemente usados em combinação com os eventos. 
 
 Em resumo, os delegates em C# permitem que você trate métodos como objetos, referenciando-os, passando-os como parâmetros e invocando-os posteriormente. Eles são particularmente úteis em cenários onde é necessário implementar callbacks ou tratar eventos.
 
+## LINQ:
+LINQ (Language Integrated Query) é uma tecnologia introduzida pela Microsoft no .NET Framework que permite a consulta de dados de uma maneira unificada usando uma sintaxe similar à consulta SQL em C#.
+
+O LINQ oferece uma maneira intuitiva e poderosa de manipular e consultar dados de diferentes fontes, como bancos de dados, coleções de objetos, serviços web e muito mais. Ele permite escrever consultas de dados diretamente no código C#, proporcionando uma abordagem declarativa para a manipulação de dados.
+
+Existem dois principais tipos de sintaxe para usar o LINQ em C#:
+
+1. Sintaxe de consulta (Query Syntax): A sintaxe de consulta é semelhante à sintaxe SQL e permite escrever consultas usando palavras-chave como "from", "where", "select" e "orderby". Aqui está um exemplo de consulta LINQ usando a sintaxe de consulta:
+
+~~~
+var result = from c in customers
+             where c.Age > 18
+             orderby c.Name
+             select c;
+~~~
+
+Nesse exemplo, a variável customers representa uma coleção de objetos do tipo Customer. A consulta LINQ filtra os clientes com idade superior a 18 e, em seguida, os ordena pelo nome, retornando a lista resultante.
+
+2. Sintaxe de método (Method Syntax): A sintaxe de método é baseada em métodos de extensão e permite encadear operações usando métodos LINQ como "Where", "OrderBy", "Select", etc. Aqui está o mesmo exemplo anterior, reescrito usando a sintaxe de método:
+
+~~~
+var result = customers
+    .Where(c => c.Age > 18)
+    .OrderBy(c => c.Name)
+    .Select(c => c);
+~~~
+
 ## Arquivos e diretórios:
 Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios que facilitam a manipulação de operações de leitura e gravação de arquivos. Vou explicar brevemente alguns deles:
 
