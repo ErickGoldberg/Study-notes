@@ -29,3 +29,7 @@ Em resumo, o ASP.NET é um framework poderoso e versátil para o desenvolvimento
 8. System.Web.Services.WebService: Essa classe é usada para criar serviços web no ASP.NET. Ela permite que os aplicativos web exponham métodos como serviços web, que podem ser acessados por outros aplicativos através de chamadas HTTP.
 
 Essas são apenas algumas das principais classes do ASP.NET. O framework possui uma ampla gama de classes e bibliotecas adicionais que fornecem recursos para diferentes aspectos do desenvolvimento web, como manipulação de cookies, gerenciamento de sessão, manipulação de arquivos, entre outros.
+
+Links úteis:
+- https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0&utm_source=aspnet-start-page&utm_campaign=vside
+- https://dotnet.microsoft.com/en-us/learn/dotnet/architecture-guides?utm_source=aspnet-start-page&utm_campaign=vside
