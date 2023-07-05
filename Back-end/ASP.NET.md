@@ -11,6 +11,33 @@ O ASP.NET também possui recursos poderosos para lidar com segurança, gerenciam
 
 Em resumo, o ASP.NET é um framework poderoso e versátil para o desenvolvimento de aplicativos web. Ele oferece diversas opções e abordagens para atender às necessidades dos desenvolvedores e é amplamente utilizado na indústria para criar soluções web escaláveis, seguras e de alto desempenho.
 
+## Estruturação das pastas:
+A estrutura de pastas em um projeto ASP.NET pode variar dependendo da versão do ASP.NET e do tipo de projeto (Web Forms ou MVC). No entanto, irei fornecer uma visão geral da estrutura de pastas comumente usada no ASP.NET MVC, que é uma abordagem popular para o desenvolvimento web.
+
+Em um projeto ASP.NET MVC típico, você pode encontrar as seguintes pastas:
+
+App_Data: Essa pasta é usada para armazenar dados de aplicativos, como arquivos de banco de dados, arquivos XML ou qualquer outro arquivo de dados relacionado ao aplicativo.
+
+App_Start: Essa pasta contém classes e arquivos de configuração que são executados no início do aplicativo. Por exemplo, você pode encontrar o arquivo RouteConfig.cs que configura as rotas de URL do aplicativo.
+
+Content: Essa pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, arquivos de imagem e arquivos JavaScript.
+
+Controllers: Essa pasta contém as classes de controladores do ASP.NET MVC. Os controladores são responsáveis por processar solicitações HTTP, executar a lógica de negócios e retornar as respostas apropriadas.
+
+Models: Essa pasta contém as classes de modelo do aplicativo. Os modelos representam as entidades e os dados manipulados pelo aplicativo.
+
+Scripts: Essa pasta é usada para armazenar arquivos JavaScript usados no aplicativo.
+
+Views: Essa pasta contém as visualizações do aplicativo, que são responsáveis por exibir a interface do usuário. Ela é geralmente organizada em subpastas correspondentes a cada controlador, contendo arquivos .cshtml ou .vbhtml que definem a estrutura e o conteúdo das páginas.
+
+Areas: Essa pasta é opcional e é usada para organizar o aplicativo em áreas funcionais separadas. Cada área pode ter sua própria estrutura de pastas semelhante à estrutura principal do aplicativo.
+
+App.config ou Web.config: Esses arquivos de configuração são usados para configurar o aplicativo, definindo valores de chave-valor, conexões de banco de dados, configurações de autenticação, entre outros.
+
+Além dessas pastas principais, você também pode encontrar outras pastas, dependendo das necessidades do seu projeto e das bibliotecas ou ferramentas utilizadas. É importante lembrar que a estrutura de pastas pode ser personalizada e ajustada de acordo com as preferências da equipe de desenvolvimento e os requisitos do projeto.
+
+É válido ressaltar que essa é apenas uma visão geral da estrutura de pastas do ASP.NET MVC. Outras versões do ASP.NET, como o ASP.NET Web Forms ou o ASP.NET Core, podem ter estruturas de pastas um pouco diferentes, mas o conceito geral de separar modelos, visualizações e controladores ainda é aplicado.
+
 ## Principais classes:
 1. System.Web.UI.Page: Essa classe é a base para todas as páginas do ASP.NET Web Forms. Ela fornece recursos para gerenciar o ciclo de vida da página, manipular eventos, acessar controles e interagir com dados.
 
