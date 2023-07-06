@@ -778,6 +778,58 @@ Em C#, existem várias classes e conceitos relacionados a arquivos e diretórios
 
 Esses são apenas alguns conceitos relacionados a arquivos e diretórios em C#. O .NET Framework oferece uma ampla gama de classes e recursos para facilitar a manipulação de operações de E/S em arquivos e diretórios.  
 
+## Ler arquivos XML:
+Para ler documentos XML em C#, você pode usar a classe XmlReader ou a classe XmlDocument. Ambas as classes fornecem funcionalidades para analisar e extrair informações de documentos XML.
+
+Usando xmlDocument:
+~~~
+using System;
+using System.Xml;
+
+class Program
+{
+    static void Main()
+    {
+        // Cria um objeto XmlDocument
+        XmlDocument xmlDoc = new XmlDocument();
+
+        // Carrega o documento XML a partir do arquivo
+        xmlDoc.Load("caminho_do_arquivo.xml");
+
+        // Obtém o elemento raiz do documento
+        XmlElement root = xmlDoc.DocumentElement;
+
+        // Exibe o nome do elemento raiz
+        Console.WriteLine("Elemento raiz: " + root.Name);
+
+        // Percorre os elementos filhos do elemento raiz
+        foreach (XmlNode node in root.ChildNodes)
+        {
+            // Verifica se é um elemento
+            if (node.NodeType == XmlNodeType.Element)
+            {
+                // Exibe o nome do elemento
+                Console.WriteLine("Elemento: " + node.Name);
+
+                // Percorre os atributos do elemento
+                foreach (XmlAttribute attribute in node.Attributes)
+                {
+                    // Exibe o nome e o valor do atributo
+                    Console.WriteLine("Atributo: " + attribute.Name + " = " + attribute.Value);
+                }
+
+                // Verifica se possui texto
+                if (node.HasChildNodes && node.FirstChild.NodeType == XmlNodeType.Text)
+                {
+                    // Exibe o texto
+                    Console.WriteLine("Texto: " + node.FirstChild.Value);
+                }
+            }
+        }
+    }
+}
+~~~
+
 ## Atalhos:
 - Identar: CTRL + K + D
 - Renomear variavél: Ctrl +	R, Ctrl	+ R	(Ctrl +	R duas vezes).
