@@ -90,6 +90,23 @@ namespace NomeDoProjeto.Controllers
 }
 ~~~
 
+## Tokens JWT:
+Tokens JWT (JSON Web Tokens) são frequentemente usados em aplicativos ASP.NET (e em muitos outros tipos de aplicativos) como um mecanismo para autenticação e autorização. Aqui estão algumas razões pelas quais os tokens JWT são amplamente utilizados em ASP.NET:
+
+- Segurança: Os tokens JWT são assinados digitalmente e podem ser verificados para garantir sua autenticidade. Eles são protegidos contra adulteração e, quando usados corretamente, são uma forma segura de autenticação.
+
+- Stateless (sem estado): Os tokens JWT são projetados para serem "stateless", o que significa que o servidor não precisa armazenar informações sobre o token em si. Isso permite que os servidores sejam escalonados horizontalmente e simplifica a arquitetura do aplicativo.
+
+- Portabilidade: Os tokens JWT são baseados em padrões abertos e podem ser usados em diferentes tecnologias e plataformas. Isso significa que um token JWT gerado por um servidor ASP.NET pode ser verificado e usado por outro serviço, independentemente da tecnologia que está sendo usada.
+
+- Informações personalizadas: Os tokens JWT são estruturados como objetos JSON, permitindo que informações adicionais sejam incluídas no token. Isso possibilita a inclusão de dados personalizados relevantes para a aplicação, como permissões, níveis de acesso e outras informações do usuário.
+
+- Escalabilidade: Como os tokens JWT são autocontidos e não exigem armazenamento de estado no servidor, eles podem ser facilmente distribuídos em um ambiente distribuído e escalável, como um sistema de microsserviços.
+
+- Integração com serviços de terceiros: Os tokens JWT são amplamente suportados por serviços e frameworks de terceiros, como serviços de autenticação e autorização baseados em nuvem, APIs RESTful e muito mais. Isso torna mais fácil integrar seu aplicativo ASP.NET com outros sistemas.
+
+Em resumo, os tokens JWT são populares em aplicativos ASP.NET devido à sua segurança, facilidade de uso, portabilidade e capacidade de integrar-se facilmente com outros serviços e plataformas. Eles fornecem uma maneira eficaz de autenticar e autorizar usuários em aplicativos web.
+
 Links úteis:
 - https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0&utm_source=aspnet-start-page&utm_campaign=vside
 - https://dotnet.microsoft.com/en-us/learn/dotnet/architecture-guides?utm_source=aspnet-start-page&utm_campaign=vside
