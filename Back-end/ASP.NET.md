@@ -107,6 +107,13 @@ Tokens JWT (JSON Web Tokens) são frequentemente usados em aplicativos ASP.NET (
 
 Em resumo, os tokens JWT são populares em aplicativos ASP.NET devido à sua segurança, facilidade de uso, portabilidade e capacidade de integrar-se facilmente com outros serviços e plataformas. Eles fornecem uma maneira eficaz de autenticar e autorizar usuários em aplicativos web.
 
+## Secrets:
+Em aplicações ASP.NET, os "secrets" (segredos) referem-se a informações sensíveis, como senhas de banco de dados, chaves de API ou outras configurações que precisam ser protegidas. Manter esses segredos em um local seguro é essencial para garantir a segurança do seu aplicativo.
+
+Antes do ASP.NET Core 2.0, era comum armazenar segredos diretamente no arquivo de configuração (appsettings.json ou web.config). No entanto, isso não é recomendado, pois esses arquivos geralmente são armazenados em repositórios de controle de versão, o que pode expor acidentalmente informações confidenciais.
+
+Com o ASP.NET Core, você pode usar o recurso de gerenciamento de segredos fornecido pelo pacote Microsoft.Extensions.Configuration.UserSecrets para armazenar e acessar seus segredos de forma segura durante o desenvolvimento. Esses segredos são armazenados em um local específico no seu sistema de arquivos, fora do controle de versão do projeto.
+
 Links úteis:
 - https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0&utm_source=aspnet-start-page&utm_campaign=vside
 - https://dotnet.microsoft.com/en-us/learn/dotnet/architecture-guides?utm_source=aspnet-start-page&utm_campaign=vside
