@@ -49,6 +49,33 @@ Além dessas pastas principais, você também pode encontrar outras pastas, depe
 
 Essas são apenas algumas das principais classes do ASP.NET. O framework possui uma ampla gama de classes e bibliotecas adicionais que fornecem recursos para diferentes aspectos do desenvolvimento web, como manipulação de cookies, gerenciamento de sessão, manipulação de arquivos, entre outros.
 
+## Exemplo de controller api:
+
+~~~
+using Microsoft.AspNetCore.Mvc;
+
+namespace NomeDoProjeto.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ExemploController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("API funcionando!");
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] string mensagem)
+        {
+            // Lógica para processar a mensagem recebida
+            return Ok();
+        }
+    }
+}
+~~~
+
 Links úteis:
 - https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0&utm_source=aspnet-start-page&utm_campaign=vside
 - https://dotnet.microsoft.com/en-us/learn/dotnet/architecture-guides?utm_source=aspnet-start-page&utm_campaign=vside
