@@ -72,6 +72,20 @@ namespace NomeDoProjeto.Controllers
             // Lógica para processar a mensagem recebida
             return Ok();
         }
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] string mensagem)
+        {
+            // Lógica para atualizar o recurso com o ID especificado
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            // Lógica para excluir o recurso com o ID especificado
+            return Ok();
+        }
+
     }
 }
 ~~~
