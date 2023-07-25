@@ -90,6 +90,34 @@ namespace NomeDoProjeto.Controllers
 }
 ~~~
 
+## IsPostBack:
+IsPostBack é uma propriedade em ASP.NET, especificamente no ambiente WebForms, que é usada para determinar se a página está sendo carregada ou reenviada em resposta a uma interação do usuário, como o clique de um botão ou o envio de um formulário.
+
+Em uma aplicação ASP.NET WebForms, a interação do usuário pode causar o envio de dados do cliente de volta ao servidor para processamento. Por exemplo, quando um usuário preenche um formulário e clica em um botão "Enviar", os dados do formulário são enviados de volta ao servidor para serem processados. Essa interação pode fazer com que a página seja carregada novamente.
+
+A propriedade IsPostBack é usada para distinguir entre o carregamento inicial da página e o carregamento causado por um evento de postback (como o clique de um botão). Ela retorna um valor booleano:
+
+- true: Indica que a página está sendo carregada como resultado de um postback, ou seja, em resposta a uma interação do usuário que enviou dados para o servidor.
+- false: Indica que a página está sendo carregada pela primeira vez, sem postback, ou seja, é o carregamento inicial da página.
+Essa distinção é útil em várias situações, principalmente quando você deseja executar determinadas ações apenas no carregamento inicial da página e evitar que essas ações sejam repetidas em postbacks subsequentes.
+
+Exemplo de uso em C#:
+~~~
+protected void Page_Load(object sender, EventArgs e)
+{
+    if (!IsPostBack)
+    {
+        // Código a ser executado apenas no carregamento inicial da página
+        // por exemplo, carregar dados iniciais, definir valores padrão, etc.
+    }
+    else
+    {
+        // Código a ser executado nos postbacks subsequentes, caso necessário
+    }
+}
+~~~
+Em resumo, IsPostBack é uma propriedade útil em ASP.NET WebForms para identificar se a página está sendo carregada pela primeira vez ou em resposta a um postback, permitindo que você tome ações apropriadas com base nessa informação.
+
 ## Tokens JWT:
 Tokens JWT (JSON Web Tokens) são frequentemente usados em aplicativos ASP.NET (e em muitos outros tipos de aplicativos) como um mecanismo para autenticação e autorização. Aqui estão algumas razões pelas quais os tokens JWT são amplamente utilizados em ASP.NET:
 
